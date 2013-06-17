@@ -13,18 +13,6 @@ ln -s ~/.dot-files/.bash_aliases ~/
 ln -s ~/.dot-files/.bash_profile ~/
 ```
 
-## LocalAliases and SSH
-for mindmatters
-```
-ln -s ~/.dot-files/.mm_local_aliases ~/.local_aliases
-ln -s ~/.dot-files/ssh/mm_config ~/.ssh/config
-```
-OR for mortik
-```
-ln -s ~/.dot-files/.mk_local_aliases ~/.local_aliases
-ln -s ~/.dot-files/ssh/mk_config ~/.ssh/config
-```
-
 ## git
 ```
 ln -s ~/.dot-files/.gitconfig ~/
