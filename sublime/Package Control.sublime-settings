@@ -1,0 +1,16 @@
+{
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"DashDoc",
+		"Dayle Rees Color Schemes",
+		"GitGutter",
+		"Haml",
+		"Handlebars",
+		"Markdown Preview",
+		"Package Control",
+		"Sass",
+		"Schemr",
+		"SyncedSideBar"
+	]
+}

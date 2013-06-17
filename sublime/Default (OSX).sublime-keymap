@@ -1,0 +1,5 @@
+[
+  { "keys": ["ctrl+w","ctrl+w"], "command": "focus_side_bar" },
+  { "keys": ["super+shift+w"], "command": "close_all" },
+  { "keys": ["super+shift+x"], "command": "schemr_cycle_favorite_schemes", "args": {"direction": "next"}}
+]
