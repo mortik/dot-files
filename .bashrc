@@ -74,11 +74,11 @@ parse_git_upstream_dirty() {
   fi
   if ! [[ "$(git status | tail -n1)" =~ "nothing to commit" ]]; then
     echo -n $(set_color $RED_COLOR)
-    echo -n $'*'
+    echo -n $'●'
   fi
   if [[ $(git log $(git_remote $1)/$1..$1) ]] >& /dev/null; then
     echo -n $(set_color $GREEN_COLOR)
-    echo -n $'▵'
+    echo -n $'●'
   fi
   echo -n $(set_color $DEFAULT_COLOR)
 }

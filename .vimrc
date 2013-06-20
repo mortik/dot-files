@@ -43,6 +43,7 @@ Bundle 'vim-scripts/smartword'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "tomasr/molokai"
 Bundle 'vim-scripts/Lucius'
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'airblade/vim-gitgutter'
@@ -126,6 +127,7 @@ syntax enable
 set ic             " ignore case for search
 set nocompatible   " We're running Vim, not Vi!
 
+set paste
 set cf                 " Enable error files & error jumping.
 set clipboard=unnamed  " Yanks go on clipboard instead.
 set history=256        " Number of things to remember in history.
