@@ -67,6 +67,7 @@ map! <Esc>OH <Home>
 map <Esc>OF <End>
 map! <Esc>OF <End>
 
+map <C-n> :NERDTreeToggle<cr>
 " smartwords
 "map w  <Plug>(smartword-w)
 "map b  <Plug>(smartword-b)
@@ -117,6 +118,10 @@ nnoremap <silent> <C-S-k> :cprev<CR>
 map <F2> :e ~/.vimrc<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" no swap files
+set noswapfile
+set nobackup
+set nowritebackup
 
 " surround for jquery selectors
 let g:surround_36 = "$('.\r')"
@@ -155,7 +160,6 @@ set smartindent
 set smarttab
 set expandtab
 set shortmess=at
-
 " display options
 "set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
