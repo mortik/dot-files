@@ -27,6 +27,7 @@ fi
 
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
+export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 
 # Set editor
 export EDITOR=vim
