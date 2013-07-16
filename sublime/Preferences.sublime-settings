@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/Dayle Rees Color Schemes/Tron.tmTheme",
 	"draw_minimap_border": true,
-	"ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": false,
 	"folder_exclude_patterns":
 	[
 		"tmp",
