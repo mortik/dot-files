@@ -28,7 +28,7 @@ fi
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
-
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 # Set editor
 export EDITOR=vim
 
