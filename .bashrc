@@ -22,7 +22,11 @@ export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
+fi
+
+if [ -f ~/.git-prompt ]; then
+  . ~/.git-prompt
 fi
 
 # Modify PATH
@@ -35,6 +39,7 @@ export EDITOR=vim
 
 DEFAULT_COLOR="[00m"
 BLUE_COLOR="[34m"
+DARK_RED_COLOR="[36m"
 GRAY_COLOR="[37m"
 PINK_COLOR="[35m"
 GREEN_COLOR="[32m"
@@ -57,44 +62,6 @@ parse_ruby() {
   echo -n $(set_color $DEFAULT_COLOR)
 }
 
-git_branch() {
-  if [[ $(git branch) ]]; then
-    echo -n $(git rev-parse --abbrev-ref HEAD)
-  else
-    echo -n '(new-repo)'
-  fi
-}
-
-git_remote() {
-  echo -n $(git config branch.$1.remote)
-}
-
-parse_git_upstream_dirty() {
-  if [[ $(git status --porcelain | grep "^??") ]] >& /dev/null; then
-    echo -n $(set_color $ORANGE_COLOR)
-    echo -n $'●'
-  fi
-  if ! [[ "$(git status | tail -n1)" =~ "nothing to commit" ]]; then
-    echo -n $(set_color $RED_COLOR)
-    echo -n $'●'
-  fi
-  if [[ $(git log $(git_remote $1)/$1..$1) ]] >& /dev/null; then
-    echo -n $(set_color $GREEN_COLOR)
-    echo -n $'●'
-  fi
-  echo -n $(set_color $DEFAULT_COLOR)
-}
-
-parse_git_branch() {
-  if [[ $(git ls-files) ]] >& /dev/null; then
-    git_branch=$(git_branch)
-    echo -n $' ['
-    echo -n $git_branch
-    echo -n $(parse_git_upstream_dirty $git_branch)
-    echo -n $']'
-  fi
-}
-
 parse_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
     echo -n $' '
@@ -110,14 +77,21 @@ parse_virtualenv() {
   fi
 }
 
-export BASEPROMPT='\n\e${BLUE_COLOR}\h \
-\e${GREEN_COLOR}\w\
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+
+export BASEPROMPT='\t \
+\e${DARK_RED_COLOR}\h \
+\e${GREEN_COLOR}\W\
 \e${DEFAULT_COLOR}\
-$(parse_ruby)\
-$(parse_git_branch)\
-$(parse_virtualenv)'
-export PS1="${BASEPROMPT}
-[\t] $ "
+$(__git_prompt)\
+$(parse_virtualenv)\
+\e${BLUE_COLOR}\
+ › \
+\e${DEFAULT_COLOR}'
+export PS1=$BASEPROMPT
 
 # sync script
 function scp-dotfiles () {
