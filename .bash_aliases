@@ -24,6 +24,16 @@ function gh-clone () {
   git clone git@github.com:$1/$2.git
 }
 
+# js2coffee shorthand
+function j2c () {
+  if [ -z "$1" ]; then
+    echo "please provide a filepath"
+    return
+  fi
+  newfile=${1%".js"}
+  js2coffee $1 > $newfile.coffee
+}
+
 # tar
 alias packgz='tar zcvf'
 alias unpackgz='tar zxvf'
