@@ -8,6 +8,7 @@
   aa = add --all
   ci = commit -a
   co = checkout
+  cb = checkout -b
   st = status -s
   br = branch
   hist = log --pretty=format:'* %h - %s (%ar) <%an>'
