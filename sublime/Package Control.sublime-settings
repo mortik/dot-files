@@ -7,14 +7,10 @@
 		"GitGutter",
 		"Haml",
 		"Handlebars",
-		"MoveTab",
 		"Package Control",
-		"Quick File Creator",
-		"QuickFileMove",
 		"ruby-slim.tmbundle",
 		"Sass",
 		"Schemr",
-		"sublime-github",
-		"SyncedSideBar"
+		"sublime-github"
 	]
 }

@@ -5,18 +5,24 @@
 	ui = auto
 
 [alias]
+  p = pull
+  pu = push
   aa = add --all
+  ai = add -i
+  ap = add -p
   ci = commit -a
+  cm = commit -m
+  ca = commit --amend
   co = checkout
   cb = checkout -b
-  st = status -s
+  s = status -s
   br = branch
   hist = log --pretty=format:'* %h - %s (%ar) <%an>'
   l = log --abbrev-commit --date=relative
   head = !git l -1
   h = !git head
   amend = commit -a --amend
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   standup-me = log --since '2 days ago' --author m.klitzke@gmail.com
   cr = log --since '1 week ago' --author m.klitzke@gmail.com
   standup = log --since '2 days ago'
@@ -31,20 +37,18 @@
   remote = origin
   merge = refs/heads/develop
 [core]
-	excludesfile = /Users/mortik/.gitignore_global
+  excludesfile = /Users/mortik/.gitignore_global
 [commit]
   template = /Users/mortik/.gitmessage.txt
 [push]
-	default = current
+  default = current
 [merge]
-	tool = opendiff
+  tool = opendiff
 [diff]
-	tool = opendiff
+  tool = opendiff
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[branch]
-	autosetuprebase = always
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

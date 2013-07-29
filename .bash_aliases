@@ -2,8 +2,9 @@
 alias genpw='pwgen -s -n -B 24'
 
 # git
-alias gs='git st'
+alias gs='git s'
 alias gp='git pull'
+alias gpu='git push'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
@@ -12,6 +13,8 @@ alias gcob='git checkout -b'
 alias ga='git add -i'
 alias gap='git add -p'
 alias gitrm='git ls-files --deleted | xargs git rm'
+
+
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 # rails
@@ -55,9 +58,13 @@ alias rmf='rm -rf'
 alias rails-env-dev='RAILS_ENV=development'
 alias rails-env-test='RAILS_ENV=test'
 alias rails-env-prod='RAILS_ENV=production'
+
+# bundler
 alias bu='bundle update'
 alias bi='bundle install'
 alias be='bundle exec'
+alias br='bundle exec rake'
+alias bt='bundle exec thor'
 
 # nginx
 alias nginx-reload='nginx -s reload'
