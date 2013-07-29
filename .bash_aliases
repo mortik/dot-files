@@ -3,6 +3,7 @@ alias genpw='pwgen -s -n -B 24'
 
 # git
 alias gitrm='git ls-files --deleted | xargs git rm'
+alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 # rails
 alias start-app='be foreman start'
