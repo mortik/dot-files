@@ -213,6 +213,7 @@ __git_prompt_colorize_gitstring ()
 		local c_red='%F{red}'
 		local c_green='%F{green}'
 		local c_lblue='%F{blue}'
+		local c_yellow='%F{yellow}'
 		local c_clear='%f'
 	else
 		# Using \[ and \] around colors is necessary to prevent
@@ -220,11 +221,13 @@ __git_prompt_colorize_gitstring ()
 		local c_red='\[\e[31m\]'
 		local c_green='\[\e[32m\]'
 		local c_lblue='\[\e[1;34m\]'
+		local c_yellow='\[\e[1;33m\]'
 		local c_clear='\[\e[0m\]'
 	fi
 	local bad_color=$c_red
 	local ok_color=$c_green
 	local flags_color="$c_lblue"
+	local warn_color="$c_yellow"
 
 	local branch_color=""
 	if [ $detached = no ]; then
@@ -237,6 +240,9 @@ __git_prompt_colorize_gitstring ()
 	z="$c_clear$z"
 	if [ "$w" = "*" ]; then
 		w="$bad_color$w"
+	fi
+	if [ -n "$p" ]; then
+		p="$warn_color$p$c_clear"
 	fi
 	if [ -n "$i" ]; then
 		i="$ok_color$i"
