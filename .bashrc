@@ -51,47 +51,55 @@ set_color() {
   echo -n $1
 }
 
-ruby_version() {
-  ruby -v | awk '{print $2}'
-}
+# ruby_version() {
+#   ruby -v | awk '{print $2}'
+# }
 
-parse_ruby() {
-  echo -n $' '
-  echo -n $(set_color $RED_COLOR)
-  echo -n $(ruby_version)
-  echo -n $(set_color $DEFAULT_COLOR)
-}
+# parse_ruby() {
+#   echo -n $' '
+#   echo -n $(set_color $RED_COLOR)
+#   echo -n $(ruby_version)
+#   echo -n $(set_color $DEFAULT_COLOR)
+# }
 
-parse_virtualenv() {
-  if [ x$VIRTUAL_ENV != x ]; then
-    echo -n $' '
-    if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
-      ENV_NAME=$(basename "${VIRTUAL_ENV}")
-    else
-      folder=$(dirname "${VIRTUAL_ENV}")
-      ENV_NAME=$(basename "$folder")
-    fi
-    echo -n $(set_color $RED_COLOR)
-    echo -n $ENV_NAME
-    echo -n $(set_color $DEFAULT_COLOR)
-  fi
-}
+# parse_virtualenv() {
+#   if [ x$VIRTUAL_ENV != x ]; then
+#     echo -n $' '
+#     if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
+#       ENV_NAME=$(basename "${VIRTUAL_ENV}")
+#     else
+#       folder=$(dirname "${VIRTUAL_ENV}")
+#       ENV_NAME=$(basename "$folder")
+#     fi
+#     echo -n $(set_color $RED_COLOR)
+#     echo -n $ENV_NAME
+#     echo -n $(set_color $DEFAULT_COLOR)
+#   fi
+# }
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWUPSTREAM="auto"
 
-export BASEPROMPT='\t \
+export PROMPT_COMMAND='__git_prompt "\t \
 \e${RED_COLOR}\h \
 \e${GREEN_COLOR}\W\
-\e${DEFAULT_COLOR}\
-$(__git_prompt)\
-$(parse_virtualenv)\
-\e${BLUE_COLOR}\
+\e${DEFAULT_COLOR}" "\e${BLUE_COLOR}\
  › \
-\e${DEFAULT_COLOR}'
-export PS1=$BASEPROMPT
+\e${DEFAULT_COLOR}"'
+
+# export BASEPROMPT='\t \
+# \e${RED_COLOR}\h \
+# \e${GREEN_COLOR}\W\
+# \e${DEFAULT_COLOR}\
+# $(__git_prompt)\
+# $(parse_virtualenv)\
+# \e${BLUE_COLOR}\
+#  › \
+# \e${DEFAULT_COLOR}'
+# export PS1=$BASEPROMPT
 
 # sync script
 function scp-dotfiles () {
