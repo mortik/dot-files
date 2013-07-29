@@ -228,7 +228,7 @@ __git_prompt_colorize_gitstring ()
 
 	local branch_color=""
 	if [ $detached = no ]; then
-		branch_color="$ok_color"
+		branch_color="$c_clear"
 	else
 		branch_color="$bad_color"
 	fi
