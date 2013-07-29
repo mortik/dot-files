@@ -407,14 +407,14 @@ __git_prompt ()
 		fi
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   [ -r "$g/refs/stash" ]; then
-			s="$"
+			s="◊"
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ] &&
 		   [ "$(git config --bool bash.showUntrackedFiles)" != "false" ] &&
 		   git ls-files --others --exclude-standard --error-unmatch -- '*' >/dev/null 2>/dev/null
 		then
-			u="%${ZSH_VERSION+%}"
+			u="●${ZSH_VERSION+%}"
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUPSTREAM-}" ]; then
@@ -422,7 +422,7 @@ __git_prompt ()
 		fi
 	fi
 
-	local z="${GIT_PS1_STATESEPARATOR-" "}"
+	local z="${GIT_PS1_STATESEPARATOR-""}"
 
 	# NO color option unless in PROMPT_COMMAND mode
 	if [ $pcmode = yes ] && [ -n "${GIT_PS1_SHOWCOLORHINTS-}" ]; then

@@ -40,42 +40,14 @@ export EDITOR=vim
 
 DEFAULT_COLOR="[00m"
 BLUE_COLOR="[34m"
-GRAY_COLOR="[37m"
 PINK_COLOR="[35m"
 GREEN_COLOR="[32m"
-ORANGE_COLOR="[33m"
 RED_COLOR="[31m"
 
 set_color() {
   echo -n $' \e'
   echo -n $1
 }
-
-# ruby_version() {
-#   ruby -v | awk '{print $2}'
-# }
-
-# parse_ruby() {
-#   echo -n $' '
-#   echo -n $(set_color $RED_COLOR)
-#   echo -n $(ruby_version)
-#   echo -n $(set_color $DEFAULT_COLOR)
-# }
-
-# parse_virtualenv() {
-#   if [ x$VIRTUAL_ENV != x ]; then
-#     echo -n $' '
-#     if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
-#       ENV_NAME=$(basename "${VIRTUAL_ENV}")
-#     else
-#       folder=$(dirname "${VIRTUAL_ENV}")
-#       ENV_NAME=$(basename "$folder")
-#     fi
-#     echo -n $(set_color $RED_COLOR)
-#     echo -n $ENV_NAME
-#     echo -n $(set_color $DEFAULT_COLOR)
-#   fi
-# }
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
@@ -89,17 +61,6 @@ export PROMPT_COMMAND='__git_prompt "\t \
 \e${DEFAULT_COLOR}" "\e${BLUE_COLOR}\
  › \
 \e${DEFAULT_COLOR}"'
-
-# export BASEPROMPT='\t \
-# \e${RED_COLOR}\h \
-# \e${GREEN_COLOR}\W\
-# \e${DEFAULT_COLOR}\
-# $(__git_prompt)\
-# $(parse_virtualenv)\
-# \e${BLUE_COLOR}\
-#  › \
-# \e${DEFAULT_COLOR}'
-# export PS1=$BASEPROMPT
 
 # sync script
 function scp-dotfiles () {
@@ -116,6 +77,7 @@ function scp-dotfiles () {
   scp ~/.dot-files/.srv_bashrc $1:~/.bashrc
   scp ~/.dot-files/.srv_bash_aliases $1:~/.bash_aliases
   scp ~/.dot-files/.gitconfig $1:~/.gitconfig
+  scp ~/.dot-files/git-prompt $1:~/.git-prompt
 }
 
 #ansible hosts
