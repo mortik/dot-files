@@ -2,7 +2,7 @@
 alias genpw='pwgen -s -n -B 24'
 
 # git
-alias gs='git s'
+alias gs='git st'
 alias gp='git pull'
 alias gpu='git push'
 alias gl='git lg'
