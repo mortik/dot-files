@@ -12,6 +12,7 @@ alias gca='git commit --amend'
 alias gcob='git checkout -b'
 alias ga='git add -i'
 alias gap='git add -p'
+alias gl='git lg'
 alias gitrm='git ls-files --deleted | xargs git rm'
 
 

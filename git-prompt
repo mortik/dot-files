@@ -442,7 +442,7 @@ __git_prompt ()
 		if [[ -n ${ZSH_VERSION-} ]]; then
 			gitstring=$(printf -- "$printf_format" "$gitstring")
 		else
-			printf -v gitstring -- "$printf_format" "$gitstring"
+			printf -v gitstring "$printf_format" "$gitstring"
 		fi
 		PS1="$ps1pc_start$gitstring$ps1pc_end"
 	else
