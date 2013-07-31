@@ -38,17 +38,6 @@ export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres
 # Set editor
 export EDITOR=vim
 
-DEFAULT_COLOR="[00m"
-BLUE_COLOR="[34m"
-PINK_COLOR="[35m"
-GREEN_COLOR="[32m"
-RED_COLOR="[31m"
-
-set_color() {
-  echo -n $' \e'
-  echo -n $1
-}
-
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -58,25 +47,23 @@ GIT_PS1_SHOWCOLORHINTS=1
 
 export PROMPT_COMMAND='__git_prompt "\
 \t \
-\e${RED_COLOR}\h \
-\e${GREEN_COLOR}\W\
-\e${DEFAULT_COLOR}" "\
-\e${BLUE_COLOR} \
+\[\e[31m\]\h \
+\[\e[32m\]\W\
+\[\e[00m\]" "\
+\[\e[34m\] \
 › \
-\e${DEFAULT_COLOR}"'
+\[\e[00m\]"'
 
 # sync script
 function scp-dotfiles () {
   if [ -z "$1" ]; then
-    echo -n $(set_color $RED_COLOR)
-    echo -n "you doing it wrong!"
-    echo $(set_color $DEFAULT_COLOR)
+    echo -n "\[\e[31m\]you doing it wrong!\[\e[00m\]"
     return
   fi
   echo -n $'syncing files to '
-  echo -n $(set_color $GREEN_COLOR)
+  echo -n "\[\e[32m\]"
   echo -n $1
-  echo $(set_color $DEFAULT_COLOR)
+  echo "\[\e[00m\]"
   scp ~/.dot-files/.srv_bashrc $1:~/.bashrc
   scp ~/.dot-files/.srv_bash_aliases $1:~/.bash_aliases
   scp ~/.dot-files/.gitconfig $1:~/.gitconfig
