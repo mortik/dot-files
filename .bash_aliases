@@ -39,6 +39,14 @@ function j2c () {
   js2coffee $1 > $newfile.coffee
 }
 
+function vmware () {
+  if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "please give vm name and action {start|stop}"
+    return
+  fi
+  vmrun $2 ~/Documents/Virtual\ Machines.localized/$1.vmwarevm/$1.vmx nogui
+}
+
 # tar
 alias packgz='tar zcvf'
 alias unpackgz='tar zxvf'
