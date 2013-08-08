@@ -15,7 +15,6 @@ alias gap='git add -p'
 alias gl='git lg'
 alias gitrm='git ls-files --deleted | xargs git rm'
 
-
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 # rails
@@ -74,6 +73,8 @@ alias bi='bundle install'
 alias be='bundle exec'
 alias br='bundle exec rake'
 alias bt='bundle exec thor'
+alias bcap='bundle exec cap'
+alias bm='bundle exec mina'
 
 # nginx
 alias nginx-reload='nginx -s reload'
