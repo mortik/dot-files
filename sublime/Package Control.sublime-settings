@@ -4,13 +4,19 @@
 		"CoffeeScript",
 		"DashDoc",
 		"Dayle Rees Color Schemes",
+		"File Switcher",
 		"GitGutter",
 		"Haml",
 		"Handlebars",
+		"Markdown Preview",
+		"MoveTab",
 		"Package Control",
+		"Quick File Creator",
+		"QuickFileMove",
 		"ruby-slim.tmbundle",
 		"Sass",
 		"Schemr",
-		"sublime-github"
+		"sublime-github",
+		"SyncedSideBar"
 	]
 }
