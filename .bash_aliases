@@ -75,6 +75,7 @@ alias br='bundle exec rake'
 alias bt='bundle exec thor'
 alias bcap='bundle exec cap'
 alias bm='bundle exec mina'
+alias bspec='bundle exec rspec'
 
 # nginx
 alias nginx-reload='nginx -s reload'
