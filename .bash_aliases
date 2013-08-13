@@ -80,12 +80,6 @@ alias bspec='bundle exec rspec'
 # nginx
 alias nginx-reload='nginx -s reload'
 
-# mysql
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-alias mysql-start='sudo /usr/local/mysql/bin/mysqld_safe'
-alias mysql-stop='sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop'
-
 # other
 alias coffee-watch='coffee --watch --output js/ coffee/'
 

@@ -34,8 +34,6 @@ export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
-export PATH="/usr/local/mysql/bin:$PATH" # mysql bin path
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH # mysql lib path
 
 # Set editor
 export EDITOR=vim
