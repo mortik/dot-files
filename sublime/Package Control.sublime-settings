@@ -2,23 +2,20 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"Chef",
 		"CoffeeScript",
 		"DashDoc",
 		"Dayle Rees Color Schemes",
-		"File Switcher",
 		"GitGutter",
 		"Haml",
 		"Handlebars",
 		"Markdown Preview",
-		"MoveTab",
 		"Package Control",
-		"Quick File Creator",
-		"QuickFileMove",
-		"ruby-slim.tmbundle",
 		"Sass",
 		"Schemr",
 		"SCSS",
 		"sublime-github",
+		"SublimeGit",
 		"SyncedSideBar"
 	]
 }
