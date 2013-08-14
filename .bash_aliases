@@ -1,3 +1,4 @@
+alias sbrc='source ~/.bashrc'
 # pwgen
 alias genpw='pwgen -s -n -B 24'
 
