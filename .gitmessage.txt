@@ -1,5 +1,1 @@
-SUBJECT
 
-details
-
-[ticket: x]
