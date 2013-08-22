@@ -2,8 +2,9 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"Better CoffeeScript",
+		"Case Conversion",
 		"Chef",
-		"CoffeeScript",
 		"DashDoc",
 		"Dayle Rees Color Schemes",
 		"GitGutter",
@@ -18,7 +19,6 @@
 		"Schemr",
 		"SCSS",
 		"sublime-github",
-		"SublimeGit",
-		"SyncedSideBar"
+		"SublimeGit"
 	]
 }
