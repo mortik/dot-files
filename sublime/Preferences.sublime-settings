@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Dayle Rees Color Schemes/Tron.tmTheme",
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended Bright.tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -17,6 +17,7 @@
 	[
 		"Vintage"
 	],
+	"scroll_speed": 2.0,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
