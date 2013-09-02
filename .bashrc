@@ -45,7 +45,7 @@ GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
-export PROMPT_COMMAND='__git_prompt "\
+export PROMPT_COMMAND='__git_prompt "⦧ \
 \t \
 \[\e[31m\]\h \
 \[\e[32m\]\W\
