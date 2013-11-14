@@ -45,7 +45,21 @@ GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
+#VirtualEnv
+export WORKON_HOME=~/Envs
+. /usr/local/bin/virtualenvwrapper.sh
+function venv () {
+  # Get Virtual Env
+  if [[ $VIRTUAL_ENV != "" ]]; then
+    # Strip out the path and just leave the env name
+    echo -n "(${VIRTUAL_ENV##*/}) "
+  fi
+}
+
 export PROMPT_COMMAND='__git_prompt "⦧ \
+\[\e[36m\]\
+\$venv\
+\[\e[00m\]\
 \t \
 \[\e[31m\]\h \
 \[\e[32m\]\W\
@@ -54,16 +68,18 @@ export PROMPT_COMMAND='__git_prompt "⦧ \
 › \
 \[\e[00m\]"'
 
+
+DEFAULT="\e[0;30m"
+RED="\[\033[0;31m\]"
+GREEN="\e[32m"
 # sync script
 function scp-dotfiles () {
   if [ -z "$1" ]; then
-    echo -n "\[\e[31m\]you doing it wrong!\[\e[00m\]"
+    echo "you doing it wrong!"
     return
   fi
-  echo -n $'syncing files to '
-  echo -n "\[\e[32m\]"
-  echo -n $1
-  echo "\[\e[00m\]"
+  echo -n $'syncing files to: '
+  echo $1
   scp ~/.dot-files/.srv_bashrc $1:~/.bashrc
   scp ~/.dot-files/.srv_bash_aliases $1:~/.bash_aliases
   scp ~/.dot-files/.gitconfig $1:~/.gitconfig

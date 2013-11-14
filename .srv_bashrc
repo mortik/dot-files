@@ -106,33 +106,51 @@ fi
 # Set editor
 export EDITOR=vim
 
-DEFAULT_COLOR="[00m"
-BLUE_COLOR="[34m"
-PINK_COLOR="[35m"
-GREEN_COLOR="[32m"
-RED_COLOR="[31m"
-if [ $(id -u) == '0' ]; then
-  USER_COLOR=$RED_COLOR
-else
-  USER_COLOR=$PINK_COLOR
-fi
-
-set_color() {
-  echo -n $' \e'
-  echo -n $1
-}
-
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWUPSTREAM="auto"
 
-export PROMPT_COMMAND='__git_prompt "\t \
-\e${USER_COLOR}\u\
-\e${DEFAULT_COLOR} at \
-\e${RED_COLOR}\h \
-\e${GREEN_COLOR}\W\
-\e${DEFAULT_COLOR}" "\e${BLUE_COLOR}\
- › \
-\e${DEFAULT_COLOR}"'
+#VirtualEnv
+export WORKON_HOME=~/Envs
+. /usr/local/bin/virtualenvwrapper.sh
+# Get Virtual Env
+if [[ $VIRTUAL_ENV != "" ]]; then
+  # Strip out the path and just leave the env name
+  VENV="(${VIRTUAL_ENV##*/}) "
+else
+  # In case you don't have one activated
+  VENV=''
+fi
+
+if [ $(id -u) == '0' ]; then
+  USER_COLOR="\[\e[31m\]"
+else
+  USER_COLOR="\[\e[35m\]"
+fi
+
+export PROMPT_COMMAND='__git_prompt "⦧ \
+\[\e[31m\]${VENV}\[\e[00m\]\
+\t \
+\${USER_COLOR}\u\
+\[\e[00m\] at \
+\[\e[31m\]\h \
+\[\e[32m\]\W\
+\[\e[00m\]" "\
+\[\e[34m\] \
+› \
+\[\e[00m\]"'
+export PROMPT_COMMAND='__git_prompt "⦧ \
+\[\e[36m\]\
+\${VENV}\
+\[\e[00m\]\
+\t \
+\${USER_COLOR}\u\
+\[\e[00m\] at \
+\[\e[31m\]\h \
+\[\e[32m\]\W\
+\[\e[00m\]" "\
+\[\e[34m\] \
+› \
+\[\e[00m\]"'
