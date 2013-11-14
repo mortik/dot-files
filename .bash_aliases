@@ -21,6 +21,9 @@ alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 # rails
 alias start-app='be foreman start'
 
+#middleman
+alias start-mm='be middleman server --port $PORT'
+
 # github
 function gh-clone () {
   if [ -z "$1" || -z "$2" ]; then
@@ -79,7 +82,7 @@ alias bm='bundle exec mina'
 alias bspec='bundle exec rspec'
 
 # nginx
-alias nginx-reload='nginx -s reload'
+alias nginx-reload='sudo nginx -s reload'
 
 # other
 alias coffee-watch='coffee --watch --output js/ coffee/'
