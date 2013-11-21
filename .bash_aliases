@@ -21,6 +21,9 @@ alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 # rails
 alias start-app='be foreman start'
 
+# virtualbox
+alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+
 #middleman
 alias start-mm='be middleman server --port $PORT'
 

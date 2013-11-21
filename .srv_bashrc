@@ -40,12 +40,12 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -92,10 +92,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.git-prompt ]; then
-  . ~/.git-prompt
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -106,51 +102,32 @@ fi
 # Set editor
 export EDITOR=vim
 
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWCOLORHINTS=1
-GIT_PS1_SHOWUPSTREAM="auto"
-
-#VirtualEnv
-export WORKON_HOME=~/Envs
-. /usr/local/bin/virtualenvwrapper.sh
-# Get Virtual Env
-if [[ $VIRTUAL_ENV != "" ]]; then
-  # Strip out the path and just leave the env name
-  VENV="(${VIRTUAL_ENV##*/}) "
-else
-  # In case you don't have one activated
-  VENV=''
-fi
-
+DEFAULT_COLOR="[00m"
+BLUE_COLOR="[34m"
+DARK_RED_COLOR="[36m"
+GRAY_COLOR="[37m"
+PINK_COLOR="[35m"
+GREEN_COLOR="[32m"
+ORANGE_COLOR="[33m"
+RED_COLOR="[31m"
 if [ $(id -u) == '0' ]; then
-  USER_COLOR="\[\e[31m\]"
+  USER_COLOR=$RED_COLOR
 else
-  USER_COLOR="\[\e[35m\]"
+  USER_COLOR=$PINK_COLOR
 fi
 
-export PROMPT_COMMAND='__git_prompt "⦧ \
-\[\e[31m\]${VENV}\[\e[00m\]\
-\t \
-\${USER_COLOR}\u\
-\[\e[00m\] at \
-\[\e[31m\]\h \
-\[\e[32m\]\W\
-\[\e[00m\]" "\
-\[\e[34m\] \
-› \
-\[\e[00m\]"'
-export PROMPT_COMMAND='__git_prompt "⦧ \
-\[\e[36m\]\
-\${VENV}\
-\[\e[00m\]\
-\t \
-\${USER_COLOR}\u\
-\[\e[00m\] at \
-\[\e[31m\]\h \
-\[\e[32m\]\W\
-\[\e[00m\]" "\
-\[\e[34m\] \
-› \
-\[\e[00m\]"'
+set_color() {
+  echo -n $' \e'
+  echo -n $1
+}
+
+export BASEPROMPT='⦧ \t \
+\e${USER_COLOR}\u\
+\e${DEFAULT_COLOR} at \
+\e${DARK_RED_COLOR}\
+\h \
+\e${GREEN_COLOR}\W\
+\e${BLUE_COLOR}\
+ › \
+\e${DEFAULT_COLOR}'
+export PS1=$BASEPROMPT

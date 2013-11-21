@@ -1,11 +1,11 @@
 {
 	"schemr_favorites":
 	[
-		"Packages/Solarized Color Scheme/Solarized (light).tmTheme",
 		"Packages/Monokai Extended/Monokai Extended Bright.tmTheme",
 		"Packages/Color Scheme - Default/Dawn.tmTheme",
-		"Packages/Color Scheme - Default/Sunburst.tmTheme",
-		"Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+		"Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+		"Packages/Color Scheme - Default/Monokai.tmTheme",
+		"Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 		"Packages/Red Planet Color Scheme/Red Planet.tmTheme"
 	]
 }

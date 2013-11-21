@@ -26,3 +26,8 @@ ln -s ~/.dot-files/.gemrc ~/
 ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
 ln -s ~/.dot-files/.vimrc ~/
 ```
+
+## iterm settings
+```
+ln -s ~/.dot-files/com.googlecode.iterm2.plist ~/Library/Preferences/
+```
