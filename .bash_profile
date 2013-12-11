@@ -30,3 +30,5 @@ eval "$(rbenv init - --no-rehash)"
 export PATH=/Users/mortik/.rbenv/shims:/Users/mortik/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Users/mortik/Applications/bin:/Users/mortik/.traq
 export TRAQ_PATH=/Users/mortik/.traq
 export TRAQ_DATA_DIR=/Users/mortik/Library/traq
+
+source $HOME/.env

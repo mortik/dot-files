@@ -33,6 +33,8 @@ fi
 export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/share/python:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 
@@ -47,22 +49,13 @@ GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
 #VirtualEnv
-#export VIRTUALENVWRAPPER_PYTHON=`which python`
-#export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-#export WORKON_HOME=~/Envs
-#. /usr/local/bin/virtualenvwrapper.sh
-#function venv () {
-  # Get Virtual Env
-#  if [[ $VIRTUAL_ENV != "" ]]; then
-#    # Strip out the path and just leave the env name
-#    echo -n "(${VIRTUAL_ENV##*/}) "
-#  fi
-#}
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+export VIRTUALENV_DISTRIBUTE=true
+export WORKON_HOME=~/Envs
+. /usr/local/bin/virtualenvwrapper.sh
 
 export PROMPT_COMMAND='__git_prompt "⦧ \
-\[\e[36m\]\
-\$venv\
-\[\e[00m\]\
 \t \
 \[\e[31m\]\h \
 \[\e[32m\]\W\

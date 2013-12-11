@@ -16,8 +16,8 @@
 	"ignored_packages":
 	[
 		"sublime-github",
-		"Vintage",
 		"Markdown Preview",
+		"Vintage",
 		"Monokai Extended"
 	],
 	"scroll_speed": 2.0,
