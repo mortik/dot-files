@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Red Planet Color Scheme/Red Planet.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -15,13 +15,14 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"sublime-github",
 		"Markdown Preview",
+		"Monokai Extended",
 		"Vintage",
-		"Monokai Extended"
+		"sublime-github"
 	],
 	"scroll_speed": 2.0,
 	"tab_size": 2,
+	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

@@ -11,6 +11,7 @@
 		"GitGutter",
 		"Haml",
 		"Handlebars",
+		"Jinja2",
 		"Markdown Preview",
 		"Monokai Extended",
 		"Package Control",
@@ -23,6 +24,7 @@
 		"Schemr",
 		"SCSS",
 		"sublime-github",
-		"SublimeGit"
+		"SublimeGit",
+		"Theme - Spacegray"
 	]
 }
