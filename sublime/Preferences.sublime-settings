@@ -15,10 +15,10 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Markdown Preview",
 		"Monokai Extended",
-		"Vintage",
-		"sublime-github"
+		"Markdown Preview",
+		"sublime-github",
+		"Vintage"
 	],
 	"scroll_speed": 2.0,
 	"tab_size": 2,
