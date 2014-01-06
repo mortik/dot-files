@@ -1,0 +1,17 @@
+{
+	"quick_themes":
+	[
+		{
+		},
+		{
+			"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
+			"theme": "Spacegray Light.sublime-theme"
+		}
+	],
+	"quick_themes_defaults":
+	{
+		"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+		"theme": "Spacegray.sublime-theme"
+	},
+	"quick_themes_selection": 0
+}
