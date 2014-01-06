@@ -275,6 +275,13 @@ __git_prompt ()
 	local ps1pc_end='\$ '
 	local printf_format=' (%s)'
 
+	local venv=''
+  if [[ $VIRTUAL_ENV != "" ]]; then
+    venv='\[\e[36m\]\
+(${VIRTUAL_ENV##*/}) \
+\[\e[00m\]'
+  fi
+
 	case "$#" in
 		2|3)	pcmode=yes
 			ps1pc_start="$1"
@@ -444,7 +451,7 @@ __git_prompt ()
 		else
 			printf -v gitstring "$printf_format" "$gitstring"
 		fi
-		PS1="$ps1pc_start$gitstring$ps1pc_end"
+		PS1="$venv$ps1pc_start$gitstring$ps1pc_end"
 	else
 		printf -- "$printf_format" "$gitstring"
 	fi

@@ -2,10 +2,7 @@
 	"schemr_favorites":
 	[
 		"Packages/Monokai Extended/Monokai Extended Bright.tmTheme",
-		"Packages/Color Scheme - Default/Dawn.tmTheme",
-		"Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
-		"Packages/Color Scheme - Default/Monokai.tmTheme",
-		"Packages/Color Scheme - Default/Solarized (Light).tmTheme",
-		"Packages/Red Planet Color Scheme/Red Planet.tmTheme"
+		"Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+		"Packages/Theme - Spacegray/base16-ocean.light.tmTheme"
 	]
 }
