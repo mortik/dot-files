@@ -37,6 +37,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Set editor
 export EDITOR=vim

@@ -5,13 +5,15 @@
 		},
 		{
 			"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
-			"theme": "Spacegray Light.sublime-theme"
+			"theme": "Spacegray Light.sublime-theme",
+			"font_size": 16
 		}
 	],
 	"quick_themes_defaults":
 	{
 		"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
-		"theme": "Spacegray.sublime-theme"
+		"theme": "Spacegray.sublime-theme",
+		"font_size": 16
 	},
 	"quick_themes_selection": 0
 }
