@@ -1,5 +1,7 @@
 {
 	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"theme": "Spacegray.sublime-theme",
+	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -11,18 +13,21 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Source Code Pro Light",
 	"font_size": 16,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage",
-		"sublime-github",
-		"Monokai Extended"
+		"Monokai Extended",
+		"sublime-github"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"scroll_speed": 2.0,
 	"tab_size": 2,
-	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
