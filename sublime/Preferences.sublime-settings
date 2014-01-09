@@ -1,6 +1,5 @@
 {
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
-	"theme": "Spacegray.sublime-theme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -18,8 +17,8 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"Monokai Extended",
-		"sublime-github"
+		"sublime-github",
+		"Monokai Extended"
 	],
 	"indent_guide_options":
 	[
@@ -28,6 +27,7 @@
 	],
 	"scroll_speed": 2.0,
 	"tab_size": 2,
+	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
