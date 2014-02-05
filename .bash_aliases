@@ -3,6 +3,7 @@ alias sbrc='source ~/.bashrc'
 alias genpw='pwgen -s -n -B 24'
 
 # git
+alias g='git'
 alias gs='git st'
 alias gp='git pull'
 alias gpu='git push'
@@ -13,7 +14,6 @@ alias gca='git commit --amend'
 alias gcob='git checkout -b'
 alias ga='git add -i'
 alias gap='git add -p'
-alias gl='git lg'
 alias gitrm='git ls-files --deleted | xargs git rm'
 
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
