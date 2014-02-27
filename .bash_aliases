@@ -9,6 +9,7 @@ alias gp='git pull'
 alias gpu='git push'
 alias gl='git lg'
 alias gc='git commit'
+alias gf='git fetch'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gcob='git checkout -b'
@@ -26,6 +27,8 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
 #middleman
 alias start-mm='be middleman server --port $PORT'
+
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # github
 function gh-clone () {
@@ -50,7 +53,7 @@ function vmware () {
     echo "please give vm name and action {start|stop}"
     return
   fi
-  vmrun $2 ~/Documents/Virtual\ Machines.localized/$1.vmwarevm/$1.vmx nogui
+  vmrun $2 ~/Documents/Virtual-Machines.localized/$1.vmwarevm/$1.vmx nogui
 }
 
 # tar

@@ -6,6 +6,7 @@
 
 [alias]
   p = pull
+  f = fetch
   pu = push
   aa = add --all
   ai = add -i

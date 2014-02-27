@@ -116,11 +116,6 @@ else
   USER_COLOR=$PINK_COLOR
 fi
 
-set_color() {
-  echo -n $' \e'
-  echo -n $1
-}
-
 export BASEPROMPT='⦧ \t \
 \e${USER_COLOR}\u\
 \e${DEFAULT_COLOR} at \

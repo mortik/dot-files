@@ -10,15 +10,16 @@
 		".svn",
 		".git",
 		".hg",
-		"CVS"
+		"CVS",
+		"target"
 	],
 	"font_size": 14,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"sublime-github",
 		"Monokai Extended",
-		"Vintage"
+		"Vintage",
+		"sublime-github"
 	],
 	"indent_guide_options":
 	[
