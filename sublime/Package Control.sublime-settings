@@ -9,11 +9,14 @@
 		"DashDoc",
 		"Dayle Rees Color Schemes",
 		"GitGutter",
+		"GoSublime",
+		"Grunt",
 		"Haml",
 		"Handlebars",
 		"Jinja2",
 		"Markdown Preview",
 		"Monokai Extended",
+		"nginx",
 		"Package Control",
 		"QuickThemes",
 		"Rails Migrations List",
@@ -25,6 +28,7 @@
 		"Schemr",
 		"SCSS",
 		"sublime-github",
-		"SublimeGit"
+		"SublimeGit",
+		"SublimeLinter-contrib-jslint"
 	]
 }
