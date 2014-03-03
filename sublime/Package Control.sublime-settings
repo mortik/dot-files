@@ -11,7 +11,6 @@
 		"DashDoc",
 		"Dayle Rees Color Schemes",
 		"GitGutter",
-		"GoSublime",
 		"Grunt",
 		"Haml",
 		"Handlebars",
@@ -26,12 +25,10 @@
 		"RailsCasts Colour Scheme",
 		"Red Planet Color Scheme",
 		"RSpec",
-		"RubyTest",
 		"Sass",
 		"Schemr",
 		"SCSS",
 		"sublime-github",
-		"SublimeGit",
-		"SublimeLinter-contrib-jslint"
+		"SublimeGit"
 	]
 }
