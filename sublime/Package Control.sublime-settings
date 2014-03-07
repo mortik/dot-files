@@ -29,6 +29,7 @@
 		"Schemr",
 		"SCSS",
 		"sublime-github",
-		"SublimeGit"
+		"SublimeGit",
+		"SublimeLinter-contrib-jslint"
 	]
 }
