@@ -54,13 +54,78 @@ set ttymouse=xterm2
 
 Bundle 'vim-scripts/octave.vim'
 
+runtime macros/matchit.vim
+
 " leader to ,
 let maplocalleader = ","
 let mapleader = ','
 
 
 set hidden
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RunTestFile(...) " {{{2
+  if a:0
+    let command_suffix = a:1
+  else
+    let command_suffix = ""
+  endif
 
+  " Run the tests for the previously-marked file.
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+  if in_test_file
+    call SetTestFile()
+  elseif !exists("t:grb_test_file")
+    return
+  end
+  call RunTests(t:grb_test_file . command_suffix)
+endfunction " }}}
+
+function! RunNearestTest() " {{{2
+  let spec_line_number = line('.')
+  call RunTestFile(":" . spec_line_number)
+endfunction " }}}
+
+function! SetTestFile() " {{{2
+  " Set the spec file that tests will be run for.
+  let t:grb_test_file=@%
+endfunction " }}}
+
+function! RunTests(filename) " {{{2
+  " Write the file and run tests for the given filename
+  if expand("%") != ""
+    :w
+  end
+  if match(a:filename, '\.feature$') != -1
+    exec ":!script/features " . a:filename
+  else
+    " First choice: project-specific test script
+    if filereadable("script/test")
+      exec ":!script/test " . a:filename
+      " Fall back to the .test-commands pipe if available, assuming someone
+      " is reading the other side and running the commands
+    elseif filewritable(".test-commands")
+      let cmd = 'rspec --color --format progress --require "~/lib/vim_rspec_formatter" --format VimFormatter --out tmp/quickfix'
+      exec ":!echo " . cmd . " " . a:filename . " > .test-commands"
+
+      " Write an empty string to block until the command completes
+      sleep 100m " milliseconds
+      :!echo > .test-commands
+      redraw!
+      " Fall back to a blocking test run with Bundler
+    elseif filereadable("Gemfile")
+      exec ":!bundle exec rspec --color " . a:filename
+      " Fall back to a normal blocking test run
+    else
+      exec ":!rspec --color " . a:filename
+    end
+  end
+endfunction " }}}
+map <Leader>t :call RunNearestTest()<CR>
+map <Leader>T :call RunTestFile()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>S :call RunTests('')<CR>
 " escape sequences
 map <Esc>OH <Home>
 map! <Esc>OH <Home>
@@ -110,7 +175,6 @@ let g:ctrlp_max_height = 20
 
 " let g:ctrlp_use_caching = 0
 " shortcuts
-nnoremap <silent> <Leader>t  :CtrlP <CR>
 nnoremap <silent> <Leader>b  :CtrlPBuffer <CR>
 noremap <silent> ,cw :cclose<CR>
 nnoremap <silent> <C-S-j> :cnext<CR>
