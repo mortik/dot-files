@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Better CoffeeScript",
+		"Better Completion",
 		"Case Conversion",
 		"Chef",
 		"CoffeeCompile",
@@ -10,6 +11,7 @@
 		"CTags",
 		"DashDoc",
 		"Dayle Rees Color Schemes",
+		"Floobits",
 		"GitGutter",
 		"Grunt",
 		"Haml",
@@ -30,6 +32,7 @@
 		"SCSS",
 		"sublime-github",
 		"SublimeGit",
-		"SublimeLinter-contrib-jslint"
+		"SublimeLinter-contrib-jslint",
+		"Table Editor"
 	]
 }
