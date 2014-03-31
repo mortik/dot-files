@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Better CoffeeScript",
+		"Better Completion",
 		"Case Conversion",
 		"Chef",
 		"CodeFormatter",
@@ -32,6 +33,7 @@
 		"SCSS",
 		"sublime-github",
 		"SublimeGit",
-		"SublimeLinter-contrib-jslint"
+		"SublimeLinter-contrib-jslint",
+		"Table Editor"
 	]
 }
