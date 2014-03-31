@@ -55,3 +55,6 @@
 	autosetuprebase = always # git config branch.<name>.rebase true if branch already exists
 [mergetool]
 	keepBackup = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
