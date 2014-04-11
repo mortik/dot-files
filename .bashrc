@@ -62,7 +62,7 @@ function scp-dotfiles () {
   echo $1
   scp ~/.dot-files/.srv_bashrc $1:~/.bashrc
   scp ~/.dot-files/.srv_bash_aliases $1:~/.bash_aliases
-  scp ~/.dot-files/.srv_bash_prompt $1:~/.bash_prompt
+  scp ~/.dot-files/.bash_prompt $1:~/
 }
 
 #ansible hosts

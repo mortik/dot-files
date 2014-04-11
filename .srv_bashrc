@@ -92,6 +92,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+PROMPT_SHOW_USER=1
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_prompt
 fi
