@@ -27,8 +27,8 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-if [ -f ~/.git-prompt ]; then
-  . ~/.git-prompt
+if [ -f ~/.bash_prompt ]; then
+  . ~/.bash_prompt
 fi
 
 # Modify PATH
@@ -45,13 +45,6 @@ export PATH=$PATH:$GOPATH/bin
 # Set editor
 export EDITOR=vim
 
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWCOLORHINTS=1
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWCOLORHINTS=1
-
 #VirtualEnv
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
@@ -59,19 +52,6 @@ export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/Envs
 . /usr/local/bin/virtualenvwrapper.sh
 
-export PROMPT_COMMAND='__git_prompt "⦧ \
-\t \
-\[\e[31m\]\h \
-\[\e[32m\]\W\
-\[\e[00m\]" "\
-\[\e[34m\] \
-› \
-\[\e[00m\]"'
-
-
-DEFAULT="\e[0;30m"
-RED="\[\033[0;31m\]"
-GREEN="\e[32m"
 # sync script
 function scp-dotfiles () {
   if [ -z "$1" ]; then
