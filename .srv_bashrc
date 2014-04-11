@@ -92,6 +92,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_prompt
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -101,28 +105,3 @@ fi
 
 # Set editor
 export EDITOR=vim
-
-DEFAULT_COLOR="[00m"
-BLUE_COLOR="[34m"
-DARK_RED_COLOR="[36m"
-GRAY_COLOR="[37m"
-PINK_COLOR="[35m"
-GREEN_COLOR="[32m"
-ORANGE_COLOR="[33m"
-RED_COLOR="[31m"
-if [ $(id -u) == '0' ]; then
-  USER_COLOR=$RED_COLOR
-else
-  USER_COLOR=$PINK_COLOR
-fi
-
-export BASEPROMPT='⦧ \t \
-\e${USER_COLOR}\u\
-\e${DEFAULT_COLOR} at \
-\e${DARK_RED_COLOR}\
-\h \
-\e${GREEN_COLOR}\W\
-\e${BLUE_COLOR}\
- › \
-\e${DEFAULT_COLOR}'
-export PS1=$BASEPROMPT
