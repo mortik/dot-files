@@ -11,6 +11,7 @@ ln -s ~/.dot-files/sublime/Preferences.sublime-settings ~/Library/Application\ S
 ln -s ~/.dot-files/.bashrc ~/
 ln -s ~/.dot-files/.bash_aliases ~/
 ln -s ~/.dot-files/.bash_profile ~/
+ln -s ~/.dot-files/.bash_prompt ~/
 ```
 
 ## git
