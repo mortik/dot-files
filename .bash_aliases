@@ -19,9 +19,6 @@ alias gitrm='git ls-files --deleted | xargs git rm'
 
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
-# rails
-alias start-app='be foreman start'
-
 # virtualbox
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
@@ -76,16 +73,6 @@ alias rmf='rm -rf'
 alias rails-env-dev='RAILS_ENV=development'
 alias rails-env-test='RAILS_ENV=test'
 alias rails-env-prod='RAILS_ENV=production'
-
-# bundler
-alias bu='bundle update'
-alias bi='bundle install'
-alias be='bundle exec'
-alias br='bundle exec rake'
-alias bt='bundle exec thor'
-alias bcap='bundle exec cap'
-alias bm='bundle exec mina'
-alias bspec='bundle exec rspec'
 
 # nginx
 alias nginx-reload='sudo nginx -s reload'
