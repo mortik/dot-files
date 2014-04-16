@@ -16,7 +16,7 @@
   ca = commit --amend
   co = checkout
   cb = checkout -b
-  st = status -s
+  s = status -s
   br = branch
   hist = log --pretty=format:'* %h - %s (%ar) <%an>'
   l = log --abbrev-commit --date=relative
