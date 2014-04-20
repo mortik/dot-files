@@ -22,21 +22,12 @@ export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
-fi
-
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
+export PATH=/usr/local/share/python:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
@@ -68,3 +59,14 @@ function scp-dotfiles () {
 
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_prompt ]; then
+  . ~/.bash_prompt
+fi
