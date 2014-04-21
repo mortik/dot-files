@@ -31,6 +31,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="./bin:$PATH"
 
