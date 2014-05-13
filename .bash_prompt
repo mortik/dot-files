@@ -21,35 +21,37 @@ function is_git_repository {
 # Determine the branch/state information for this git repository.
 function set_git_branch {
   # Capture the output of the "git status" command.
-  git_status="$(git status 2> /dev/null)"
+  git_status="$(git status --porcelain -b -u -z 2> /dev/null)"
 
   # Set color based on clean/staged/dirty.
-  if [[ ${git_status} =~ "working directory clean" ]]; then
-    state="${GREEN}"
-  elif [[ ${git_status} =~ "Changes to be committed" ]]; then
+  regex_not_added=" [MDA]"
+  regex_added="[MDA] "
+  if [[ ${git_status} =~ $regex_not_added ]]; then
+    state="${LIGHT_RED}"
+  elif [[ ${git_status} =~ $regex_added ]]; then
     state="${YELLOW}"
   else
-    state="${LIGHT_RED}"
+    state="${GREEN}"
   fi
 
   # Set arrow icon based on status against remote.
-  remote_pattern="Your branch is (.*) of"
-  if [[ ${git_status} =~ ${remote_pattern} ]]; then
-    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote="↑"
-    else
-      remote="↓"
-    fi
+  ahead_pattern="\[ahead (.*)\]"
+  behind_pattern="\[behind (.*)\]"
+  if [[ ${git_status} =~ ${ahead_pattern} ]]; then
+    remote=">"
+  elif [[ ${git_status} =~ ${behind_pattern} ]]; then
+    remote="<"
   else
     remote=""
   fi
+  # TODO: currently not working
   diverge_pattern="Your branch and (.*) have diverged"
   if [[ ${git_status} =~ ${diverge_pattern} ]]; then
     remote="↕"
   fi
 
   # Get the name of the branch.
-  branch_pattern="^On branch ([^${IFS}]*)"
+  branch_pattern="^## ([^${IFS}\.]*)"
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
     branch=${BASH_REMATCH[1]}
   fi

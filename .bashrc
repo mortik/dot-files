@@ -5,7 +5,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=".:~:~/dev:~/dev/work:~/dev/mm"
+export CDPATH=".:~:~/dev:~/dev/work:~/dev/work/mm:~/dev/work/woa"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -60,8 +60,6 @@ function scp-dotfiles () {
 
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
