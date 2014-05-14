@@ -35,19 +35,15 @@ function set_git_branch {
   fi
 
   # Set arrow icon based on status against remote.
-  ahead_pattern="\[ahead (.*)\]"
-  behind_pattern="\[behind (.*)\]"
+  ahead=""
+  ahead_pattern="ahead ([[:digit:]]+)"
   if [[ ${git_status} =~ ${ahead_pattern} ]]; then
-    remote=">"
-  elif [[ ${git_status} =~ ${behind_pattern} ]]; then
-    remote="<"
-  else
-    remote=""
+    ahead=">"
   fi
-  # TODO: currently not working
-  diverge_pattern="Your branch and (.*) have diverged"
-  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-    remote="↕"
+  behind=""
+  behind_pattern="behind ([[:digit:]]+)"
+  if [[ ${git_status} =~ ${behind_pattern} ]]; then
+    behind="<"
   fi
 
   # Get the name of the branch.
@@ -57,7 +53,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="[${state}${branch}${COLOR_NONE}${RED}${remote}${COLOR_NONE}] "
+  BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${COLOR_NONE}] "
 }
 
 # Return the prompt symbol to use, colorized based on the return value of the
