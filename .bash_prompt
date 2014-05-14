@@ -34,6 +34,12 @@ function set_git_branch {
     state="${GREEN}"
   fi
 
+  new=""
+  regex_new="\?\? "
+  if [[ ${git_status} =~ $regex_new ]]; then
+    new="*"
+  fi
+
   # Set arrow icon based on status against remote.
   ahead=""
   ahead_pattern="ahead ([[:digit:]]+)"
@@ -53,7 +59,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${COLOR_NONE}] "
+  BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${new}${COLOR_NONE}] "
 }
 
 # Return the prompt symbol to use, colorized based on the return value of the
