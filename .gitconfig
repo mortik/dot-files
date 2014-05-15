@@ -47,6 +47,7 @@
   merge = refs/heads/develop
 [core]
   excludesfile = /Users/mortik/.gitignore_global
+	precomposeunicode = true
 [push]
   default = current
 [merge]
@@ -55,7 +56,6 @@
   tool = opendiff
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
