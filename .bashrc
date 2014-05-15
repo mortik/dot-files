@@ -5,7 +5,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=".:~:~/dev:~/dev/work:~/dev/mm"
+export CDPATH=".:~:~/dev:~/dev/work:~/dev/work/mm:~/dev/work/woa"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -22,24 +22,16 @@ export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
-fi
-
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
+export PATH=/usr/local/share/python:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="./bin:$PATH"
 
@@ -68,3 +60,12 @@ function scp-dotfiles () {
 
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_prompt ]; then
+  . ~/.bash_prompt
+fi

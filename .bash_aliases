@@ -17,6 +17,8 @@ alias ga='git add -i'
 alias gap='git add -p'
 alias gitrm='git ls-files --deleted | xargs git rm'
 
+alias brew-up='brew update && brew upgrade && brew cleanup'
+
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 # virtualbox
