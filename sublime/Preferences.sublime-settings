@@ -18,8 +18,8 @@
 	"ignored_packages":
 	[
 		"Monokai Extended",
-		"sublime-github",
-		"Vintage"
+		"Vintage",
+		"sublime-github"
 	],
 	"indent_guide_options":
 	[
