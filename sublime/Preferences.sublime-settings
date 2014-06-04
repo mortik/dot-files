@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -28,7 +28,7 @@
 	],
 	"scroll_speed": 2.0,
 	"tab_size": 2,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
