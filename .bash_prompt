@@ -54,15 +54,7 @@ function set_git_branch {
 
   # Capture the output of the "git status" command with branch.
   # Get the name of the branch.
-  git_status_branch="$(git status --porcelain -b -u 2> /dev/null)"
-  branch_pattern="^## (.+)$"
-  if [[ ${git_status_branch} =~ ${branch_pattern} ]]; then
-    if [[ ${BASH_REMATCH[1]} == "Initial" ]]; then
-      branch="init"
-    else
-      branch=${BASH_REMATCH[1]}
-    fi
-  fi
+  branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 
   # Set the final branch string.
   BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${new}${COLOR_NONE}] "
