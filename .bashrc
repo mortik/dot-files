@@ -25,7 +25,6 @@ export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
-export PATH=/usr/local/share/python:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres App bin
