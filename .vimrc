@@ -249,13 +249,9 @@ set wildmode=list:longest,full
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 set wildignore+=public/system/**,tmp/**,*.scssc,*.sassc,*.class,log/**,server/**,*/vendor/bundle/**,*/.rsync_cache/*,*/server/*
 
-" gui stuff
 set t_Co=256
-" colorscheme wombat256mod
-set background=dark
-colorscheme Tron
-
-highlight LineNr term=underline ctermfg=008 ctermbg=233 guifg=lightgray guibg=black
+colorscheme github
+set background=light
 
 function! g:CodeReview()
   let g:lucius_style="light"

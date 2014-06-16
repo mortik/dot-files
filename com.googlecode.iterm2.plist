@@ -29,7 +29,7 @@
 	<key>CopySelection</key>
 	<true/>
 	<key>Default Bookmark Guid</key>
-	<string>ED382368-053C-4084-95F1-4605C9A79970</string>
+	<string>4C4C7515-5525-4AB5-BC0E-6FA13DFCBCF7</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -108,13 +108,13 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>98 230 605 485 0 0 1280 778 </string>
+	<string>98 234 605 485 0 0 1280 778 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>450 486 384 129 0 0 1280 778 </string>
+	<string>1735 1505 384 129 0 0 3840 2138 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>49 9 1228 769 0 0 1280 778 </string>
+	<string>44 16 1235 762 0 0 1280 778 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_ED382368-053C-4084-95F1-4605C9A79970</key>
@@ -912,9 +912,9 @@
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.54835450649261475</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.46338105201721191</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -1638,7 +1638,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-20T17:43:35Z</date>
+	<date>2014-06-13T09:30:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1688,6 +1688,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140421</string>
+	<string>1.0.0.20140518</string>
 </dict>
 </plist>

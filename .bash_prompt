@@ -55,6 +55,9 @@ function set_git_branch {
   # Capture the output of the "git status" command with branch.
   # Get the name of the branch.
   branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  if [ $? -ne 0 ]; then
+    branch="INIT"
+  fi
 
   # Set the final branch string.
   BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${new}${COLOR_NONE}] "
