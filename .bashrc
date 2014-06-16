@@ -59,6 +59,7 @@ function scp-dotfiles () {
 
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
+export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
