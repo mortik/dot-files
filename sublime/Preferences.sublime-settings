@@ -16,9 +16,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Monokai Extended",
-		"Vintage",
-		"sublime-github"
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
