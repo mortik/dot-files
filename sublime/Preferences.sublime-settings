@@ -2,7 +2,6 @@
 	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
-	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
 	[
 		"tmp",
@@ -17,9 +16,9 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"sublime-github",
 		"Monokai Extended",
-		"Vintage"
+		"Vintage",
+		"sublime-github"
 	],
 	"indent_guide_options":
 	[
