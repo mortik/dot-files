@@ -24,6 +24,8 @@
 		"draw_active"
 	],
 	"scroll_speed": 2.0,
+	"show_encoding": true,
+	"show_line_endings": true,
 	"tab_size": 2,
 	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
