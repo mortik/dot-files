@@ -77,7 +77,7 @@
 	<key>LeftCommand</key>
 	<integer>7</integer>
 	<key>LeftOption</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MaxVertically</key>
@@ -108,7 +108,7 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>98 234 605 485 0 0 1280 778 </string>
+	<string>98 234 924 485 0 0 1280 778 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1735 1505 384 129 0 0 3840 2138 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
@@ -1638,7 +1638,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-16T16:12:20Z</date>
+	<date>2014-06-17T20:23:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
