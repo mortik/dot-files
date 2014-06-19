@@ -13,7 +13,16 @@
 		"target"
 	],
 	"font_size": 14,
+	"auto_complete_commit_on_tab": true,
+	"scroll_speed": 2.0,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 2,
+	"theme": "Spacegray Light.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
 	"highlight_modified_tabs": true,
+	"bold_folder_labels": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -22,12 +31,5 @@
 	[
 		"draw_normal",
 		"draw_active"
-	],
-	"scroll_speed": 2.0,
-	"show_encoding": true,
-	"show_line_endings": true,
-	"tab_size": 2,
-	"theme": "Spacegray Light.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	]
 }
