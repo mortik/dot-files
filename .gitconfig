@@ -49,6 +49,7 @@
 [core]
   excludesfile = /Users/mortik/.gitignore_global
 	precomposeunicode = true
+	editor = vim
 [push]
   default = current
 [merge]

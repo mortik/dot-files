@@ -35,7 +35,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="./bin:$PATH"
 
 # Set editor
-export EDITOR=vim
+export EDITOR=subl
 
 #VirtualEnv
 export VIRTUALENVWRAPPER_PYTHON=`which python`
