@@ -6,7 +6,6 @@
 	"draw_minimap_border": true,
 	"folder_exclude_patterns":
 	[
-		"tmp",
 		".rsync_cache",
 		".svn",
 		".git",
