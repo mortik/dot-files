@@ -87,7 +87,7 @@
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>1</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/Documents</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -123,7 +123,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>84 810 924 485 0 0 2560 1418 </string>
+	<string>83 341 605 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>60 14 1376 864 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -171,11 +171,11 @@
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.22514490783214569</real>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.87427544593811035</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.87925279140472412</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -898,9 +898,9 @@
 				<key>Blue Component</key>
 				<real>0.3333333432674408</real>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.84623867273330688</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.87572455406188965</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -1653,7 +1653,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-30T14:02:33Z</date>
+	<date>2014-07-11T07:23:34Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1701,6 +1701,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140518</string>
+	<string>1.0.0.20140629</string>
 </dict>
 </plist>
