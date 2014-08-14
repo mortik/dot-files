@@ -16,6 +16,7 @@ alias gcob='git checkout -b'
 alias ga='git add -i'
 alias gap='git add -p'
 alias gitrm='git ls-files --deleted | xargs git rm'
+alias go-run='go run !(*_test).go'
 
 alias brew-up='brew update && brew upgrade && brew cleanup'
 

@@ -1,6 +1,3 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -31,7 +28,7 @@ export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres
 export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
 export PATH="./bin:$PATH"
 
 # Set editor

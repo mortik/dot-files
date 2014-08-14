@@ -2,6 +2,7 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"Better CoffeeScript",
 		"BufferScroll",
 		"Case Conversion",
 		"CoffeeScript",
@@ -9,13 +10,16 @@
 		"Dayle Rees Color Schemes",
 		"Enhanced Clojure",
 		"GitGutter",
+		"GoSublime",
 		"Haml",
 		"Handlebars",
 		"Jinja2",
+		"JSHint",
 		"Markdown Preview",
 		"nginx",
 		"Package Control",
 		"Pretty JSON",
+		"Puppet",
 		"Quick File Creator",
 		"Quick File Move",
 		"Quick File Open",
@@ -23,6 +27,7 @@
 		"Sass",
 		"Schemr",
 		"SCSS",
-		"SublimeGit"
+		"SublimeGit",
+		"SublimeLinter-contrib-puppet-lint"
 	]
 }
