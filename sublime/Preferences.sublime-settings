@@ -1,7 +1,7 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"folder_exclude_patterns":
@@ -28,7 +28,9 @@
 	"scroll_speed": 2.0,
 	"show_encoding": true,
 	"show_line_endings": true,
+	"spacegray_sidebar_tree_small": true,
 	"tab_size": 2,
+	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

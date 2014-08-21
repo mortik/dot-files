@@ -111,3 +111,4 @@ class RspecCurrentLineInFile(RspecCurrentFileCommand):
         self.execute_spec('"' + file_path + '"', " -n '" + test_name + "'")
       else:
         print("no test content ...")
+
