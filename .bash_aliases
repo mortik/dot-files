@@ -26,7 +26,7 @@ alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
 #middleman
-alias start-mm='be middleman server --port $PORT'
+alias start-mm='bundle exec middleman server --port $PORT'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
