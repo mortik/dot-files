@@ -59,7 +59,7 @@
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
-	<string>4C4C7515-5525-4AB5-BC0E-6FA13DFCBCF7</string>
+	<string>E25F6CAB-8FAC-4744-B01D-86C63C31EE07</string>
 	<key>HotKeyTogglesWindow</key>
 	<false/>
 	<key>Hotkey</key>
@@ -82,6 +82,10 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>1</string>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>1</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -113,7 +117,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>200 165 924 485 0 0 1280 777 </string>
+	<string>200 165 605 485 0 0 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>470 486 384 129 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
@@ -190,11 +194,11 @@
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.65882354974746704</real>
 				<key>Green Component</key>
-				<real>0.50857782363891602</real>
+				<real>0.40000000596046448</real>
 				<key>Red Component</key>
-				<real>0.19764687120914459</real>
+				<real>0.32549020648002625</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -358,11 +362,11 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.90273833274841309</real>
+				<real>0.7450980544090271</real>
 				<key>Green Component</key>
-				<real>0.90273833274841309</real>
+				<real>0.7450980544090271</real>
 				<key>Red Component</key>
-				<real>0.90273833274841309</real>
+				<real>0.7450980544090271</real>
 			</dict>
 			<key>Guid</key>
 			<string>E25F6CAB-8FAC-4744-B01D-86C63C31EE07</string>
@@ -902,7 +906,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mortik/.dot-files</string>
+	<string>/Users/mortik/.dotfiles</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -918,7 +922,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-02T19:57:43Z</date>
+	<date>2014-09-03T19:57:43Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
