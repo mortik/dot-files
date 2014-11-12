@@ -5,39 +5,19 @@
 	ui = auto
 
 [alias]
-  p = pull
   f = fetch origin --prune
-  pu = push
-  aa = add --all
-  ai = add -i
-  ap = add -p
-  ci = commit -a
-  cm = commit -m
-  ca = commit --amend
+	r = rebase
   co = checkout
   cb = checkout -b
+  coa = commit --amend
+  remove =ls-files --deleted | xargs git rm
   s = status -sb
   st = status -sb
   br = branch
-  hist = log --pretty=format:'* %h - %s (%ar) <%an>'
   l = log --abbrev-commit --date=relative
-  head = !git l -1
-  h = !git head
-  amend = commit -a --amend
   lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   standup-me = log --since '2 days ago' --author m.klitzke@gmail.com
-  cr = log --since '1 week ago' --author m.klitzke@gmail.com
-  standup = log --since '2 days ago'
-  dt = difftool
   mt = mergetool
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 [format]
   pretty=format:* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [branch "master"]

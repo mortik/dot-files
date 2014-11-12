@@ -2,10 +2,11 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"Better CoffeeScript",
 		"BufferScroll",
 		"Case Conversion",
+		"CoffeeCompile",
 		"CoffeeScript",
+		"Color Highlighter",
 		"DashDoc",
 		"Enhanced Clojure",
 		"FileBrowser",
@@ -14,7 +15,9 @@
 		"GoSublime",
 		"Haml",
 		"Handlebars",
+		"JavaScriptNext - ES6 Syntax",
 		"Jinja2",
+		"JsFormat",
 		"JSHint",
 		"Markdown Preview",
 		"Marked App Menu",
@@ -27,11 +30,13 @@
 		"Quick File Move",
 		"Quick File Open",
 		"QuickThemes",
+		"RubyTest",
 		"Sass",
 		"Schemr",
 		"SCSS",
 		"SublimeGit",
 		"SublimeLinter-contrib-puppet-lint",
+		"Theme - itg.flat",
 		"Theme - Spacegray"
 	]
 }

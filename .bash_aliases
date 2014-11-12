@@ -1,21 +1,6 @@
 alias sbrc='source ~/.bashrc'
-# pwgen
 alias genpw='pwgen -s -n -B 24'
 
-# git
-alias g='git'
-alias gs='git st'
-alias gp='git pull'
-alias gpu='git push'
-alias gl='git lg'
-alias gc='git commit'
-alias gf='git f'
-alias gcm='git commit -m'
-alias gca='git commit --amend'
-alias gcob='git checkout -b'
-alias ga='git add -i'
-alias gap='git add -p'
-alias gitrm='git ls-files --deleted | xargs git rm'
 alias go-run='go run !(*_test).go'
 
 alias brew-up='brew update && brew upgrade && brew cleanup'
@@ -76,6 +61,7 @@ alias rmf='rm -rf'
 alias rails-env-dev='RAILS_ENV=development'
 alias rails-env-test='RAILS_ENV=test'
 alias rails-env-prod='RAILS_ENV=production'
+alias db-recreate="rake db:drop db:create db:migrate"
 
 # nginx
 alias nginx-reload='sudo nginx -s reload'
@@ -87,3 +73,6 @@ alias coffee-watch='coffee --watch --output js/ coffee/'
 if [ -f ~/.local_aliases ]; then
     . ~/.local_aliases
 fi
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
