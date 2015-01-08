@@ -29,7 +29,7 @@ export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-export PATH="./bin:$PATH"
+export PATH=./bin:$PATH
 
 # Set editor
 export EDITOR=subl
