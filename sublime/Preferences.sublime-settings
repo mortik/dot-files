@@ -1,9 +1,9 @@
 {
-	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/itg.Monokai (SL).tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
+	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
 	[
 		".rsync_cache",
@@ -11,7 +11,9 @@
 		".git",
 		".hg",
 		"CVS",
-		"target"
+		"target",
+		".bundle",
+		"tmp"
 	],
 	"font_size": 14,
 	"highlight_modified_tabs": true,
@@ -31,6 +33,7 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
+	"theme": "itg.flat.dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
