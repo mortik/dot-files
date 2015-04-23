@@ -1,6 +1,5 @@
 {
-	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/itg.Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Afterglow-monokai (SL).tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -26,14 +25,15 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"itg_sidebar_tree_medium": true,
-	"itg_small_tabs": true,
 	"node_path": "/usr/local/bin/node",
 	"scroll_speed": 2.0,
 	"show_encoding": true,
 	"show_line_endings": true,
+	"sidebar_size_12": true,
+	"status_bar_brighter": true,
 	"tab_size": 2,
-	"theme": "itg.flat.dark.sublime-theme",
+	"tabs_medium": true,
+	"theme": "Afterglow-blue.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

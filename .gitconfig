@@ -1,6 +1,6 @@
 [user]
 	name = Marten Klitzke
-	email = m.klitzke@gmail.com
+	email = mklitzke@mortik.de
 [color]
 	ui = auto
 
@@ -27,7 +27,7 @@
   remote = origin
   merge = refs/heads/develop
 [core]
-  excludesfile = /Users/mortik/.gitignore_global
+	excludesfile = /Users/mortik/.gitignore_global
 	precomposeunicode = true
 	editor = vim
 [push]
@@ -38,6 +38,7 @@
   tool = opendiff
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -48,3 +49,7 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

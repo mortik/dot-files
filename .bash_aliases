@@ -10,12 +10,14 @@ alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 # virtualbox
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
-#middleman
+# middleman
 alias start-mm='bundle exec middleman server --port $PORT'
+
+# git tower
+alias tig='gittower .'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
-# github
 function gh-clone () {
   if [ -z "$1" || -z "$2" ]; then
     return

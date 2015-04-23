@@ -14,10 +14,10 @@ export TRAQ_DATA_DIR=/Users/mortik/Library/traq
 export VM_PATH=/Users/mortik/Documents/Virtual-Machines.localized
 
 export RBENV_ROOT=$(brew --prefix)/var/rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-fi
+eval "$(rbenv init -)"
 
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
+case $- in
+   *i*) source ~/.bashrc
+esac
+export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
+export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
