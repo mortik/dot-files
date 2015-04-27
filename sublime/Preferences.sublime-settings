@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Afterglow-monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/itg.Monokai (SL).tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -33,7 +33,9 @@
 	"status_bar_brighter": true,
 	"tab_size": 2,
 	"tabs_medium": true,
-	"theme": "Afterglow-blue.sublime-theme",
+	"itg_small_tabs": true,
+	"itg_sidebar_tree_medium": true,
+	"theme": "itg.flat.dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
