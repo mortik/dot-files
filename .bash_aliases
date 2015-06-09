@@ -3,7 +3,7 @@ alias genpw='pwgen -s -n -B 24'
 
 alias go-run='go run !(*_test).go'
 
-alias brew-up='brew update && brew upgrade && brew cleanup'
+alias brew-up='brew update --all && brew upgrade && brew cleanup'
 
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
@@ -13,8 +13,7 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 # middleman
 alias start-mm='bundle exec middleman server --port $PORT'
 
-# git tower
-alias tig='gittower .'
+alias run='foreman start'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -55,7 +54,10 @@ function cl () {
       cd "$*" && ls -la
    fi
 }
+
 alias l='ls -lah'
+
+alias e='subl .'
 
 alias rmf='rm -rf'
 

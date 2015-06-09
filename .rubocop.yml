@@ -33,6 +33,9 @@ Style/MultilineBlockChain:
 Style/TrailingComma:
   Enabled: false
 
+Style/ClassVars:
+  Enabled: false
+
 Metrics/LineLength:
   Enabled: false
   Max: 120
@@ -49,9 +52,6 @@ Metrics/AbcSize:
 
 Metrics/PerceivedComplexity:
   Enabled: false
-
-Style/RegexpLiteral:
-  MaxSlashes: 0
 
 # `fail` is seldom/never seen in Ruby code.
 # https://github.com/bbatsov/ruby-style-guide/issues/233

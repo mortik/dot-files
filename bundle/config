@@ -1,3 +1,6 @@
 ---
 BUNDLE_BUILD__MYSQL: "--with-mysql-config=/usr/local/mysql/bin/mysql_config"
 BUNDLE_JOBS: '3'
+BUNDLE_GEM__COC: 0
+BUNDLE_GEM__MIT: 0
+BUNDLE_GEM__TEST: false

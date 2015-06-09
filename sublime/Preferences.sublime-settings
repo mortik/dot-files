@@ -25,6 +25,8 @@
 		"draw_normal",
 		"draw_active"
 	],
+	"itg_sidebar_tree_medium": true,
+	"itg_small_tabs": true,
 	"node_path": "/usr/local/bin/node",
 	"scroll_speed": 2.0,
 	"show_encoding": true,
@@ -33,8 +35,6 @@
 	"status_bar_brighter": true,
 	"tab_size": 2,
 	"tabs_medium": true,
-	"itg_small_tabs": true,
-	"itg_sidebar_tree_medium": true,
 	"theme": "itg.flat.dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
