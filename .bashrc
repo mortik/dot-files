@@ -29,11 +29,15 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export PATH=./bin:$PATH
+export PATH=$PATH:~/.composer/vendor/bin
+
+# PHP
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Set editor
 export EDITOR=subl
 
-#VirtualEnv
+# VirtualEnv
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
 export VIRTUALENV_DISTRIBUTE=true

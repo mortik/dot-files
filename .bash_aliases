@@ -7,13 +7,15 @@ alias brew-up='brew update --all && brew upgrade && brew cleanup'
 
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
+alias xcode6='/Applications/Xcode.app/Contents/MacOS/Xcode </dev/null &>/dev/null &'
+
 # virtualbox
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
 # middleman
 alias start-mm='bundle exec middleman server --port $PORT'
 
-alias run='foreman start'
+alias run='forego start'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
