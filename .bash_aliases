@@ -15,6 +15,8 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 # middleman
 alias start-mm='bundle exec middleman server --port $PORT'
 
+alias edit-hosts='subl /etc/hosts'
+
 alias run='forego start'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
