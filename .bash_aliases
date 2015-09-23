@@ -61,7 +61,7 @@ function cl () {
 
 alias l='ls -lah'
 
-alias e='subl .'
+alias e='$EDITOR .'
 
 alias rmf='rm -rf'
 

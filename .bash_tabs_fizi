@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Open new Terminal tabs for FiZi Workplace
+
+function fizi-startup () {
+    osascript &>/dev/null <<EOF
+        tell application "iTerm"
+            activate
+            tell current window
+                set fiZiApi to (create tab with default profile)
+                tell current session
+                    set name to "FiZi API"
+                    write text "cd ~/dev/work/mm/finderzimmer/api"
+                    write text "run"
+                    set fiZiApi to (split horizontally with same profile)
+                end tell
+                tell reckoningDir
+                    set name to "Reckoning App"
+                end tell
+                set fiZiWebviews to (create tab with default profile)
+                tell current session
+                    set name to "FiZi Webviews"
+                    write text "cd ~/dev/work/mm/finderzimmer/webviews"
+                    write text "middleman"
+                end tell
+                set newTab to (create tab with default profile)
+                tell current session
+                    set name to "FiZi iOS"
+                    write text "cd ~/dev/work/mm/finderzimmer/ios"
+                end tell
+            end tell
+        end tell
+EOF
+}

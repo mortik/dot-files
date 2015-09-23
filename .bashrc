@@ -35,14 +35,14 @@ export PATH=$PATH:~/.composer/vendor/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Set editor
-export EDITOR=subl
+export EDITOR=atom
 
 # VirtualEnv
-export VIRTUALENVWRAPPER_PYTHON=`which python`
-export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-export VIRTUALENV_DISTRIBUTE=true
-export WORKON_HOME=~/Envs
-. /usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=`which python`
+# export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+# export VIRTUALENV_DISTRIBUTE=true
+# export WORKON_HOME=~/Envs
+# . /usr/local/bin/virtualenvwrapper.sh
 
 # sync script
 function scp-dotfiles () {
@@ -71,6 +71,11 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
+
+# Tab Workspace Startup
+. ~/.bash_tabs_fizi
+. ~/.bash_tabs_reckoning
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
