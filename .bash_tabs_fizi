@@ -6,24 +6,30 @@ function fizi-startup () {
     osascript &>/dev/null <<EOF
         tell application "iTerm"
             activate
+            set fiZiWindow to (create window with default profile)
             tell current window
-                set fiZiApi to (create tab with default profile)
                 tell current session
-                    set name to "FiZi API"
+                    set name to "FiZi API (process)"
                     write text "cd ~/dev/work/mm/finderzimmer/api"
                     write text "run"
-                    set fiZiApi to (split horizontally with same profile)
+                    set fiZiApiDirTab to (split horizontally with same profile)
                 end tell
-                tell reckoningDir
-                    set name to "Reckoning App"
+                tell fiZiApiDirTab
+                    set name to "FiZi API"
+                    write text "cd ~/dev/work/mm/finderzimmer/api"
                 end tell
-                set fiZiWebviews to (create tab with default profile)
+                set fiZiWebviewsProcessTab to (create tab with default profile)
                 tell current session
-                    set name to "FiZi Webviews"
+                    set name to "FiZi Webviews (process)"
                     write text "cd ~/dev/work/mm/finderzimmer/webviews"
                     write text "middleman"
+                    set fiZiWebviewsDirTab to (split horizontally with same profile)
                 end tell
-                set newTab to (create tab with default profile)
+                tell fiZiWebviewsDirTab
+                    set name to "FiZi Webviews"
+                    write text "cd ~/dev/work/mm/finderzimmer/webviews"
+                end tell
+                set fiZiiOSTab to (create tab with default profile)
                 tell current session
                     set name to "FiZi iOS"
                     write text "cd ~/dev/work/mm/finderzimmer/ios"
