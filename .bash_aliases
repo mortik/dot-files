@@ -15,9 +15,13 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 # middleman
 alias start-mm='bundle exec middleman server --port $PORT'
 
-alias edit-hosts='subl /etc/hosts'
+alias edit-hosts='$EDITOR /etc/hosts'
+alias edit-dots='$EDITOR ~/.dotfiles'
 
 alias run='forego start'
+alias run-dev='forego start -f Procfile.dev'
+
+alias rails-log='tail -f log/development.log'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 

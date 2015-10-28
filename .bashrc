@@ -35,7 +35,7 @@ export PATH=$PATH:~/.composer/vendor/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Set editor
-export EDITOR=subl
+export EDITOR=atom
 
 # VirtualEnv
 # export VIRTUALENVWRAPPER_PYTHON=`which python`
