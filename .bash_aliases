@@ -21,6 +21,8 @@ alias edit-dots='$EDITOR ~/.dotfiles'
 alias run='forego start'
 alias run-dev='forego start -f Procfile.dev'
 
+alias git='hub'
+
 alias rails-log='tail -f log/development.log'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
