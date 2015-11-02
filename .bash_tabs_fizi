@@ -11,7 +11,7 @@ function fizi-startup () {
                 tell current session
                     set name to "FiZi API (process)"
                     write text "cd ~/dev/work/mm/finderzimmer/api"
-                    write text "run"
+                    write text "run-dev"
                     set fiZiApiDirTab to (split horizontally with same profile)
                 end tell
                 tell fiZiApiDirTab

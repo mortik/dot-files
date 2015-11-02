@@ -11,7 +11,7 @@ function reckoning-startup () {
                 tell current session
                     set name to "Reckoning App (process)"
                     write text "cd ~/dev/reckoning/app"
-                    write text "run"
+                    write text "run-dev"
                     set reckoningDirTab to (split horizontally with same profile)
                 end tell
                 tell reckoningDirTab
