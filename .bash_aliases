@@ -27,11 +27,35 @@ alias rails-log='tail -f log/development.log'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
-function gh-clone () {
-  if [ -z "$1" || -z "$2" ]; then
+function git-hotfix () {
+  if [ -z "$1" ]; then
+    branch="master"
+  else
+    branch=$1
+  fi
+  git pull-request -m "Hotfix Release" -b $branch
+}
+
+function git-release () {
+  if [ -z "$1" ]; then
+    branch="master"
+  else
+    branch=$1
+  fi
+  git pull-request -m "New Release" -b $branch
+}
+
+function git-pr () {
+  if [ -z "$1" ]; then
+    echo "Please provide a Pull Request Message"
     return
   fi
-  git clone git@github.com:$1/$2.git
+  if [ -z "$2" ]; then
+    branch="develop"
+  else
+    branch=$2
+  fi
+  git pull-request -m "$1" -b $branch
 }
 
 # js2coffee shorthand

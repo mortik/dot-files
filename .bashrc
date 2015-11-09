@@ -57,6 +57,9 @@ function scp-dotfiles () {
   scp ~/.dot-files/.bash_prompt $1:~/
 }
 
+#android
+export PATH="$PATH:~/dev/android/android-sdk-macosx/platform-tools"
+
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
 export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
