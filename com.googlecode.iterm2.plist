@@ -154,7 +154,9 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1280 778 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4 22 1270 755 0 0 1280 777 </string>
+	<string>0 0 1280 778 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 0 1280 778 0 0 1280 777 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_ED382368-053C-4084-95F1-4605C9A79970</key>
@@ -750,7 +752,7 @@
 			<key>Semantic History</key>
 			<dict>
 				<key>action</key>
-				<string>raw command</string>
+				<string>best editor</string>
 				<key>editor</key>
 				<string>com.sublimetext.3</string>
 				<key>text</key>
@@ -1614,21 +1616,40 @@
 			<string>/Users/mortik/dev/work/mm/finderzimmer</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>458754578.47873998</real>
+	<real>463084853.87643999</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>466286645.94996798</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453375445.41941601</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>458575633.04077101</real>
+	<real>454926586.675376</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1694,11 +1715,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml</string>
+	<string>http://iterm2.com/appcasts/testing3.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-16T07:20:43Z</date>
+	<date>2015-11-11T13:30:24Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -14442,6 +14463,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150626</string>
+	<string>2.9.20151001</string>
 </dict>
 </plist>
