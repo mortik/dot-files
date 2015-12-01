@@ -13,6 +13,8 @@ LIGHT_GREEN="\[\033[1;32m\]"
  LIGHT_GRAY="\[\033[0;37m\]"
  COLOR_NONE="\[\e[0m\]"
 
+export GIT_RADAR_FORMAT="[%{branch} %{local}] %{changes} %{stash}"
+
 # Detect whether the current directory is a git repository.
 function is_git_repository {
   git branch > /dev/null 2>&1
@@ -123,9 +125,8 @@ function set_bash_prompt () {
   else
     BRANCH=''
   fi
-
   # Set the bash prompt variable.
-  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION}${BRANCH}
+  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION}\$(git-radar --bash --fetch)
 ${PROMPT_SYMBOL} "
 }
 

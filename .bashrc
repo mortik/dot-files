@@ -58,6 +58,8 @@ function scp-dotfiles () {
 }
 
 #android
+export ANDROID_HOME="$HOME/dev/android/android-sdk-macosx"
+export PATH="$PATH:~/dev/android/android-sdk-macosx/tools"
 export PATH="$PATH:~/dev/android/android-sdk-macosx/platform-tools"
 
 #ansible hosts
