@@ -15,56 +15,6 @@ LIGHT_GREEN="\[\033[1;32m\]"
 
 export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 
-# Detect whether the current directory is a git repository.
-function is_git_repository {
-  git branch > /dev/null 2>&1
-}
-
-# Determine the branch/state information for this git repository.
-function set_git_branch {
-  # Capture the output of the "git status" command.
-  git_status="$(git status --porcelain -u -z -b 2> /dev/null)"
-
-  # Set color based on clean/staged/dirty.
-  regex_not_added=" [MDA]"
-  regex_added="[MDA] "
-  if [[ ${git_status} =~ $regex_not_added ]]; then
-    state="${LIGHT_RED}"
-  elif [[ ${git_status} =~ $regex_added ]]; then
-    state="${YELLOW}"
-  else
-    state="${GREEN}"
-  fi
-
-  new=""
-  regex_new="\?\? "
-  if [[ ${git_status} =~ $regex_new ]]; then
-    new="*"
-  fi
-
-  # Set arrow icon based on status against remote.
-  ahead=""
-  ahead_pattern="ahead ([[:digit:]]+)"
-  if [[ ${git_status} =~ ${ahead_pattern} ]]; then
-    ahead=">"
-  fi
-  behind=""
-  behind_pattern="behind ([[:digit:]]+)"
-  if [[ ${git_status} =~ ${behind_pattern} ]]; then
-    behind="<"
-  fi
-
-  # Capture the output of the "git status" command with branch.
-  # Get the name of the branch.
-  branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-  if [ $? -ne 0 ]; then
-    branch="INIT"
-  fi
-
-  # Set the final branch string.
-  BRANCH="[${state}${branch}${COLOR_NONE}${RED}${ahead}${behind}${new}${COLOR_NONE}] "
-}
-
 # Return the prompt symbol to use, colorized based on the return value of the
 # previous command.
 function set_prompt_symbol () {
@@ -118,15 +68,8 @@ function set_bash_prompt () {
   set_ruby_version
 
   set_user_prompt
-
-  # Set the BRANCH variable.
-  if is_git_repository ; then
-    set_git_branch
-  else
-    BRANCH=''
-  fi
   # Set the bash prompt variable.
-  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION}\$(git-radar --bash --fetch)
+  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION}\$(git-radar --bash)
 ${PROMPT_SYMBOL} "
 }
 
