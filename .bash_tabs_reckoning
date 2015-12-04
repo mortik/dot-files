@@ -6,7 +6,6 @@ function reckoning-startup () {
     osascript &>/dev/null <<EOF
         tell application "iTerm"
             activate
-            set reckoningWindow to (create window with default profile)
             tell current window
                 tell current session
                     set name to "Reckoning App (process)"
@@ -17,12 +16,6 @@ function reckoning-startup () {
                 tell reckoningDirTab
                     set name to "Reckoning App"
                     write text "cd ~/dev/reckoning/app"
-                end tell
-                set reckoningLogTab to (create tab with default profile)
-                tell current session
-                    set name to "Reckoning App (logs)"
-                    write text "cd ~/dev/reckoning/app"
-                    write text "tail -f log/development.log"
                 end tell
             end tell
         end tell

@@ -329,8 +329,6 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
-			<key>Background Image Location</key>
-			<string>/Users/mortik/Dropbox (Personal)/Pictures/wallpaper/b5.jpg</string>
 			<key>Blend</key>
 			<real>0.22002823261114263</real>
 			<key>Blink Allowed</key>
@@ -866,7 +864,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31245377218934911</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -884,7 +882,7 @@
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/mortik</string>
 		</dict>

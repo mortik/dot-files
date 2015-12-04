@@ -6,7 +6,6 @@ function fizi-startup () {
     osascript &>/dev/null <<EOF
         tell application "iTerm"
             activate
-            set fiZiWindow to (create window with default profile)
             tell current window
                 tell current session
                     set name to "FiZi API (process)"
