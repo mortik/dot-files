@@ -2,7 +2,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=".:~:~/dev:~/dev/work:~/dev/mm:~/dev/work/mm:~/dev/work/woa"
+export CDPATH=".:~:~/dev:~/dev/work"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -32,7 +32,7 @@ export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
 
 # PHP
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+# export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Set editor
 export EDITOR=atom
@@ -76,10 +76,6 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
-
-# Tab Workspace Startup
-. ~/.bash_tabs_fizi
-. ~/.bash_tabs_reckoning
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
