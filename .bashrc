@@ -15,7 +15,6 @@ HISTFILESIZE=10000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -24,38 +23,23 @@ export PATH=$PATH:~/Applications/bin
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
-export PATH="$PATH:/Users/mortik/dev/work/mortik/tools/drush:/usr/local/bin"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
 
-# PHP
-# export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
 # Set editor
 export EDITOR=atom
 
 # VirtualEnv
-# export VIRTUALENVWRAPPER_PYTHON=`which python`
-# export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-# export VIRTUALENV_DISTRIBUTE=true
-# export WORKON_HOME=~/Envs
-# . /usr/local/bin/virtualenvwrapper.sh
-
-# sync script
-function scp-dotfiles () {
-  if [ -z "$1" ]; then
-    echo "you doing it wrong!"
-    return
-  fi
-  echo -n $'syncing files to: '
-  echo $1
-  scp ~/.dot-files/.srv_bashrc $1:~/.bashrc
-  scp ~/.dot-files/.srv_bash_aliases $1:~/.bash_aliases
-  scp ~/.dot-files/.bash_prompt $1:~/
-}
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export VIRTUALENVWRAPPER_PYTHON=`which python`
+  export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+  export VIRTUALENV_DISTRIBUTE=true
+  export WORKON_HOME=~/Envs
+  . /usr/local/bin/virtualenvwrapper.sh
+fi
 
 #android
 export ANDROID_HOME="$HOME/dev/android/android-sdk-macosx"
@@ -79,6 +63,3 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-[ -f /Users/mortik/.travis/travis.sh ] && source /Users/mortik/.travis/travis.sh

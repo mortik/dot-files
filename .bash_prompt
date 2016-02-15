@@ -38,8 +38,11 @@ function set_ruby_version () {
   ruby_version="$(ruby -v)"
   version_pattern="^ruby ([0-9\.p]+)"
   RUBY_VERSION=""
-  if [[ ${ruby_version} =~ ${version_pattern} ]]; then
-    RUBY_VERSION="${LIGHT_BLUE}<${BASH_REMATCH[1]}>${COLOR_NONE} "
+
+  if [ -f .ruby-version ]; then
+    if [[ ${ruby_version} =~ ${version_pattern} ]]; then
+      RUBY_VERSION="${LIGHT_BLUE}<${BASH_REMATCH[1]}>${COLOR_NONE} "
+    fi
   fi
 }
 
@@ -69,7 +72,7 @@ function set_bash_prompt () {
 
   set_user_prompt
   # Set the bash prompt variable.
-  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w \$(git-radar --bash --fetch)
+  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION} \$(git-radar --bash --fetch)
 ${PROMPT_SYMBOL} "
 }
 
