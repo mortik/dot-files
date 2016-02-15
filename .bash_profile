@@ -11,7 +11,7 @@ export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 export PATH=/opt/X11/bin:/usr/local/git/bin:/Users/mortik/Applications/bin:$PATH
 export VM_PATH=/Users/mortik/Documents/Virtual-Machines.localized
 
-if [ -f $(brew --prefix)/var/rbenv ]; then
+if [ -d $(brew --prefix)/var/rbenv ]; then
   export RBENV_ROOT=$(brew --prefix)/var/rbenv
   eval "$(rbenv init -)"
 fi
