@@ -16,7 +16,5 @@ ln -s ~/.dotfiles/.gitmessage.txt ~/
 
 ## others
 ```
-ln -s ~/.dotfiles/.gemrc ~/
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/.vimrc ~/
+ln -s ~/.dotfiles/.tigrc ~/
 ```

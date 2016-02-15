@@ -12,7 +12,7 @@
   coa = commit --amend
   remove =ls-files --deleted | xargs git rm
   s = status -sb
-  st = status -sb
+  st = status
 	rm = rm --cached
   br = branch
   brv = branch -av
@@ -61,3 +61,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain
