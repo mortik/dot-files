@@ -13,6 +13,8 @@
   remove =ls-files --deleted | xargs git rm
   s = status -sb
   st = status -sb
+  stp = subtree push
+  gh-deploy = subtree push --prefix build origin gh-pages
 	rm = rm --cached
   br = branch
   brv = branch -av
