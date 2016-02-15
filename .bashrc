@@ -33,12 +33,12 @@ export PATH=$PATH:~/.composer/vendor/bin
 export EDITOR=atom
 
 # VirtualEnv
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
   export VIRTUALENVWRAPPER_PYTHON=`which python`
   export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
   export VIRTUALENV_DISTRIBUTE=true
   export WORKON_HOME=~/Envs
-  . /usr/local/bin/virtualenvwrapper.sh
+  . /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 #android
