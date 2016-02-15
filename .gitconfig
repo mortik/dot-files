@@ -12,7 +12,7 @@
   coa = commit --amend
   remove =ls-files --deleted | xargs git rm
   s = status -sb
-  st = status -sb
+  st = status
   stp = subtree push
   gh-deploy = subtree push --prefix build origin gh-pages
 	rm = rm --cached
@@ -63,3 +63,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain

@@ -1,9 +1,0 @@
-[
-  {"keys": ["super+shift+w"], "command": "close_all"},
-  {"keys": ["super+alt+w"], "command": "close_window"},
-  {"keys": ["super+alt+s"], "command": "reveal_in_side_bar"},
-  {"keys": ["ctrl+i"], "command": "copy_relative_path"},
-  {"keys": ["ctrl+super+t"], "command": "rspec_current_file"},
-  {"keys": ["ctrl+super+c","ctrl+super+t"], "command": "rspec_current_line_in_file"},
-  {"keys": ["f1"], "command": "dired", "args": { "immediate": true }}
-]

@@ -9,12 +9,12 @@ fi
 export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 export PATH=/opt/X11/bin:/usr/local/git/bin:/Users/mortik/Applications/bin:$PATH
-export TRAQ_PATH=/Users/mortik/.traq
-export TRAQ_DATA_DIR=/Users/mortik/Library/traq
 export VM_PATH=/Users/mortik/Documents/Virtual-Machines.localized
 
-export RBENV_ROOT=$(brew --prefix)/var/rbenv
-eval "$(rbenv init -)"
+if [ -f $(brew --prefix)/var/rbenv ]; then
+  export RBENV_ROOT=$(brew --prefix)/var/rbenv
+  eval "$(rbenv init -)"
+fi
 
 case $- in
    *i*) source ~/.bashrc
