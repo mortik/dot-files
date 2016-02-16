@@ -19,9 +19,9 @@ export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 # previous command.
 function set_prompt_symbol () {
   if test $1 -eq 0 ; then
-      PROMPT_SYMBOL="${LIGHT_BLUE}›${COLOR_NONE}"
+      PROMPT_SYMBOL="${LIGHT_BLUE}>>${COLOR_NONE}"
   else
-      PROMPT_SYMBOL="${LIGHT_RED}›${COLOR_NONE}"
+      PROMPT_SYMBOL="${LIGHT_RED}>>${COLOR_NONE}"
   fi
 }
 
