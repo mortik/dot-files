@@ -28,6 +28,8 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # Set editor
 export EDITOR=atom
@@ -52,6 +54,7 @@ export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 
 export MT_NO_EXPECTATIONS=yes
 
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
@@ -60,6 +63,3 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"

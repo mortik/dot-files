@@ -19,9 +19,9 @@ export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 # previous command.
 function set_prompt_symbol () {
   if test $1 -eq 0 ; then
-      PROMPT_SYMBOL="${LIGHT_BLUE}>>${COLOR_NONE}"
+      PROMPT_SYMBOL="${LIGHT_BLUE}>${COLOR_NONE}>>"
   else
-      PROMPT_SYMBOL="${LIGHT_RED}>>${COLOR_NONE}"
+      PROMPT_SYMBOL="${LIGHT_RED}>${COLOR_NONE}>>"
   fi
 }
 
@@ -35,11 +35,10 @@ function set_virtualenv () {
 }
 
 function set_ruby_version () {
-  ruby_version="$(ruby -v)"
-  version_pattern="^ruby ([0-9\.p]+)"
-  RUBY_VERSION=""
-
   if [ -f .ruby-version ]; then
+    ruby_version="$(ruby -v)"
+    version_pattern="^ruby ([0-9\.p]+)"
+    RUBY_VERSION=""
     if [[ ${ruby_version} =~ ${version_pattern} ]]; then
       RUBY_VERSION="${LIGHT_BLUE}<${BASH_REMATCH[1]}>${COLOR_NONE} "
     fi
@@ -59,6 +58,14 @@ function set_user_prompt () {
   fi
 }
 
+function set_machine_prompt () {
+  if [ -n "${PROMPT_SHOW_MACHINE}" ]; then
+    MACHINE_PROMPT="${RED}\h${COLOR_NONE} "
+  else
+    MACHINE_PROMPT=""
+  fi
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -71,8 +78,10 @@ function set_bash_prompt () {
   set_ruby_version
 
   set_user_prompt
+
+  set_machine_prompt
   # Set the bash prompt variable.
-  PS1="⦧ ${PYTHON_VIRTUALENV}\t ${USER_PROMPT}${RED}\h${COLOR_NONE} \w ${RUBY_VERSION} \$(git-radar --bash --fetch)
+  PS1="${PYTHON_VIRTUALENV}${GREEN}\t${COLOR_NONE} ${USER_PROMPT}${MACHINE_PROMPT}\w ${RUBY_VERSION}\$(git-radar --bash --fetch)
 ${PROMPT_SYMBOL} "
 }
 
