@@ -1,0 +1,26 @@
+# VM Setup
+export VM_PATH=~/Documents/Virtual-Machines.localized
+
+# Pebble
+export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
+export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
+
+# Ruby Setup
+if [ -d $(brew --prefix)/var/rbenv ]; then
+  export RBENV_ROOT=$(brew --prefix)/var/rbenv
+  eval "$(rbenv init -)"
+fi
+
+# VirtualEnv
+if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+  export VIRTUALENVWRAPPER_PYTHON=`which python`
+  export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+  export VIRTUALENV_DISTRIBUTE=true
+  export WORKON_HOME=~/Envs
+  . /usr/local/bin/virtualenvwrapper_lazy.sh
+fi
+
+# Android
+export ANDROID_HOME="$HOME/dev/android/android-sdk-macosx"
+export PATH="$PATH:~/dev/android/android-sdk-macosx/tools"
+export PATH="$PATH:~/dev/android/android-sdk-macosx/platform-tools"
