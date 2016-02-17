@@ -1,6 +1,8 @@
 alias sbrc='source ~/.bashrc'
 alias genpw='pwgen -s -n -B 24'
 
+alias ..='cd ..'
+
 alias go-run='go run !(*_test).go'
 
 alias brew-up='brew update --all && brew upgrade && brew cleanup'
@@ -108,8 +110,8 @@ alias nginx-reload='sudo nginx -s reload'
 alias coffee-watch='coffee --watch --output js/ coffee/'
 
 # Local alias definitions.
-if [ -f ~/.local_aliases ]; then
-    . ~/.local_aliases
+if [ -f ~/.bash_aliases.local ]; then
+    . ~/.bash_aliases.local
 fi
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
