@@ -95,7 +95,7 @@ alias l='ls -lah'
 
 alias e='atom .'
 
-alias ansible-vagrant='ansible-playbook -i hosts playbook.yml  --private-key=.vagrant/machines/default/virtualbox/private_key -u vagrant'
+alias ansible-vagrant='ansible-playbook -i hosts playbook.yml  --private-key=~/.vagrant.d/insecure_private_key -u vagrant'
 
 alias rmf='rm -rf'
 
