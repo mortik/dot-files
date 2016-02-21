@@ -46,7 +46,7 @@ function set_ruby_version () {
 }
 
 function set_user_prompt () {
-  if [ -n "${PROMPT_SHOW_USER}" ]; then
+  if is_remote_machine; then
     if [ $(id -u) == '0' ]; then
       color="${RED}"
     else
@@ -59,11 +59,19 @@ function set_user_prompt () {
 }
 
 function set_machine_prompt () {
-  if [ -n "${PROMPT_SHOW_MACHINE}" ]; then
+  if is_remote_machine; then
     MACHINE_PROMPT="${RED}\h${COLOR_NONE} "
   else
     MACHINE_PROMPT=""
   fi
+}
+
+function is_remote_machine () {
+  hostnames=(esperanza)
+  case "${hostnames[@]}" in  *"${HOSTNAME}"*)
+    return 1 ;;
+  esac
+  return 0
 }
 
 # Set the full bash prompt.

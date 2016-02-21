@@ -1,4 +1,11 @@
 # DotFiles
+
+## Dependencies
+```
+brew install hub
+brew install michaeldfallen/formula/git-radar
+```
+
 ## BashFiles
 ```
 ln -s ~/.dotfiles/.bashrc ~/
