@@ -27,6 +27,14 @@ alias git='hub'
 
 alias rails-log='tail -f log/development.log'
 
+alias check-port='sudo lsof -i :'
+
+alias pg-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pg-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+
+alias redis-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
+alias redis-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
+
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 function git-hotfix () {
@@ -107,6 +115,11 @@ alias db-recreate="rake db:drop db:create db:migrate"
 
 # nginx
 alias nginx-reload='sudo nginx -s reload'
+
+# jass en/decryption
+function jass-decrypt () {
+  echo "${1}" | jass -d -k $MAIN_SSH_KEY_PATH
+}
 
 # other
 alias coffee-watch='coffee --watch --output js/ coffee/'
