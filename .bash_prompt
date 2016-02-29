@@ -38,10 +38,13 @@ function set_ruby_version () {
   if [ -f .ruby-version ]; then
     ruby_version="$(ruby -v)"
     version_pattern="^ruby ([0-9\.p]+)"
-    RUBY_VERSION=""
     if [[ ${ruby_version} =~ ${version_pattern} ]]; then
       RUBY_VERSION="${CYAN}<${BASH_REMATCH[1]}>${COLOR_NONE} "
+    else
+      RUBY_VERSION=""
     fi
+  else
+    RUBY_VERSION=""
   fi
 }
 

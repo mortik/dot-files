@@ -1,10 +1,12 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 AllCops:
-  RunRailsCops: true
   Exclude:
     - 'bin/*'
     - 'db/schema.rb'
     - 'node_modules/**/*'
+
+Rails:
+  Enabled: true
 
 Style/Documentation:
   Enabled: false # for now
@@ -33,7 +35,9 @@ Style/ParallelAssignment:
 #   "foo",
 #   "bar",
 # ]
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
+  Enabled: false
+Style/TrailingCommaInArguments:
   Enabled: false
 
 Style/ClassVars:
@@ -50,6 +54,9 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Max: 40
 
+Style/CyclomaticComplexity:
+  Max: 12
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -64,6 +71,9 @@ Style/SignalException:
 # Would complain about `new_record?` otherwise
 Style/TrivialAccessors:
   ExactNameMatch: true
+
+Style/Lambda:
+  Enabled: false
 
 Rails/Delegate:
   Exclude:
