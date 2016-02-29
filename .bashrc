@@ -2,7 +2,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=".:~:~/dev:~/dev/work"
+export CDPATH=".:~:~/dev"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
