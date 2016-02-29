@@ -27,6 +27,8 @@ alias git='hub'
 
 alias rails-log='tail -f log/development.log'
 
+alias check-port='sudo lsof -i :'
+
 alias pg-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
