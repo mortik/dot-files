@@ -6,7 +6,7 @@ export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
 export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
 
 # Ruby Setup
-if [ -d $(brew --prefix)/var/rbenv ]; then
+if [ -f $(brew --prefix)/bin/rbenv ]; then
   export RBENV_ROOT=$(brew --prefix)/var/rbenv
   eval "$(rbenv init -)"
 fi
