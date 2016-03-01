@@ -2,8 +2,7 @@
 
 ## Dependencies
 ```
-brew install hub
-brew install michaeldfallen/formula/git-radar
+brew install git bash-completion ansible hub michaeldfallen/formula/git-radar
 ```
 
 ## BashFiles

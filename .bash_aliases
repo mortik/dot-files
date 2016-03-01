@@ -37,6 +37,9 @@ alias redis-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.pl
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
+alias mocha-run='NODE_ENV=test mocha --harmony --recursive'
+alias mocha-run-1='NODE_ENV=test mocha --harmony test/test-helper.js'
+
 function git-hotfix () {
   if [ -z "$1" ]; then
     branch="master"
