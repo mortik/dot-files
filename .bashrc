@@ -2,7 +2,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=".:~:~/dev"
+export CDPATH=.:~:~/dev
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -20,15 +20,15 @@ shopt -s checkwinsize
 
 # Modify PATH
 export PATH=$PATH:~/Applications/bin
-export PATH="./node_modules/.bin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH" # Add NPM binaries
+export PATH=./node_modules/.bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
 
 # Set editor
 export EDITOR=atom
