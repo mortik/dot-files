@@ -18,13 +18,11 @@
 	rm = rm --cached
   br = branch
   brv = branch -av
-  l = log --abbrev-commit --date=relative
+  l = log --abbrev-commit --date=relative --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
   lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   standup-me = log --since '2 days ago' --author m.klitzke@gmail.com
   mt = mergetool
 	undo-commit = reset --soft HEAD^
-[format]
-  pretty=format:* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [branch "master"]
   remote = origin
   merge = refs/heads/master
