@@ -1,0 +1,44 @@
+{
+	"binary_file_patterns":
+	[
+		"dist/*",
+		"node_modules/*",
+		"bower_components/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"tmp/*"
+	],
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+    "translate_tabs_to_spaces": true,
+	"remember_full_screen": true,
+	"sidebar_no_icon": true,
+	"tab_size": 2,
+	"tabs_label_not_italic": true,
+	"tabs_medium": true,
+	"theme": "Afterglow-blue.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"use_simple_full_screen": true
+}
