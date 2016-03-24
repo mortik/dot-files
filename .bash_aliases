@@ -35,6 +35,18 @@ alias pg-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.
 alias redis-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 alias redis-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 
+alias couch-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.couchdb.plist'
+alias couch-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.couchdb.plist'
+
+alias influx-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.influxdb.plist'
+alias influx-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.influxdb.plist'
+
+alias chrono-start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.chronograf.plist'
+alias chrono-stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.chronograf.plist'
+
+alias local-services-stop='pg-stop && redis-stop && couch-stop && influx-stop && chrono-stop'
+alias local-services-start='pg-start && redis-start && couch-start && influx-start && chrono-start'
+
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 alias mocha-run='NODE_ENV=test mocha --harmony --recursive'

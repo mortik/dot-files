@@ -38,19 +38,6 @@
 	editor = vim
 [push]
   default = current
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-    tool = Kaleidoscope
-[difftool]
-    prompt = false
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-[mergetool]
-    prompt = false
-[merge]
-    tool = Kaleidoscope
 [branch]
 	autosetuprebase = always # git config branch.<name>.rebase true if branch already exists
 [filter "media"]
@@ -66,3 +53,7 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[merge]
+	tool = opendiff
+[diff]
+	tool = opendiff
