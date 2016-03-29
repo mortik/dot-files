@@ -18,7 +18,7 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 alias start-mm='bundle exec middleman server --port $PORT'
 
 # docker
-alias docker-eval='eval $(docker-machine env)'
+alias docker-eval='docker-machine start default && eval $(docker-machine env)'
 
 alias edit-hosts='$EDITOR /etc/hosts'
 alias edit-dots='$EDITOR ~/.dotfiles'
