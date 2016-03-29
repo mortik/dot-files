@@ -1,15 +1,6 @@
-# VM Setup
-export VM_PATH=~/Documents/Virtual-Machines.localized
-
 # Pebble
 export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
 export PATH=~/pebble-dev/PebbleSDK-3.0-dp1/bin:$PATH
-
-# Ruby Setup
-if [ -f $(brew --prefix)/bin/rbenv ]; then
-  export RBENV_ROOT=$(brew --prefix)/var/rbenv
-  eval "$(rbenv init -)"
-fi
 
 # VirtualEnv
 if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
