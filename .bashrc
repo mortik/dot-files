@@ -39,11 +39,6 @@ export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 
 export MT_NO_EXPECTATIONS=yes
 
-# Docker Setup
-if [ -f /usr/local/bin/docker-machine ]; then
-  eval "$(docker-machine env)"
-fi
-
 # Ruby Setup
 if [ -f $(brew --prefix)/bin/rbenv ]; then
   export RBENV_ROOT=$(brew --prefix)/var/rbenv
