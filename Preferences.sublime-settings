@@ -25,6 +25,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Ruby Slim",
 		"Vintage"
 	],
 	"indent_guide_options":
