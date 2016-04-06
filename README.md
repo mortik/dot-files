@@ -15,7 +15,6 @@ ln -s ~/.dotfiles/.bash_prompt ~/
 
 ## git
 ```
-ln -s ~/.dotfiles/.gitconfig ~/
 ln -s ~/.dotfiles/.gitignore_global ~/
 ln -s ~/.dotfiles/.gitmessage.txt ~/
 ```
@@ -24,3 +23,7 @@ ln -s ~/.dotfiles/.gitmessage.txt ~/
 ```
 ln -s ~/.dotfiles/.tigrc ~/
 ```
+
+
+## local bash and gitconfig
+local.tmp and .gitconfig a just examples. Copy them to your $HOME dir and make changes accordingly
