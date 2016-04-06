@@ -57,3 +57,5 @@
 	tool = opendiff
 [github]
 	user = mortik
+[commit]
+	gpgsign = true
