@@ -51,9 +51,9 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[credential]
-	helper = osxkeychain
 [merge]
 	tool = opendiff
 [diff]
 	tool = opendiff
+[github]
+	user = mortik

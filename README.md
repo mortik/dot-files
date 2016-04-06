@@ -26,4 +26,7 @@ ln -s ~/.dotfiles/.tigrc ~/
 
 
 ## local bash and gitconfig
-local.tmp and .gitconfig a just examples. Copy them to your $HOME dir and make changes accordingly
+local.tmp and .gitconfig a just examples. Copy them to your $HOME dir and make changes accordingly. Make also sure you add your github token like this:
+```
+git config --global github.token ${your-token}
+```
