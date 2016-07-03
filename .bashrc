@@ -31,7 +31,7 @@ export PATH=$PATH:~/.composer/vendor/bin
 export PATH=/usr/local/heroku/bin:$PATH
 
 # Set editor
-export EDITOR=atom
+export EDITOR=subl
 
 #ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
