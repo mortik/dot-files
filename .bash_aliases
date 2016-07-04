@@ -119,7 +119,7 @@ function cl () {
 
 alias l='ls -lah'
 
-alias e='atom .'
+alias e='subl .'
 
 alias ansible-vagrant='ansible-playbook -i hosts playbook.yml --private-key=~/.vagrant.d/insecure_private_key -u vagrant'
 
