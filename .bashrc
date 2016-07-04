@@ -29,6 +29,8 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
 export PATH=/usr/local/heroku/bin:$PATH
+export PATH=$PATH:~/Library/Android/sdk/tools
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
 # Set editor
 export EDITOR=atom
