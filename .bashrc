@@ -30,10 +30,14 @@ export PATH=./bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
 export PATH=/usr/local/heroku/bin:$PATH
 
+# Android Setup
+export ANDROID_HOME=~/Library/Android/sdk/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 # Set editor
 export EDITOR=subl
 
-#ansible hosts
+# Ansible hosts
 export ANSIBLE_HOSTS=~/ansible_hosts
 export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 
