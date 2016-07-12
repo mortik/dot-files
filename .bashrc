@@ -62,3 +62,6 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
+
+# added by travis gem
+[ -f /Users/mortik/.travis/travis.sh ] && source /Users/mortik/.travis/travis.sh
