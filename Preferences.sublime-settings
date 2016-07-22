@@ -35,13 +35,15 @@
 		"draw_normal",
 		"draw_active"
 	],
+	"highlight_line": true,
+	"open_files_in_new_window": false,
+	"hot_exit": true,
 	"remember_full_screen": true,
-	"sidebar_no_icon": true,
+	"bold_folder_labels": true,
 	"tab_size": 2,
 	"tabs_label_not_italic": true,
 	"tabs_medium": true,
 	"theme": "Afterglow-blue.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"use_simple_full_screen": true
+	"trim_trailing_white_space_on_save": true
 }
