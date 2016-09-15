@@ -1,0 +1,95 @@
+#!/bin/bash
+#
+# Open new Terminal tabs for Reckoning Workplace
+
+function woa-startup () {
+    osascript &>/dev/null <<EOF
+        tell application "iTerm"
+            activate
+            set woaWindow to (create window with default profile)
+            tell current window
+                tell current session
+                    set name to "WOA Cas"
+                    write text "cd ~/dev/work/woa/fm-cas"
+                    write text "run"
+                end tell
+                set woaCoreTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Core"
+                    write text "cd ~/dev/work/woa/fm-core"
+                    write text "run"
+                    set woaCoreDirTab to (split horizontally with same profile)
+                end tell
+                tell woaCoreDirTab
+                    set name to "WOA Core dir"
+                    write text "cd ~/dev/work/woa/fm-core"
+                end tell
+                set woaApiTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Api"
+                    write text "cd ~/dev/work/woa/fm-api"
+                    set woaApiDirTab to (split horizontally with same profile)
+                end tell
+                tell woaApiDirTab
+                    set name to "WOA Api dir"
+                    write text "cd ~/dev/work/woa/fm-api"
+                end tell
+                set woaPressTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Press"
+                    write text "cd ~/dev/work/woa/fm-press"
+                    set woaPressDirTab to (split horizontally with same profile)
+                end tell
+                tell woaPressDirTab
+                    set name to "WOA Press dir"
+                    write text "cd ~/dev/work/woa/fm-press"
+                end tell
+                set woaProfileTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Profile"
+                    write text "cd ~/dev/work/woa/fm-requirement-profile"
+                    set woaProfileDirTab to (split horizontally with same profile)
+                end tell
+                tell woaProfileDirTab
+                    set name to "WOA Profile dir"
+                    write text "cd ~/dev/work/woa/fm-requirement-profile"
+                end tell
+                set woaCheckinTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Checkin"
+                    write text "cd ~/dev/work/woa/fm-checkin"
+                    set woaCheckinDirTab to (split horizontally with same profile)
+                end tell
+                tell woaCheckinDirTab
+                    set name to "WOA Checkin dir"
+                    write text "cd ~/dev/work/woa/fm-checkin"
+                end tell
+                set woaCateringTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Catering"
+                    write text "cd ~/dev/work/woa/fm-catering"
+                    set woaCateringDirTab to (split horizontally with same profile)
+                end tell
+                tell woaCateringDirTab
+                    set name to "WOA Catering dir"
+                    write text "cd ~/dev/work/woa/fm-catering"
+                end tell
+                set woaAdminTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Admin"
+                    write text "cd ~/dev/work/woa/fm-admin"
+                    set woaAdminDirTab to (split horizontally with same profile)
+                end tell
+                tell woaAdminDirTab
+                    set name to "WOA Admin dir"
+                    write text "cd ~/dev/work/woa/fm-admin"
+                end tell
+                set woaProvisioningTab to (create tab with default profile)
+                tell current session
+                    set name to "WOA Provisioning"
+                    write text "cd ~/dev/work/woa/provisioning"
+                end tell
+            end tell
+        end tell
+EOF
+}

@@ -19,6 +19,7 @@
 		"*.zip",
 		"tmp/*"
 	],
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/Afterglow-monokai (SL).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -26,6 +27,7 @@
 	],
 	"font_size": 15,
 	"highlight_line": true,
+	"hot_exit": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -35,11 +37,8 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"highlight_line": true,
 	"open_files_in_new_window": false,
-	"hot_exit": true,
 	"remember_full_screen": true,
-	"bold_folder_labels": true,
 	"tab_size": 2,
 	"tabs_label_not_italic": true,
 	"tabs_medium": true,

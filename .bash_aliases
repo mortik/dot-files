@@ -55,6 +55,9 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias mocha-run='NODE_ENV=test mocha --harmony --recursive'
 alias mocha-run-1='NODE_ENV=test mocha --harmony test/test-helper.js'
 
+alias utube-audio='youtube-dl -x --audio-format mp3'
+alias utube='youtube-dl -f mp4'
+
 function git-hotfix () {
   if [ -z "$1" ]; then
     branch="master"
@@ -145,6 +148,17 @@ alias coffee-watch='coffee --watch --output js/ coffee/'
 # Local alias definitions.
 if [ -f ~/.bash_aliases.local ]; then
     . ~/.bash_aliases.local
+fi
+
+# project iterm function definitions.
+if [ -f ~/.dotfiles/.bash_tabs_one ]; then
+    . ~/.dotfiles/.bash_tabs_one
+fi
+if [ -f ~/.dotfiles/.bash_tabs_reckoning ]; then
+    . ~/.dotfiles/.bash_tabs_reckoning
+fi
+if [ -f ~/.dotfiles/.bash_tabs_woa ]; then
+    . ~/.dotfiles/.bash_tabs_woa
 fi
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'

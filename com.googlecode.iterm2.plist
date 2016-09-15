@@ -234,7 +234,7 @@
 	<key>DimInactiveSplitPanes</key>
 	<true/>
 	<key>DimOnlyText</key>
-	<false/>
+	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>HideActivityIndicator</key>
@@ -292,11 +292,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>391 110 823 420 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 313 606 456 0 0 1280 777 </string>
+	<string>352 310 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>332 288 620 392 0 0 1280 777 </string>
+	<string>328 288 620 392 0 0 1280 777 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1280 777 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>224 189 918 498 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 878 0 0 1440 877 </string>
+	<string>0 0 1280 778 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -951,7 +955,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.055917159763313608</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -980,10 +984,14 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
 	<integer>0</integer>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>70EAE9B4-D7D4-466C-B0D0-728B34712738</string>
 	<key>NoSyncLastTipTime</key>
 	<real>483741780.305619</real>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1034,6 +1042,12 @@
 		<string>0032</string>
 		<string>0032</string>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenBookmark</key>
+	<true/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -1082,11 +1096,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=98</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=98</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-12T14:32:57Z</date>
+	<date>2016-09-14T00:51:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1114,7 +1128,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.0</string>
+	<string>3.0.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
