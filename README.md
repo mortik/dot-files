@@ -19,6 +19,14 @@ ln -s ~/.dotfiles/.gitignore_global ~/
 ln -s ~/.dotfiles/.gitmessage.txt ~/
 ```
 
+## atom
+```
+ln -s ~/.dotfiles/atom/*.cson ~/.atom/
+ln -s ~/.dotfiles/atom/*.coffee ~/.atom/
+ln -s ~/.dotfiles/atom/*.less ~/.atom/
+apm install --packages-file ~/.dotfiles/atom/packages.list
+```
+
 ## others
 ```
 ln -s ~/.dotfiles/.tigrc ~/
