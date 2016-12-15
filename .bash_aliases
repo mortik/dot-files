@@ -58,6 +58,8 @@ alias mocha-run-1='NODE_ENV=test mocha --harmony test/test-helper.js'
 alias utube-audio='youtube-dl -x --audio-format mp3'
 alias utube='youtube-dl -f mp4'
 
+alias aws-login='eval $(aws ecr get-login)'
+
 function git-hotfix () {
   if [ -z "$1" ]; then
     branch="master"

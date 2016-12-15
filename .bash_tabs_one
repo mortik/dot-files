@@ -10,24 +10,24 @@ function one-startup () {
             tell current window
                 tell current session
                     set name to "One GraphQL"
-                    write text "cd ~/dev/work/costa/one/graphql"
+                    write text "cd ~/dev/one/graphql"
                     write text "./scripts/dev.sh"
                     set onePackagerTab to (split horizontally with same profile)
                 end tell
                 tell onePackagerTab
                     set name to "One Packager"
-                    write text "cd ~/dev/work/costa/one/mobile_app/app"
+                    write text "cd ~/dev/one/mobile_app/app"
                     write text "npm start -- --reset-cache"
                 end tell
                 set oneCalabashTab to (create tab with default profile)
                 tell current session
                     set name to "One Calabash"
-                    write text "cd ~/dev/work/costa/one/mobile_app"
+                    write text "cd ~/dev/one/mobile_app"
                 end tell
                 set oneAppTab to (create tab with default profile)
                 tell current session
                     set name to "One App"
-                    write text "cd ~/dev/work/costa/one/mobile_app/app"
+                    write text "cd ~/dev/one/mobile_app/app"
                 end tell
             end tell
         end tell
