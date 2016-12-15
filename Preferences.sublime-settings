@@ -19,15 +19,16 @@
 		"*.zip",
 		"tmp/*"
 	],
-	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Afterglow-monokai (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+	],
 	"folder_exclude_patterns":
 	[
 	],
 	"font_size": 15,
 	"highlight_line": true,
-	"hot_exit": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -37,12 +38,13 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"open_files_in_new_window": false,
 	"remember_full_screen": true,
+	"sidebar_no_icon": true,
 	"tab_size": 2,
 	"tabs_label_not_italic": true,
 	"tabs_medium": true,
 	"theme": "Afterglow-blue.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"use_simple_full_screen": true
 }
