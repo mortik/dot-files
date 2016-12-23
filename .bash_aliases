@@ -60,6 +60,22 @@ alias utube='youtube-dl -f mp4'
 
 alias aws-login='eval $(aws ecr get-login)'
 
+function encrypt () {
+  if [ -z "$1" ]; then
+    echo "Specify a file to encrypt"
+  else
+    openssl aes-256-cbc -a -salt -in $1 -out $1.enc
+  fi
+}
+
+function decrypt () {
+  if [ -z "$1" ]; then
+    echo "Specify a file to decrypt"
+  else
+    openssl aes-256-cbc -d -a -in $1.enc -out $1
+  fi
+}
+
 function git-hotfix () {
   if [ -z "$1" ]; then
     branch="master"
