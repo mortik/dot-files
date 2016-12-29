@@ -60,6 +60,8 @@ alias utube='youtube-dl -f mp4'
 
 alias aws-login='eval $(aws ecr get-login)'
 
+alias gen-ssh='ssh-keygen -t ed25519'
+
 function encrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to encrypt"

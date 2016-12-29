@@ -13,7 +13,7 @@ else
     brew update --all && brew upgrade && brew cleanup
 fi
 
-brew install git tig bash-completion ansible hub michaeldfallen/formula/git-radar
+brew install git tig awscli rbenv terraform bash-completion ansible hub michaeldfallen/formula/git-radar
 
 # BashFiles
 echo "Setup Bashrc, Aliases and Prompt..."

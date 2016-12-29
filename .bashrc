@@ -49,6 +49,8 @@ if [ -f $(brew --prefix)/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+ssh-add -A 2> /dev/null
+
 # VM Setup
 export VM_PATH=~/Documents/Virtual-Machines.localized
 
