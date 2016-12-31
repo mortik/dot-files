@@ -1,5 +1,6 @@
 "*":
   core:
+    projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
   editor:
     showIndentGuide: true
@@ -7,5 +8,8 @@
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
   "go-plus":
     panelDisplayMode: "closed"
+  "tree-view":
+    autoReveal: true
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
