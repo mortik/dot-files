@@ -59,8 +59,17 @@ alias utube-audio='youtube-dl -x --audio-format mp3'
 alias utube='youtube-dl -f mp4'
 
 alias aws-login='eval $(aws ecr get-login)'
+function s3-sync () {
+  if [ -z "$1" ]; then
+    echo "Specify a bucket path like 'bucker/folder/file or just the bucket name to sync all files'"
+  else
+    aws s3 sync s3://$1 .
+  fi
+}
 
 alias gen-ssh='ssh-keygen -t ed25519'
+
+alias set-hostname='sudo scutil --set HostName'
 
 function encrypt () {
   if [ -z "$1" ]; then

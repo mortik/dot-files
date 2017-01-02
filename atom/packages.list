@@ -1,8 +1,11 @@
 Sublime-Style-Column-Selection@1.7.2
 editorconfig@2.0.5
-go-debug@0.1.22
-go-plus@4.3.2
+go-debug@1.0.1
+go-plus@5.0.8
+go-signature-statusbar@1.2.0
+hyperclick@0.0.39
 language-babel@2.48.5
+language-haml@0.24.1
 language-terraform@0.7.5
 linter@1.11.18
 linter-docker@0.1.4
