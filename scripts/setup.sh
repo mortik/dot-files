@@ -15,6 +15,8 @@ fi
 
 brew install git go forego tig heroku awscli rbenv terraform bash-completion ansible hub michaeldfallen/formula/git-radar
 
+brew tap Homebrew/bundle
+
 curl get.pow.cx | sh
 
 # BashFiles
