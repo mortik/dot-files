@@ -10,3 +10,4 @@ language-terraform@0.7.5
 linter@1.11.18
 linter-docker@0.1.4
 linter-eslint@8.0.0
+pretty-json@1.6.1
