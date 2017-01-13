@@ -55,19 +55,13 @@ ssh-add -A 2> /dev/null
 export VM_PATH=~/Documents/Virtual-Machines.localized
 
 # Local definitions.
-if [ -f ~/.bashrc.local ]; then
-  . ~/.bashrc.local
-fi
+[ -e ~/.bashrc.local ] && source ~/.bashrc.local
 
 # Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
+[ -e ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Prompt definitions.
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
-fi
+[ -e ~/.bash_prompt ] && source ~/.bash_prompt
 
 # added by travis gem
-[ -f /Users/mortik/.travis/travis.sh ] && source /Users/mortik/.travis/travis.sh
+[ -e /Users/mortik/.travis/travis.sh ] && source /Users/mortik/.travis/travis.sh
