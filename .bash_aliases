@@ -153,6 +153,8 @@ alias l='ls -lah'
 
 alias e='$EDITOR .'
 
+alias apm-export='apm list --installed --bare > packages.txt'
+
 alias ansible-vagrant='ansible-playbook -i hosts playbook.yml --private-key=~/.vagrant.d/insecure_private_key -u vagrant'
 
 alias rmf='rm -rf'
