@@ -2,6 +2,7 @@
   core:
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
+    useCustomTitleBar: true
   editor: {}
   "exception-reporting":
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
@@ -14,6 +15,6 @@
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
