@@ -13,9 +13,10 @@ else
     brew update --all && brew upgrade && brew cleanup
 fi
 
-brew install git go forego tig heroku awscli rbenv terraform bash-completion ansible hub michaeldfallen/formula/git-radar
+brew install git mas go forego tig heroku awscli rbenv terraform bash-completion ansible hub michaeldfallen/formula/git-radar
 
 brew tap Homebrew/bundle
+brew bundle
 
 curl get.pow.cx | sh
 
