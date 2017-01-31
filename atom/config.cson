@@ -2,6 +2,7 @@
   core:
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
+    useCustomTitleBar: true
   editor:
     showIndentGuide: true
   customFileTypes:
