@@ -45,11 +45,12 @@ Style/ClassVars:
 
 Metrics/LineLength:
   Enabled: false
-  Max: 120
 
 Metrics/ClassLength:
   Enabled: false
-  Max: 500
+
+Metrics/BlockLength:
+  Enabled: false
 
 Metrics/MethodLength:
   Max: 40

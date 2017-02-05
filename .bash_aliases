@@ -157,6 +157,14 @@ alias apm-export='apm list --installed --bare > packages.txt'
 
 alias ansible-vagrant='ansible-playbook -i hosts playbook.yml --private-key=~/.vagrant.d/insecure_private_key -u vagrant'
 
+function vault-decrypt () {
+  ansible-vault decrypt secrets.yml --vault-password-file=~/.ansible_vault_files/$1
+}
+
+function vault-encrypt () {
+  ansible-vault encrypt secrets.yml --vault-password-file=~/.ansible_vault_files/$1
+}
+
 alias rmf='rm -rf'
 
 # rails

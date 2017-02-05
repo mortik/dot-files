@@ -3,8 +3,7 @@
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
     useCustomTitleBar: true
-  editor:
-    showIndentGuide: true
+  editor: {}
   "exception-reporting":
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
   "go-plus":
@@ -13,6 +12,11 @@
     lint: {}
     navigator: {}
     panelDisplayMode: "closed"
+  "linter-rubocop":
+    command: "/usr/local/var/rbenv/versions/2.3.1/bin/rubocop"
+  "rubocop-auto-correct":
+    autoRun: true
+    rubocopCommandPath: "/usr/local/var/rbenv/shims/rubocop"
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true
