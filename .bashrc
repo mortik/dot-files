@@ -1,3 +1,4 @@
+#!/bin/bash
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -26,6 +27,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export GOROOT
+GOROOT=$(go env GOROOT)
 export PATH=./bin:$PATH
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=/usr/local/heroku/bin:$PATH
@@ -44,7 +47,7 @@ export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 export MT_NO_EXPECTATIONS=yes
 
 # Ruby Setup
-if [ -e $(brew --prefix)/bin/rbenv ]; then
+if [ -e "$(brew --prefix)/bin/rbenv" ]; then
   export RBENV_ROOT=$(brew --prefix)/var/rbenv
   eval "$(rbenv init -)"
 fi
@@ -55,13 +58,17 @@ ssh-add -A 2> /dev/null
 export VM_PATH=~/Documents/Virtual-Machines.localized
 
 # Local definitions.
-[ -e $HOME/.bashrc.local ] && source $HOME/.bashrc.local
+# shellcheck source=/dev/null
+[ -e "$HOME/.bashrc.local" ] && source $HOME/.bashrc.local
 
 # Alias definitions.
-[ -e $HOME/.bash_aliases ] && source $HOME/.bash_aliases
+# shellcheck source=/dev/null
+[ -e "$HOME/.bash_aliases" ] && source $HOME/.bash_aliases
 
 # Prompt definitions.
-[ -e $HOME/.bash_prompt ] && source $HOME/.bash_prompt
+# shellcheck source=/dev/null
+[ -e "$HOME/.bash_prompt" ] && source $HOME/.bash_prompt
 
 # added by travis gem
-[ -e $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+# shellcheck source=/dev/null
+[ -e "$HOME/.travis/travis.sh" ] && source $HOME/.travis/travis.sh

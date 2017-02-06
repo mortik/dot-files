@@ -2,15 +2,15 @@
 
 # The various escape codes that we can use to color our prompt.
         RED="\[\033[0;31m\]"
-     YELLOW="\[\033[0;33m\]"
-      GREEN="\[\033[0;32m\]"
+     # YELLOW="\[\033[0;33m\]"
+      # GREEN="\[\033[0;32m\]"
        BLUE="\[\033[0;34m\]"
        PINK="\[\033[0;35m\]"
        CYAN="\[\033[0;36m\]"
-     ORANGE="\[\033[1;31m\]"
-  DARK_GRAY="\[\033[1;30m\]"
-      WHITE="\[\033[0;37m\]"
- LIGHT_GRAY="\[\033[0;38m\]"
+     # ORANGE="\[\033[1;31m\]"
+  # DARK_GRAY="\[\033[1;30m\]"
+      # WHITE="\[\033[0;37m\]"
+ # LIGHT_GRAY="\[\033[0;38m\]"
  COLOR_NONE="\[\e[0m\]"
 
 export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
@@ -18,7 +18,7 @@ export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 # Return the prompt symbol to use, colorized based on the return value of the
 # previous command.
 function set_prompt_symbol () {
-  if test $1 -eq 0 ; then
+  if test "$1" -eq 0 ; then
       PROMPT_SYMBOL="${CYAN}>${COLOR_NONE}"
   else
       PROMPT_SYMBOL="${RED}>${COLOR_NONE}"
@@ -30,7 +30,8 @@ function set_virtualenv () {
   if test -z "$VIRTUAL_ENV" ; then
       PYTHON_VIRTUALENV=""
   else
-      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+      VIRTUAL_ENV=$(basename "$VIRTUAL_ENV")
+      PYTHON_VIRTUALENV="${BLUE}[$VIRTUAL_ENV]${COLOR_NONE} "
   fi
 }
 
@@ -50,7 +51,7 @@ function set_ruby_version () {
 
 function set_user_prompt () {
   if is_remote_machine; then
-    if [ $(id -u) == '0' ]; then
+    if [ "$(id -u)" == '0' ]; then
       color="${RED}"
     else
       color="${PINK}"

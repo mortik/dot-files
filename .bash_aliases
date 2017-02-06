@@ -1,3 +1,4 @@
+#!/bin/bash
 alias sbrc='source ~/.bashrc'
 alias genpw='pwgen -s -n -B 24'
 
@@ -63,7 +64,7 @@ function s3-sync () {
   if [ -z "$1" ]; then
     echo "Specify a bucket path like 'bucker/folder/file or just the bucket name to sync all files'"
   else
-    aws s3 sync s3://$1 .
+    aws s3 sync "s3://$1" .
   fi
 }
 
@@ -75,7 +76,7 @@ function encrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to encrypt"
   else
-    openssl aes-256-cbc -a -salt -in $1 -out $1.enc
+    openssl aes-256-cbc -a -salt -in "$1" -out "$1.enc"
   fi
 }
 
@@ -83,7 +84,7 @@ function decrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to decrypt"
   else
-    openssl aes-256-cbc -d -a -in $1.enc -out $1
+    openssl aes-256-cbc -d -a -in "$1.enc" -out "$1"
   fi
 }
 
@@ -93,7 +94,7 @@ function git-hotfix () {
   else
     branch=$1
   fi
-  git pull-request -m "Hotfix Release" -b $branch
+  git pull-request -m "Hotfix Release" -b "$branch"
 }
 
 function git-release () {
@@ -102,7 +103,7 @@ function git-release () {
   else
     branch=$1
   fi
-  git pull-request -m "New Release" -b $branch
+  git pull-request -m "New Release" -b "$branch"
 }
 
 function git-pr () {
@@ -115,7 +116,7 @@ function git-pr () {
   else
     branch=$2
   fi
-  git pull-request -m "$1" -b $branch
+  git pull-request -m "$1" -b "$branch"
 }
 
 # js2coffee shorthand
@@ -125,7 +126,7 @@ function j2c () {
     return
   fi
   newfile=${1%".js"}
-  js2coffee $1 > $newfile.coffee
+  js2coffee "$1" > "$newfile.coffee"
 }
 
 function vmware () {
@@ -133,7 +134,7 @@ function vmware () {
     echo "please give vm name and action {start|stop}"
     return
   fi
-  vmrun $2 ~/Documents/Virtual-Machines.localized/$1.vmwarevm/$1.vmx nogui
+  vmrun "$2" "$HOME/Documents/Virtual-Machines.localized/$1.vmwarevm/$1.vmx" nogui
 }
 
 # tar
@@ -157,13 +158,8 @@ alias apm-export='apm list --installed --bare > packages.txt'
 
 alias ansible-vagrant='ansible-playbook -i hosts playbook.yml --private-key=~/.vagrant.d/insecure_private_key -u vagrant'
 
-function vault-decrypt () {
-  ansible-vault decrypt secrets.yml --vault-password-file=~/.ansible_vault_files/$1
-}
-
-function vault-encrypt () {
-  ansible-vault encrypt secrets.yml --vault-password-file=~/.ansible_vault_files/$1
-}
+alias vault-decrypt='ansible-vault decrypt secrets.yml'
+alias vault-encrypt='ansible-vault encrypt secrets.yml'
 
 alias rmf='rm -rf'
 
@@ -178,24 +174,28 @@ alias nginx-reload='sudo nginx -s reload'
 
 # jass en/decryption
 function jass-decrypt () {
-  echo "${1}" | jass -d -k $MAIN_SSH_KEY_PATH
+  echo "${1}" | jass -d -k "$MAIN_SSH_KEY_PATH"
 }
 
 # other
 alias coffee-watch='coffee --watch --output js/ coffee/'
 
 # Local alias definitions.
+# shellcheck source=/dev/null
 if [ -f ~/.bash_aliases.local ]; then
     . ~/.bash_aliases.local
 fi
 
 # project iterm function definitions.
+# shellcheck source=/dev/null
 if [ -f ~/.dotfiles/.bash_tabs_one ]; then
     . ~/.dotfiles/.bash_tabs_one
 fi
+# shellcheck source=/dev/null
 if [ -f ~/.dotfiles/.bash_tabs_reckoning ]; then
     . ~/.dotfiles/.bash_tabs_reckoning
 fi
+# shellcheck source=/dev/null
 if [ -f ~/.dotfiles/.bash_tabs_woa ]; then
     . ~/.dotfiles/.bash_tabs_woa
 fi
