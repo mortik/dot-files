@@ -34,6 +34,11 @@
       warnOnNotInstalled: false
     "nuclide-home":
       showHome: false
+  "linter-rubocop":
+    command: "/usr/local/var/rbenv/versions/2.3.1/bin/rubocop"
+  "rubocop-auto-correct":
+    autoRun: true
+    rubocopCommandPath: "/usr/local/var/rbenv/shims/rubocop"
   "tree-view":
     autoReveal: true
     hideIgnoredNames: true

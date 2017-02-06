@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CSScomb",
+		"FileDiffs",
+		"GitGutter",
+		"GitSavvy",
+		"GitStatus",
+		"MarkdownEditing",
+		"Package Control",
+		"Pretty JSON",
+		"Quick File Creator",
+		"Quick File Move",
+		"RuboCop",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-coffee",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-json",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-shellcheck",
+		"SublimeLinter-slim-lint",
+		"Theme - Afterglow"
+	]
+}
