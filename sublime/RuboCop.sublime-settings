@@ -1,0 +1,6 @@
+{
+  "rubocop_command": "/usr/local/var/rbenv/shims/rubocop -a",
+  "check_for_rvm": false,
+  "check_for_rbenv": true,
+  "rubocop_config_file": "/Users/mortik/.rubocop.yml"
+}
