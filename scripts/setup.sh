@@ -13,8 +13,6 @@ else
     brew update --all && brew upgrade && brew cleanup
 fi
 
-brew install git mas go forego tig heroku awscli rbenv terraform bash-completion ansible hub michaeldfallen/formula/git-radar
-
 brew tap Homebrew/bundle
 brew bundle
 
@@ -50,6 +48,22 @@ then
   if [ ! -f ~/.gitconfig ]; then
     cp ~/.dotfiles/gitconfig.tmp ~/.gitconfig
   fi
+fi
+
+# atom
+read -p "Setup sublime?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo "Setup sublime..."
+  SUBLIME_PATH="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+  rm "$SUBLIME_PATH/Package Control.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/Preferences.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/JavaScript (Babel).sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/JavaScript.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/Markdown.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/RuboCop.sublime-settings" 2> /dev/null
+  ln -s ~/.dotfiles/sublime/*.sublime-settings "$SUBLIME_PATH/"
 fi
 
 # atom
