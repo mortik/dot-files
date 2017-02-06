@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Babel",
 		"Color Highlighter",
 		"CSScomb",
 		"FileDiffs",
@@ -17,6 +18,7 @@
 		"Quick File Creator",
 		"Quick File Move",
 		"RuboCop",
+		"Ruby Slim",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-coffee",
