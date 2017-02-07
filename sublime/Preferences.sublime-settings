@@ -13,6 +13,7 @@
 		"draw_active"
 	],
 	"remember_full_screen": true,
+	"show_panel_on_build": false,
 	"sidebar_no_icon": true,
 	"tab_size": 2,
 	"tabs_label_not_italic": true,

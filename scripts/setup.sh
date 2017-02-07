@@ -62,8 +62,13 @@ then
   rm "$SUBLIME_PATH/JavaScript (Babel).sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/JavaScript.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Markdown.sublime-settings" 2> /dev/null
-  rm "$SUBLIME_PATH/RuboCop.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/GoTools.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/sublime/Ruby.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/sublime/SublimeLinter.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/sublime/SublimeOnSaveBuild.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/sublime/rubocop.sublime-build" 2> /dev/null
   ln -s ~/.dotfiles/sublime/*.sublime-settings "$SUBLIME_PATH/"
+  ln -s ~/.dotfiles/sublime/*.sublime-build "$SUBLIME_PATH/"
 fi
 
 # atom

@@ -1,9 +1,12 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 AllCops:
   Exclude:
-    - 'bin/*'
-    - 'db/schema.rb'
     - 'node_modules/**/*'
+    - "db/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "bin/**/*"
+    - "log/**/*"
 
 Rails:
   Enabled: true

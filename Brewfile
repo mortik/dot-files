@@ -16,6 +16,7 @@ brew 'hub'
 brew 'postgres', restart_service: true
 brew 'redis', restart_service: true
 brew 'michaeldfallen/formula/git-radar'
+brew 'keybase'
 cask 'wkhtmltopdf'
 cask '1password'
 cask 'spectacle'
