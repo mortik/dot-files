@@ -38,4 +38,4 @@ cask 'gpgtools'
 cask 'imageoptim'
 cask 'sketch'
 cask 'moneymoney'
-mas 'Steuererklärung', id: '748816884'
+mas 'Steuererklärung', id: 748816884
