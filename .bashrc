@@ -48,7 +48,8 @@ export MT_NO_EXPECTATIONS=yes
 
 # Ruby Setup
 if [ -e "$(brew --prefix)/bin/rbenv" ]; then
-  export RBENV_ROOT=$(brew --prefix)/var/rbenv
+  export RBENV_ROOT
+  RBENV_ROOT=$(brew --prefix)/var/rbenv
   eval "$(rbenv init -)"
 fi
 
@@ -72,3 +73,13 @@ export VM_PATH=~/Documents/Virtual-Machines.localized
 # added by travis gem
 # shellcheck source=/dev/null
 [ -e "$HOME/.travis/travis.sh" ] && source $HOME/.travis/travis.sh
+
+# BEGIN ANSIBLE MANAGED BLOCK - bashrc.d
+for config in $HOME/.bashrc.d/*.bash ; do
+  [ -e "$config" ] && source $config
+done
+
+for config in $HOME/.bashrc.d/aliases/*.bash ; do
+  [ -e "$config" ] && source $config
+done
+# END ANSIBLE MANAGED BLOCK - bashrc.d
