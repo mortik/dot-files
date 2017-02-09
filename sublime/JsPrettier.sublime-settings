@@ -1,0 +1,7 @@
+{
+  "auto_format_on_save": true,
+  "prettier_options": {
+    "singleQuote": true,
+    "trailingComma": true
+  }
+}
