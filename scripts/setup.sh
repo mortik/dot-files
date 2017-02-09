@@ -61,6 +61,7 @@ then
   rm "$SUBLIME_PATH/Preferences.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/JavaScript (Babel).sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/JavaScript.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/JsPrettier.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Markdown.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/GoTools.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Ruby.sublime-settings" 2> /dev/null
