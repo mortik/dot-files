@@ -6,10 +6,11 @@
 	"installed_packages":
 	[
 		"Babel",
+		"Better CoffeeScript",
 		"Color Highlighter",
 		"CSScomb",
-		"ESLint",
 		"DashDoc",
+		"ESLint",
 		"FileDiffs",
 		"GitGutter",
 		"GitSavvy",
