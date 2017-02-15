@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Babel",
+		"Better CoffeeScript",
 		"Color Highlighter",
 		"CSScomb",
 		"DashDoc",
