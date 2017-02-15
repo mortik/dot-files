@@ -63,7 +63,7 @@ then
   rm "$SUBLIME_PATH/JavaScript.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/JsPrettier.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Markdown.sublime-settings" 2> /dev/null
-  rm "$SUBLIME_PATH/GoTools.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/GoSublime.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Ruby.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/SublimeLinter.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/SublimeOnSaveBuild.sublime-settings" 2> /dev/null
