@@ -25,7 +25,7 @@ export PATH=./node_modules/.bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go:$(pwd):$(pwd)/vendor
 export PATH=$GOPATH/bin:$PATH
 export GOROOT
 GOROOT=$(go env GOROOT)
@@ -83,3 +83,6 @@ for config in $HOME/.bashrc.d/aliases/*.bash ; do
   [ -e "$config" ] && source $config
 done
 # END ANSIBLE MANAGED BLOCK - bashrc.d
+
+# added by travis gem
+[ -f /Users/mortik/.travis/travis.sh ] && source /Users/mortik/.travis/travis.sh
