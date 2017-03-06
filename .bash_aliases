@@ -19,7 +19,12 @@ alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 alias start-mm='bundle exec middleman server --port $PORT'
 
 # docker
-alias docker-eval='docker-machine start default && eval $(docker-machine env)'
+alias docker-kill-all='docker kill $(docker ps -q)'
+alias docker-clean-c='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+alias docker-clean-i='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+alias docker-clean-all-i='docker rmi $(docker images -q)'
+alias docker-clean-all='docker-clean || true && docker-clean-all-i && docker volume prune -f'
+alias docker-clean='docker-clean-c || true && docker-clean-i'
 
 alias edit-hosts='$EDITOR /etc/hosts'
 alias edit-dots='$EDITOR ~/.dotfiles'
