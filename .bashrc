@@ -25,7 +25,7 @@ export PATH=./node_modules/.bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go:$(pwd):$(pwd)/vendor
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export GOROOT
 GOROOT=$(go env GOROOT)
