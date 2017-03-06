@@ -6,7 +6,7 @@ alias ..='cd ..'
 
 alias go-run='go run !(*_test).go'
 
-alias update='brew update --all && brew upgrade && brew cleanup && apm upgrade --compatible -c false'
+alias update='brew update --all && brew upgrade && brew cleanup'
 
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
