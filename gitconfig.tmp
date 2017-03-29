@@ -60,3 +60,7 @@
   user = mortik
 [commit]
   gpgsign = true
+[url "https://github.com/"]
+  insteadOf = git@github.com:
+[url "https://"]
+  insteadOf = git://
