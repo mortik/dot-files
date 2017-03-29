@@ -1,8 +1,8 @@
 {
   "auto_format_on_save": true,
   "prettier_options": {
-    "printWidth": 100,
+    "tabWidth": 4,
     "singleQuote": true,
-    "trailingComma": true
+    "trailingComma": "all"
   }
 }

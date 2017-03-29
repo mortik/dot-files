@@ -16,6 +16,8 @@ fi
 brew tap Homebrew/bundle
 brew bundle
 
+vagrant plugin install vagrant-vbguest vagrant-share
+
 curl get.pow.cx | sh
 
 # BashFiles
