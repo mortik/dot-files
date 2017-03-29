@@ -1,4 +1,9 @@
 {
-    "filename_filter": "\\.(rb)$",
-    "build_on_save": 1
+	"build_on_save": 1,
+	"extensions":
+	[
+		"Fastfile",
+    "Appfile"
+	],
+	"filename_filter": "\\.(rb)$"
 }
