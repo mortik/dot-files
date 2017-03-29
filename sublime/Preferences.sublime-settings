@@ -6,7 +6,7 @@
 		"coverage/*",
 		"build/*",
 		".gradle/*",
-		".bundle/",
+		".bundle/*",
 		"vendor/*",
 		"containers/*",
 		"venv/*",
