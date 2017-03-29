@@ -34,7 +34,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=/usr/local/heroku/bin:$PATH
 
 # Android Setup
-export ANDROID_HOME=$HOME/Library/Android/sdk/
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Set editor
