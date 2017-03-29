@@ -81,7 +81,7 @@ function encrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to encrypt"
   else
-    openssl aes-256-cbc -a -salt -in "$1" -out "$1.enc"
+    openssl aes-256-cbc -e -md sha256 -a -salt -in "$1" -out "$1.enc"
   fi
 }
 
@@ -89,7 +89,7 @@ function decrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to decrypt"
   else
-    openssl aes-256-cbc -d -a -in "$1.enc" -out "$1"
+    openssl aes-256-cbc -d -md sha256 -a -in "$1.enc" -out "$1"
   fi
 }
 
