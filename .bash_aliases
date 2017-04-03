@@ -11,6 +11,7 @@ alias update='brew update --all && brew upgrade && brew cleanup'
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 alias xcode6='/Applications/Xcode.app/Contents/MacOS/Xcode </dev/null &>/dev/null &'
+alias show-profile='security cms -D -i'
 
 # virtualbox
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
