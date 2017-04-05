@@ -67,9 +67,8 @@ then
   rm "$SUBLIME_PATH/Markdown.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/GoSublime.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/Ruby.sublime-settings" 2> /dev/null
+  rm "$SUBLIME_PATH/RuboCop.sublime-settings" 2> /dev/null
   rm "$SUBLIME_PATH/SublimeLinter.sublime-settings" 2> /dev/null
-  rm "$SUBLIME_PATH/SublimeOnSaveBuild.sublime-settings" 2> /dev/null
-  rm "$SUBLIME_PATH/rubocop.sublime-build" 2> /dev/null
   ln -s ~/.dotfiles/sublime/*.sublime-settings "$SUBLIME_PATH/"
   ln -s ~/.dotfiles/sublime/*.sublime-build "$SUBLIME_PATH/"
 fi
