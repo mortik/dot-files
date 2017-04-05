@@ -11,6 +11,7 @@ alias update='brew update --all && brew upgrade && brew cleanup'
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 alias xcode6='/Applications/Xcode.app/Contents/MacOS/Xcode </dev/null &>/dev/null &'
+alias show-profile='security cms -D -i'
 
 # virtualbox
 alias vb-restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
@@ -81,7 +82,7 @@ function encrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to encrypt"
   else
-    openssl aes-256-cbc -a -salt -in "$1" -out "$1.enc"
+    openssl aes-256-cbc -e -md sha256 -a -salt -in "$1" -out "$1.enc"
   fi
 }
 
@@ -89,7 +90,7 @@ function decrypt () {
   if [ -z "$1" ]; then
     echo "Specify a file to decrypt"
   else
-    openssl aes-256-cbc -d -a -in "$1.enc" -out "$1"
+    openssl aes-256-cbc -d -md sha256 -a -in "$1.enc" -out "$1"
   fi
 }
 
