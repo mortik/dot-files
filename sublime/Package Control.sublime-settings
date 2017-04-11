@@ -26,6 +26,7 @@
 		"Pretty JSON",
 		"Quick File Creator",
 		"Quick File Move",
+		"RuboCop",
 		"Ruby Slim",
 		"Sass",
 		"SideBarEnhancements",
@@ -33,10 +34,8 @@
 		"SublimeLinter-coffee",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-json",
-		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"SublimeLinter-slim-lint",
-		"SublimeOnSaveBuild",
 		"Theme - Afterglow"
 	]
 }
