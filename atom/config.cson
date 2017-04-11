@@ -25,13 +25,16 @@
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
   "go-plus":
     config: {}
+    currentPanelHeight: "60.30751708428246vh"
     format:
       tool: "goreturns"
+    goPath: "/Users/mortikCosta/dev/one/go-apis:/Users/mortikCosta/dev/one/go-apis/vendor:~/go"
     lint: {}
     navigator: {}
     panelDisplayMode: "closed"
   "linter-rubocop":
-    command: "/usr/local/var/rbenv/versions/2.3.1/bin/rubocop"
+    command: "/usr/local/var/rbenv/shims/rubocop"
+  "linter-ui-default": {}
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false
@@ -39,6 +42,8 @@
       showHome: false
   "rubocop-auto-correct":
     autoRun: true
+    correctFile: true
+    notification: false
     rubocopCommandPath: "/usr/local/var/rbenv/shims/rubocop"
   "tree-view":
     autoReveal: true
