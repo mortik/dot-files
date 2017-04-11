@@ -34,7 +34,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Set editor
-export EDITOR=subl
+export EDITOR=atom
 
 # Ansible hosts
 export ANSIBLE_HOSTS=$HOME/ansible_hosts

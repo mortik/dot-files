@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 brew 'git'
@@ -17,6 +18,7 @@ brew 'postgres', restart_service: true
 brew 'redis', restart_service: true
 brew 'michaeldfallen/formula/git-radar'
 brew 'keybase'
+brew 'shellcheck'
 cask 'wkhtmltopdf'
 cask 'dash'
 cask '1password'
