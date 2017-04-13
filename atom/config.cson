@@ -25,7 +25,7 @@
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
   "go-plus":
     config: {}
-    currentPanelHeight: "60.30751708428246vh"
+    currentPanelHeight: "20.558086560364465vh"
     format:
       tool: "goreturns"
     goPath: "/Users/mortikCosta/dev/one/go-apis:/Users/mortikCosta/dev/one/go-apis/vendor:~/go"
