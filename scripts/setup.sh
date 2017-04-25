@@ -21,19 +21,17 @@ vagrant plugin install vagrant-vbguest vagrant-share
 curl get.pow.cx | sh
 
 # BashFiles
-read -p "Setup bashrc files?" -n 1 -r
+read -p "Setup bash files?" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "Setup Bashrc, Aliases and Prompt..."
-  rm ~/.bashrc 2> /dev/null
-  ln -s ~/.dotfiles/.bashrc ~/
-  rm ~/.bash_aliases 2> /dev/null
-  ln -s ~/.dotfiles/.bash_aliases ~/
+  echo "Setup Bash"
   rm ~/.bash_profile 2> /dev/null
   ln -s ~/.dotfiles/.bash_profile ~/
-  rm ~/.bash_prompt 2> /dev/null
-  ln -s ~/.dotfiles/.bash_prompt ~/
+  rm ~/.bashrc 2> /dev/null
+  ln -s ~/.dotfiles/.bashrc ~/
+  rm -rf ~/.bashrc.d 2> /dev/null
+  ln -s ~/.dotfiles/.bashrc.d ~/
 fi
 
 # git

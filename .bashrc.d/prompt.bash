@@ -18,10 +18,10 @@ export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 # Return the prompt symbol to use, colorized based on the return value of the
 # previous command.
 function set_prompt_symbol () {
-  if test "$1" -eq 0 ; then
-      PROMPT_SYMBOL="${CYAN}>${COLOR_NONE}"
+  if [[ "$1" -eq 0 ]] || [[ "$1" == 130 ]]; then
+      PROMPT_SYMBOL="${CYAN}❯${COLOR_NONE}"
   else
-      PROMPT_SYMBOL="${RED}>${COLOR_NONE}"
+      PROMPT_SYMBOL="${RED}✖$1${COLOR_NONE} ${CYAN}❯${COLOR_NONE}"
   fi
 }
 
@@ -93,7 +93,7 @@ function set_bash_prompt () {
 
   set_machine_prompt
   # Set the bash prompt variable.
-  PS1="${CYAN}⦧${COLOR_NONE} ${PYTHON_VIRTUALENV}${CYAN}\t${COLOR_NONE} ${USER_PROMPT}${MACHINE_PROMPT}\w ${RUBY_VERSION}\$(git-radar --bash)
+  PS1="${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}\w ${RUBY_VERSION}\$(git-radar --bash)
 ${PROMPT_SYMBOL} "
 }
 

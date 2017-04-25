@@ -3,9 +3,6 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# shellcheck source=/dev/null
-[ -e "$(brew --prefix)/etc/bash_completion" ] && source  $(brew --prefix)/etc/bash_completion
-
 export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
