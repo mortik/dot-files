@@ -15,7 +15,7 @@
       ]
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
-    useCustomTitleBar: true
+    titleBar: "custom"
   customFileTypes:
     "test.xml.plist": [
       "plist"
@@ -25,7 +25,7 @@
     userId: "53fc0820-54db-5a56-6c4c-6982ffa7a0c8"
   "go-plus":
     config: {}
-    currentPanelHeight: "20.558086560364465vh"
+    currentPanelHeight: "20vh"
     format:
       tool: "goreturns"
     goPath: "/Users/mortikCosta/dev/one/go-apis:/Users/mortikCosta/dev/one/go-apis/vendor:~/go"
@@ -46,7 +46,7 @@
     notification: false
     rubocopCommandPath: "/usr/local/var/rbenv/shims/rubocop"
   "tree-view":
-    autoReveal: true
+    autoReveal: false
     hideIgnoredNames: true
     hideVcsIgnoredFiles: false
   welcome:
