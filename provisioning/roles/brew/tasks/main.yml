@@ -1,0 +1,16 @@
+---
+- name: Is Homebrew present?
+  command: which brew
+  register: homebrew_installed
+  ignore_errors: true
+  changed_when: false
+
+- name: Install Homebrew
+  command: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+  when: "'brew' not in homebrew_installed.stdout"
+
+- name: Install Homebrew Apps
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ brew_apps }}"
