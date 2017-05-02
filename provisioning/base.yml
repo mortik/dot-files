@@ -16,6 +16,7 @@
       - ansible
       - hub
       - postgres
+      - gnupg@2.0
       - redis
       - nginx
       - michaeldfallen/formula/git-radar
@@ -30,6 +31,7 @@
       - colorsnapper
       - google-chrome
       - sublime-text
+      - atom
       - slack
       - iterm2
       - spotify
@@ -45,7 +47,7 @@
       - paw
 
     mas_apps:
-      - { id: , name: "Steuererklärung" }
+      - { id: 748816884, name: "Steuererklärung" }
       - { id: 411643860, name: "DaisyDisk (4.3.2)" }
       - { id: 497799835, name: "Xcode (8.1)" }
 

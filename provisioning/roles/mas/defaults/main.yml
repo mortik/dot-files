@@ -2,4 +2,5 @@
 mas_email: ""
 mas_password: ""
 mas_apps: []
-mas_upgrade_all_apps: false
+mas_upgrade_all_apps: False
+mas_signin_dialog: False
