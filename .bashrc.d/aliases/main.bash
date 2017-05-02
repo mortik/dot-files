@@ -58,6 +58,7 @@ alias local-services-stop='pg-stop && redis-stop && couch-stop && influx-stop &&
 alias local-services-start='pg-start && redis-start && couch-start && influx-start && chrono-start'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+alias be='bundle exec'
 
 alias mocha-run='NODE_ENV=test mocha --harmony --recursive'
 alias mocha-run-1='NODE_ENV=test mocha --harmony test/test-helper.js'
