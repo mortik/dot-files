@@ -70,7 +70,7 @@ function set_machine_prompt () {
 }
 
 function is_remote_machine () {
-  hostnames=(esperanza meleth)
+  hostnames=(esperanza meleth polaris)
   case "${hostnames[@]}" in  *"${HOSTNAME}"*)
     return 1 ;;
   esac
