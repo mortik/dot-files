@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # The various escape codes that we can use to color our prompt.
         RED="\[\033[0;31m\]"
      # YELLOW="\[\033[0;33m\]"
@@ -18,7 +17,7 @@ export GIT_RADAR_FORMAT="[%{branch}%{ :local}]%{ :changes}%{ :stash}"
 # Return the prompt symbol to use, colorized based on the return value of the
 # previous command.
 function set_prompt_symbol () {
-  if [[ "$1" -eq 0 ]] || [[ "$1" == 130 ]]; then
+  if test "$1" -eq 0 ; then
       PROMPT_SYMBOL="${CYAN}❯${COLOR_NONE}"
   else
       PROMPT_SYMBOL="${RED}✖$1${COLOR_NONE} ${CYAN}❯${COLOR_NONE}"
