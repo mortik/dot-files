@@ -13,6 +13,9 @@
       "source.python": [
         "BUCK"
       ]
+    disabledPackages: [
+      "go-debug"
+    ]
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
     titleBar: "custom"
