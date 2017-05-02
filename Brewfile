@@ -16,6 +16,7 @@ brew 'hub'
 brew 'postgres', restart_service: true
 brew 'redis', restart_service: true
 brew 'shellcheck'
+brew 'gnupg@2.0'
 cask 'wkhtmltopdf'
 cask 'dash'
 cask '1password'
