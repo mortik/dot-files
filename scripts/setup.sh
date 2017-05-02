@@ -18,8 +18,6 @@ brew bundle
 
 vagrant plugin install vagrant-vbguest vagrant-share
 
-curl get.pow.cx | sh
-
 # BashFiles
 read -p "Setup bash files?" -n 1 -r
 echo
