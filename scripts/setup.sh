@@ -14,6 +14,7 @@ else
 fi
 
 brew tap Homebrew/bundle
+brew install michaeldfallen/formula/git-radar
 brew bundle
 
 vagrant plugin install vagrant-vbguest vagrant-share

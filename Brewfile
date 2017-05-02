@@ -15,8 +15,6 @@ brew 'ansible'
 brew 'hub'
 brew 'postgres', restart_service: true
 brew 'redis', restart_service: true
-brew 'michaeldfallen/formula/git-radar'
-brew 'keybase'
 brew 'shellcheck'
 cask 'wkhtmltopdf'
 cask 'dash'
@@ -37,6 +35,7 @@ cask 'gpgtools'
 cask 'imageoptim'
 cask 'sketch'
 cask 'moneymoney'
+cask 'keybase'
 cask 'fantastical'
 cask 'paw'
 mas 'Steuererklärung', id: 748816884
