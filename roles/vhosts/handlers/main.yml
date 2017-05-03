@@ -1,0 +1,5 @@
+---
+- name: restart nginx
+  shell: "brew services restart nginx"
+  become: True
+  become_method: sudo

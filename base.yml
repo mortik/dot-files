@@ -1,0 +1,18 @@
+---
+- hosts: local
+  connection: local
+  roles:
+    - {role: brew, tags: brew, when: "ansible_os_family == 'Darwin'"}
+    - {role: cask, tags: cask, when: "ansible_os_family == 'Darwin'"}
+    - {role: mas, tags: mas, when: "ansible_os_family == 'Darwin'"}
+    - {role: git, tags: git}
+    - {role: ssh, tags: ssh}
+    # - gpg
+      # - setup keychain
+      # - generate key (optional)
+    - {role: rc-files, tags: rc-files}
+    - {role: bash, tags: bash}
+    - {role: bash_aliases, tags: bash_aliases}
+    - {role: atom, tags: atom}
+    - {role: sublime, tags: sublime}
+    - {role: vhosts, tags: vhosts}

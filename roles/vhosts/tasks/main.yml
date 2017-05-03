@@ -1,0 +1,29 @@
+---
+- block:
+
+    - name: install nginx
+      homebrew: name=nginx state=present
+      notify:
+        - restart nginx
+
+    - name: setup nginx config
+      copy:
+        src: "{{ item }}"
+        dest: "/usr/local/etc/nginx/{{ item }}"
+      with_items:
+        - nginx.conf
+        - proxy_params_http
+
+    - name: create templates
+      template:
+        src: "{{ item.type }}.j2"
+        dest: "/usr/local/etc/nginx/servers/{{ item.domain }}"
+      vars:
+        domain: "{{ item.domain }}"
+        path: "{{ item.path }}"
+        port: "{{ item.port }}"
+      with_items: "{{ vhosts }}"
+      notify:
+        - restart nginx
+
+  when: ansible_os_family == 'Darwin'

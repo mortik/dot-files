@@ -1,0 +1,28 @@
+server {
+  listen 80;
+  server_name {{ domain }} *.{{ domain }};
+  root {{ path }};
+
+  location / {
+    try_files $uri @proxy;
+  }
+
+  location @proxy {
+    include proxy_params_http;
+    proxy_pass http://127.0.0.1:{{ port }};
+  }
+
+  location /socket {
+    include proxy_params_http;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection Upgrade;
+    proxy_pass http://127.0.0.1:{{ port }}/socket;
+  }
+
+  location /phoenix/live_reload/socket {
+    include proxy_params_http;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection Upgrade;
+    proxy_pass http://127.0.0.1:{{ port }}/phoenix/live_reload/socket;
+  }
+}

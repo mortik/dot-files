@@ -1,0 +1,67 @@
+[user]
+  name = {{ git_user_name }}
+  email = {{ git_user_email }}
+[color]
+  ui = auto
+[alias]
+  f = fetch origin --prune
+  r = rebase
+  co = checkout
+  cb = checkout -b
+  p = pull
+  ps = push
+  pr = pull-request -l WIP
+  coa = commit --amend
+  remove =ls-files --deleted | xargs git rm
+  s = status -sb
+  st = status
+  stp = subtree push
+  gh-deploy = subtree push --prefix build origin gh-pages
+  rm = rm --cached
+  br = branch
+  brv = branch -av
+  l = log --abbrev-commit --date=relative --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+  lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  standup-me = log --since '2 days ago' --author m.klitzke@gmail.com
+  mt = mergetool
+  undo-commit = reset --soft HEAD^
+  unchanged = update-index --assume-unchanged
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+[branch "develop"]
+  remote = origin
+  merge = refs/heads/develop
+[core]
+  excludesfile = ~/.gitignore_global
+  precomposeunicode = true
+  editor = vim
+[push]
+  default = current
+[branch]
+  autosetuprebase = always # git config branch.<name>.rebase true if branch already exists
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[merge]
+  tool = opendiff
+[diff]
+  tool = opendiff
+[github]
+  user = {{ github_user }}
+  token = {{ github_token }}
+[commit]
+  gpgsign = true
+[url "https://github.com/"]
+  insteadOf = git@github.com:
+[url "https://"]
+  insteadOf = git://

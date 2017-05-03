@@ -1,0 +1,30 @@
+---
+- name: setup bash_profile
+  copy:
+    src: .bash_profile
+    dest: "{{ ansible_env.HOME }}/.bash_profile"
+
+- name: setup bashrc
+  template:
+    src: ".bashrc"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+
+- name: create bashrc.d folder
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- name: copy bashrc.d files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
+  with_items:
+    - android.bash
+    - ansible.bash
+    - bash_completion.bash
+    - gnupg.bash
+    - go.bash
+    - nvm.bash
+    - prompt.bash
+    - rbenv.bash
+    - travis.bash

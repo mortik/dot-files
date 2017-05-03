@@ -1,0 +1,12 @@
+---
+- name: create bashrc.d/aliases folder
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d/aliases"
+    state: directory
+
+- name: copy aliases
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/aliases/{{ item }}"
+  with_items:
+    - main.bash

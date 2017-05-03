@@ -1,0 +1,11 @@
+---
+- name: copy rc files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+  with_items:
+    - .gemrc
+    - .vimrc
+    - .tigrc
+    - .rubocop.yml
+    - .screenrc
