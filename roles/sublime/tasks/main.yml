@@ -17,7 +17,6 @@
         - Markdown.sublime-settings
         - GoSublime.sublime-settings
         - Ruby.sublime-settings
-        - RuboCop.sublime-settings
         - SublimeLinter.sublime-settings
 
   when: ansible_os_family == 'Darwin'

@@ -1,3 +1,0 @@
-{
-  "rubocop_command": "/usr/local/var/rbenv/shims/rubocop -a"
-}
