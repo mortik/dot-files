@@ -16,5 +16,7 @@
   with_items: "{{ brew_apps }}"
 
 - name: Start services
-  shell: "sudo brew services restart {{ item }}"
+  shell: "brew services restart {{ item }}"
   with_items: "{{ brew_apps_services }}"
+  become: True
+  become_method: sudo

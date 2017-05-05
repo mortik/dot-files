@@ -1,4 +1,7 @@
 ---
+- name: install bash
+  homebrew: name=bash state=present
+
 - name: setup bash_profile
   copy:
     src: .bash_profile
