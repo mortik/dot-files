@@ -13,6 +13,8 @@
       with_items:
         - nginx.conf
         - proxy_params_http
+      notify:
+        - restart nginx
 
     - name: create templates
       template:
@@ -25,5 +27,14 @@
       with_items: "{{ vhosts }}"
       notify:
         - restart nginx
+
+    - name: Add mappings to /etc/hosts
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          127.0.0.1 {{ item.domain }}
+      with_items: "{{ vhosts }}"
+      become: True
+      become_method: sudo
 
   when: ansible_os_family == 'Darwin'
