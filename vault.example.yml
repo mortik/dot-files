@@ -79,6 +79,7 @@ atom_packages:
   - linter-rubocop
   - linter-slim
   - linter-ui-default
+  - linter-codeclimate
   - nova-atom-syntax
   - nova-atom-ui
   - pigments
