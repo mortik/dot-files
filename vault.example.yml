@@ -58,6 +58,8 @@ cask_apps:
   - fantastical
   - keybase
   - paw
+  - kaleidoscope
+  - tower
 atom_packages:
   - Sublime-Style-Column-Selection
   - autocomplete-modules

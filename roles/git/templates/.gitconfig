@@ -61,6 +61,8 @@
   token = {{ github_token }}
 [commit]
   gpgsign = true
+[gpg]
+  program = /usr/local/opt/gnupg@2.0/bin/gpg
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://"]
