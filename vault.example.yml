@@ -11,6 +11,8 @@ editor: "atom"
 mas_apps:
   - { id: 497799835, name: "Xcode" }
   - { id: 409203825, name: "Numbers" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409183694, name: "Keynote" }
   - { id: 969418666, name: "ColorSnapper2" }
 vhosts:
   - { domain: "foo.dev", path: "{{ansible_env.HOME }}/dev/foo", port: 3000, type: rails }
