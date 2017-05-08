@@ -7,6 +7,7 @@ github_user: ""
 github_token: ""
 ssh_key_name: ""
 ssh_key_pass: ""
+gpg_default_key_id: ""
 editor: "atom"
 mas_apps:
   - { id: 497799835, name: "Xcode" }
@@ -29,7 +30,7 @@ brew_apps:
   - ansible
   - hub
   - postgres
-  - gnupg@2.0
+  - gpg
   - redis
   - nginx
   - michaeldfallen/formula/git-radar

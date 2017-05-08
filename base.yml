@@ -7,9 +7,7 @@
     - {role: mas, tags: mas, when: "ansible_os_family == 'Darwin'"}
     - {role: git, tags: git}
     - {role: ssh, tags: ssh}
-    # - gpg
-      # - setup keychain
-      # - generate key (optional)
+    - {role: gpg, tags: gpg}
     - {role: rc-files, tags: rc-files}
     - {role: bash, tags: bash}
     - {role: bash_aliases, tags: bash_aliases}

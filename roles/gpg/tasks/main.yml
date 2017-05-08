@@ -1,0 +1,10 @@
+---
+- name: setup gpg dir
+  file:
+    path: "{{ ansible_env.HOME }}/.gnupg"
+    state: directory
+
+- name: setup gpg conf
+  template:
+    src: gpg.conf.j2
+    dest: "{{ ansible_env.HOME }}/.gnupg/gpg.conf"
