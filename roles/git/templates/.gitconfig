@@ -53,9 +53,9 @@
   process = git-lfs filter-process
   required = true
 [merge]
-  tool = opendiff
+	tool = Kaleidoscope
 [diff]
-  tool = opendiff
+	tool = Kaleidoscope
 [github]
   user = {{ github_user }}
   token = {{ github_token }}
@@ -67,3 +67,13 @@
   insteadOf = git@github.com:
 [url "https://"]
   insteadOf = git://
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = true
