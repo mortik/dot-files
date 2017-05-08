@@ -18,6 +18,10 @@
     ]
     projectHome: "/Users/mortik/dev"
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
     titleBar: "custom"
   customFileTypes:
     "test.xml.plist": [
@@ -38,11 +42,6 @@
   "linter-rubocop":
     command: "/usr/local/var/rbenv/shims/rubocop"
   "linter-ui-default": {}
-  nuclide:
-    "nuclide-flow":
-      warnOnNotInstalled: false
-    "nuclide-home":
-      showHome: false
   "rubocop-auto-correct":
     autoRun: true
     correctFile: true

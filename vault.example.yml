@@ -9,7 +9,9 @@ ssh_key_name: ""
 ssh_key_pass: ""
 editor: "atom"
 mas_apps:
-  - { id: 497799835, name: "Xcode (8.1)" }
+  - { id: 497799835, name: "Xcode" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 969418666, name: "ColorSnapper2" }
 vhosts:
   - { domain: "foo.dev", path: "{{ansible_env.HOME }}/dev/foo", port: 3000, type: rails }
 brew_apps:
@@ -49,6 +51,8 @@ cask_apps:
   - flux
   - virtualbox
   - gpgtools
+  - mattermost
+  - nextcloud
   - imageoptim
   - sketch
   - fantastical
