@@ -66,9 +66,11 @@ cask_apps:
 atom_packages:
   - Sublime-Style-Column-Selection
   - autocomplete-modules
+  - base16-ocean-dark-spacegray
   - busy-signal
   - clipboard-plus
   - editorconfig
+  - git-plus
   - go-debug
   - go-plus
   - go-signature-statusbar
@@ -81,6 +83,7 @@ atom_packages:
   - language-haml
   - language-slim
   - language-terraform
+  - language-vue
   - linter
   - linter-coffeescript
   - linter-docker
@@ -88,7 +91,7 @@ atom_packages:
   - linter-rubocop
   - linter-slim
   - linter-ui-default
-  - linter-codeclimate
+  - monokai
   - nova-atom-syntax
   - nova-atom-ui
   - pigments
