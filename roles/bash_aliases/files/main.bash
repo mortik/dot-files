@@ -34,6 +34,7 @@ alias run='forego start'
 alias run-dev='forego start -f Procfile.dev'
 
 alias git='hub'
+alias gt='gittower .'
 
 alias rails-log='tail -f log/development.log'
 
