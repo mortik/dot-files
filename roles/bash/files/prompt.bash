@@ -20,7 +20,7 @@ function set_prompt_symbol () {
   if test "$1" -eq 0 ; then
       PROMPT_SYMBOL="${CYAN}❯${COLOR_NONE}"
   else
-      PROMPT_SYMBOL="${RED}✖$1${COLOR_NONE} ${CYAN}❯${COLOR_NONE}"
+      PROMPT_SYMBOL="${RED}❯${COLOR_NONE}"
   fi
 }
 
