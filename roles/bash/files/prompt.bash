@@ -49,32 +49,16 @@ function set_ruby_version () {
 }
 
 function set_user_prompt () {
-  if is_remote_machine; then
-    if [ "$(id -u)" == '0' ]; then
-      color="${RED}"
-    else
-      color="${PINK}"
-    fi
-    USER_PROMPT="${color}\u${COLOR_NONE} at "
+  if [ "$(id -u)" == '0' ]; then
+    color="${RED}"
   else
-    USER_PROMPT=""
+    color="${PINK}"
   fi
+  USER_PROMPT="${color}\u${COLOR_NONE} at "
 }
 
 function set_machine_prompt () {
-  if is_remote_machine; then
-    MACHINE_PROMPT="${RED}\h${COLOR_NONE} "
-  else
-    MACHINE_PROMPT=""
-  fi
-}
-
-function is_remote_machine () {
-  hostnames=(esperanza meleth polaris)
-  case "${hostnames[@]}" in  *"${HOSTNAME}"*)
-    return 1 ;;
-  esac
-  return 0
+  MACHINE_PROMPT="${RED}\h${COLOR_NONE} "
 }
 
 # Set the full bash prompt.
@@ -92,7 +76,7 @@ function set_bash_prompt () {
 
   set_machine_prompt
   # Set the bash prompt variable.
-  PS1="\n${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}\w ${RUBY_VERSION}\$(git-radar --bash)
+  PS1="\n${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}\w ${RUBY_VERSION}\$(git-radar --bash --fetch)
 ${PROMPT_SYMBOL} "
 }
 
