@@ -39,6 +39,8 @@
     lint: {}
     navigator: {}
     panelDisplayMode: "closed"
+  "linter-eslint":
+    fixOnSave: true
   "linter-rubocop":
     command: "/usr/local/var/rbenv/shims/rubocop"
   "linter-ui-default": {}
