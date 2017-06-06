@@ -68,7 +68,7 @@ function set_bash_prompt () {
   set_user_prompt
 
   set_machine_prompt
-  PS1="\n${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}\w${RUBY_VERSION}\$(git-radar --bash --fetch)\n${PROMPT_SYMBOL} "
+  PS1="\n${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}\w${RUBY_VERSION}\$(git-radar --bash)\n${PROMPT_SYMBOL} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
