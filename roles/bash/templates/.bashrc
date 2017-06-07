@@ -3,7 +3,7 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-export CDPATH=.:$HOME:$HOME/dev:$HOME/dev/work
+export CDPATH={{ bash_cdpath }}
 
 # append to the history file, don't overwrite it
 shopt -s histappend

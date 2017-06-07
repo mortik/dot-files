@@ -14,3 +14,4 @@
     - {role: atom, tags: atom}
     - {role: sublime, tags: sublime}
     - {role: vhosts, tags: vhosts}
+    - {role: nvim, tags: nvim}

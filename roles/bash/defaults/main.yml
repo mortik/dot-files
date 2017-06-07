@@ -1,2 +1,3 @@
 ---
 editor: atom
+bash_cdpath: ".:$HOME:$HOME/dev:$HOME/dev/work"
