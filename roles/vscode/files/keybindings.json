@@ -1,13 +1,5 @@
 [
   {
-    "key": "ctrl+cmd+p",
-    "command": "projectManager.listProjects"
-  },
-  {
-    "key": "alt+cmd+p",
-    "command": "-projectManager.listProjects"
-  },
-  {
     "key": "shift+cmd+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -16,5 +8,13 @@
     "key": "shift+alt+down",
     "command": "-editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+p",
+    "command": "projectManager.listProjectsNewWindow"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-projectManager.listProjects"
   }
 ]
