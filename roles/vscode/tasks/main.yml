@@ -1,0 +1,16 @@
+---
+- block:
+
+    - name: install visual-studio-code
+      homebrew_cask: name=visual-studio-code state=present
+
+    - name: Setup Settings
+      copy:
+        src: settings.json
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json"
+
+  when: ansible_os_family == 'Darwin'
+
+- name: install extensions
+  shell: "code --install-extension {{ item }}"
+  with_items: "{{ vscode_extensions }}"

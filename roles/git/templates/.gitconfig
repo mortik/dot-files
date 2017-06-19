@@ -55,7 +55,10 @@
 [merge]
 	tool = Kaleidoscope
 [diff]
-	tool = Kaleidoscope
+  tool = default-difftool
+[difftool "default-difftool"]
+	prompt = false
+  cmd = code --wait --diff $LOCAL $REMOTE
 [github]
   user = {{ github_user }}
   token = {{ github_token }}
@@ -70,10 +73,6 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
 [mergetool]
 	prompt = false
 	keepBackup = true
