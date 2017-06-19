@@ -6,8 +6,16 @@
 
     - name: Setup Settings
       copy:
-        src: settings.json
-        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json"
+        src: "{{ item }}"
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/{{ item }}"
+      with_items:
+        - settings.json
+        - keybindings.json
+
+    - name: Projects Setup
+      template:
+        src: projects.json.j2
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/projects.json"
 
   when: ansible_os_family == 'Darwin'
 

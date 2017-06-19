@@ -7,3 +7,6 @@ vscode_extensions:
   - liuji-jim.vue
   - octref.vetur
   - splintah.theme-one-spacegrey
+
+vscode_projects:
+  - { name: ".dotfiles", path: "$home/.dotfiles" }

@@ -1,0 +1,6 @@
+[{% for item in vscode_projects %}{
+	"name": "{{ item.name }}",
+	"rootPath": "{{ item.path }}",
+	"paths": [],
+	"group": ""
+}{{ ", " if not loop.last else "" }}{% endfor %}]
