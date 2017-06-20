@@ -1,11 +1,17 @@
 ---
 vscode_extensions:
+  - PeterJausovec.vscode-docker
   - RobinMalfait.prettier-eslint-vscode
   - alefragnani.project-manager
   - dbaeumer.vscode-eslint
+  - file-icons.file-icons
   - golf1052.theme-base16-ocean
   - liuji-jim.vue
+  - misogi.ruby-rubocop
+  - ms-vscode.sublime-keybindings
   - octref.vetur
+  - rebornix.Ruby
+  - sleistner.vscode-fileutils
   - splintah.theme-one-spacegrey
 
 vscode_projects:
