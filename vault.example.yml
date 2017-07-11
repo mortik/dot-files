@@ -23,6 +23,7 @@ brew_apps:
   - git
   - mas
   - go
+  - hh
   - forego
   - tig
   - awscli

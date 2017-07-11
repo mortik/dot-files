@@ -27,7 +27,6 @@
     - bash_completion.bash
     - gnupg.bash
     - go.bash
-    - nvm.bash
     - prompt.bash
     - rbenv.bash
     - travis.bash
