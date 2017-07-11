@@ -1,18 +1,23 @@
 ---
 vscode_extensions:
+  - PKief.material-icon-theme
   - PeterJausovec.vscode-docker
   - RobinMalfait.prettier-eslint-vscode
   - alefragnani.project-manager
   - dbaeumer.vscode-eslint
-  - file-icons.file-icons
+  - donjayamanne.githistory
+  - donjayamanne.python
   - golf1052.theme-base16-ocean
   - liuji-jim.vue
+  - lukehoban.Go
+  - mauve.terraform
   - misogi.ruby-rubocop
   - ms-vscode.sublime-keybindings
   - octref.vetur
   - rebornix.Ruby
   - sleistner.vscode-fileutils
   - splintah.theme-one-spacegrey
+  - zhuangtongfa.Material-theme
 
 vscode_projects:
   - { name: ".dotfiles", path: "$home/.dotfiles" }

@@ -35,6 +35,7 @@ alias run-dev='forego start -f Procfile.dev'
 
 alias git='hub'
 alias gt='gittower .'
+alias git-remove-untracked='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 
 alias rails-log='tail -f log/development.log'
 

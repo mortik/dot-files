@@ -1,0 +1,44 @@
+{
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#303030",
+        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.debuggingBackground": "#511f1f"
+    },
+    "window.openFoldersInNewWindow": "on",
+    "window.openFilesInNewWindow": "off",
+    "window.reopenFolders": "all",
+    "window.newWindowDimensions": "inherit",
+    "explorer.openEditors.visible": 0,
+    "editor.renderIndentGuides": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.tabSize": 2,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [{
+        "language": "javascript",
+        "autoFix": true
+    }, {
+        "language": "vue",
+        "autoFix": true
+    }],
+    "vetur.validation.template": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "build/**": true,
+        ".tmp/**": true,
+        "**/coverage/**": true,
+        "**/.eslintcache": true
+    },
+    "window.zoomLevel": 1,
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Ocean Dark",
+    "projectManager.openInNewWindowWhenClickingInStatusBar": false,
+    "projectManager.groupList": true,
+    "projectManager.git.baseFolders": ["{{ ansible_env.HOME }}/dev"]
+}
