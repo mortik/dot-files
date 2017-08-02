@@ -4,19 +4,28 @@ vscode_extensions:
   - PeterJausovec.vscode-docker
   - esbenp.prettier-vscode
   - alefragnani.project-manager
+  - bibhasdn.unique-lines
   - dbaeumer.vscode-eslint
   - donjayamanne.githistory
   - donjayamanne.python
   - AndrsDC.base16-themes
-  - liuji-jim.vue
+  - hollowtree.vue-snippets
+  - jcbuisson.vue
+  - kumar-harsh.graphql-for-vscode
   - lukehoban.Go
   - mauve.terraform
+  - minhthai.vscode-todo-parser
   - misogi.ruby-rubocop
+  - mohsen1.prettify-json
   - ms-vscode.sublime-keybindings
   - octref.vetur
   - rebornix.Ruby
+  - richie5um2.vscode-sort-json
+  - sianglim.slim
   - sleistner.vscode-fileutils
   - splintah.theme-one-spacegrey
+  - vayan.haml
+  - wmaurer.change-case
   - zhuangtongfa.Material-theme
 
 vscode_projects:
