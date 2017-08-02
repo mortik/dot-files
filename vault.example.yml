@@ -8,7 +8,7 @@ github_token: ""
 ssh_key_name: ""
 ssh_key_pass: ""
 gpg_default_key_id: ""
-editor: "atom"
+editor: "code"
 mas_apps:
   - { id: 497799835, name: "Xcode" }
   - { id: 409203825, name: "Numbers" }
@@ -19,13 +19,16 @@ vhosts:
   - { domain: "rails-app.dev", path: "{{ansible_env.HOME }}/dev/rails", port: 3000, type: rails }
   - { domain: "phoenix-app.dev", path: "{{ansible_env.HOME }}/dev/phoenix", port: 4000, type: phoenix }
   - { domain: "static.dev", path: "{{ansible_env.HOME }}/dev/static", type: static }
+vscode_projects:
+  - { name: ".dotfiles", path: "$home/.dotfiles" }
 brew_apps:
+  - hh
   - git
   - mas
   - go
-  - hh
   - forego
   - tig
+  - heroku
   - awscli
   - rbenv
   - terraform
@@ -38,11 +41,14 @@ brew_apps:
   - nginx
   - michaeldfallen/formula/git-radar
   - shellcheck
-brew_apps_services:
+brew_services:
   - nginx
   - redis
   - postgres
+brew_start_services: False
 cask_apps:
+  - wkhtmltopdf
+  - visual-studio-code
   - dash
   - 1password
   - spectacle
@@ -54,9 +60,48 @@ cask_apps:
   - iterm2
   - spotify
   - alfred
+  - flux
   - virtualbox
   - gpgtools
   - imageoptim
   - sketch
+  - moneymoney
   - fantastical
+  - keybase
   - paw
+  - kaleidoscope
+  - tower
+atom_packages:
+  - Sublime-Style-Column-Selection
+  - autocomplete-modules
+  - busy-signal
+  - clipboard-plus
+  - editorconfig
+  - go-debug
+  - go-plus
+  - go-signature-statusbar
+  - hyperclick
+  - indent-guide-improved
+  - intentions
+  - language-babel
+  - language-gradle
+  - language-graphql
+  - language-haml
+  - language-slim
+  - language-terraform
+  - linter
+  - linter-coffeescript
+  - linter-docker
+  - linter-eslint
+  - linter-rubocop
+  - linter-slim
+  - linter-ui-default
+  - linter-codeclimate
+  - nova-atom-syntax
+  - nova-atom-ui
+  - pigments
+  - pretty-json
+  - project-manager
+  - rubocop-auto-correct
+  - sort-lines
+  - tool-bar
