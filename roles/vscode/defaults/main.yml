@@ -2,12 +2,12 @@
 vscode_extensions:
   - PKief.material-icon-theme
   - PeterJausovec.vscode-docker
-  - RobinMalfait.prettier-eslint-vscode
+  - esbenp.prettier-vscode
   - alefragnani.project-manager
   - dbaeumer.vscode-eslint
   - donjayamanne.githistory
   - donjayamanne.python
-  - golf1052.theme-base16-ocean
+  - AndrsDC.base16-themes
   - liuji-jim.vue
   - lukehoban.Go
   - mauve.terraform
