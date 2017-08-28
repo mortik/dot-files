@@ -1,0 +1,14 @@
+server {
+  listen 80;
+  server_name {{ domain }};
+  root {{ path }};
+
+  location / {
+    try_files $uri @proxy;
+  }
+
+  location @proxy {
+    include proxy_params_http;
+    proxy_pass http://127.0.0.1:{{ port }};
+  }
+}
