@@ -11,8 +11,6 @@
     - {role: rc-files, tags: rc-files}
     - {role: bash, tags: bash}
     - {role: bash_aliases, tags: bash_aliases}
-    - {role: atom, tags: atom}
-    - {role: sublime, tags: sublime}
     - {role: vhosts, tags: vhosts}
     - {role: nvim, tags: nvim}
     - {role: vscode, tags: vscode}
