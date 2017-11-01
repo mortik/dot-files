@@ -1,6 +1,0 @@
-{
-  "env": { "GOPATH": "$HOME/go:$GS_GOPATH" },
-  "fmt_cmd": ["goimports", "-srcdir", "$_dir"],
-  "linters": [{"cmd": ["go", "vet"]}],
-  "shell": ["/bin/bash", "--login", "-c", "$CMD"]
-}

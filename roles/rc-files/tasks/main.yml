@@ -7,7 +7,6 @@
     - .gemrc
     - .vimrc
     - .tigrc
-    - .rubocop.yml
     - .screenrc
     - .tmux.conf
   tags: rc-files

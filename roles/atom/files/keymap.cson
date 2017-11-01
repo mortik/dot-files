@@ -1,3 +1,0 @@
-'atom-workspace atom-text-editor':
-  'ctrl-up': 'editor:move-line-up'
-  'ctrl-down': 'editor:move-line-down'

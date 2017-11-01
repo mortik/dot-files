@@ -38,8 +38,6 @@
   editor = nvim
 [push]
   default = current
-[branch]
-  autosetuprebase = always # git config branch.<name>.rebase true if branch already exists
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
