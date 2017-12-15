@@ -13,7 +13,7 @@ if [ -n "${tag_names}" ]; then
   tags="-t $tag_names"
 fi
 
-ansible-playbook base.yml -e @vault.yml --ask-sudo-pass $tags
+ansible-playbook base.yml -i hosts -e @vault.yml --ask-sudo-pass $tags
 
 echo
 echo "Provisioning Finished!"
