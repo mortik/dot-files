@@ -379,14 +379,16 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>519 215 815 314 0 0 1680 1028 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>509 640 616 174 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>528 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1680 1028 </string>
+	<string>489 1286 606 469 0 1050 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>408 597 770 429 0 0 1680 1028 </string>
+	<string>629 1726 918 452 0 1050 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1028 0 0 1680 1028 </string>
+	<string>0 0 1630 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 526 650 502 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -607,7 +609,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
+			<key>Blur Radius</key>
+			<real>16.876483185279188</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1064,7 +1068,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.13889395621827411</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1099,6 +1103,8 @@
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>504893674.956016</real>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PerformDNSLookups</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1147,7 +1153,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-29T07:23:08Z</date>
+	<date>2018-02-22T08:08:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

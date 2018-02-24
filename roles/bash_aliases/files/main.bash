@@ -37,6 +37,27 @@ alias git='hub'
 alias gt='gittower .'
 alias git-remove-untracked='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 
+function git-branch-start () {
+  if [ -z "$1" ]; then
+    echo "Specify a name for your new branch"
+  else
+    if [ -z "$2" ]; then
+      branch=""
+    else
+      branch=$2
+    fi
+    git worktree add -B $1 ../$1 $branch && cd ../$1
+  fi
+}
+
+function git-branch-finish () {
+  if [ -z "$1" ]; then
+    echo "Specify the name of your branch"
+  else
+    cd ../base && rm -rf ../$1 && git worktree prune
+  fi
+}
+
 alias rails-log='tail -f log/development.log'
 
 alias check-port='sudo lsof -i :'
