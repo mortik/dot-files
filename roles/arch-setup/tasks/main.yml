@@ -20,9 +20,6 @@
   become: yes
   become_method: sudo
 
-- name: install pamac
-  command: yaourt -S pamac-aur --noconfirm
-
 - name: install tools
   pacman:
     name: "{{ item }}"
