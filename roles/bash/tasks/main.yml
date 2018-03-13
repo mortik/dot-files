@@ -46,13 +46,6 @@
         src: "bashrc.arch.bash"
         dest: "{{ ansible_env.HOME }}/.bashrc"
 
-    - name: setup bash configs
-      copy:
-        src: "{{ item }}"
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
-      with_items:
-        - bashrc.arch.bash
-
   when: ansible_os_family == 'Archlinux'
 
 - name: copy bashrc.d files
