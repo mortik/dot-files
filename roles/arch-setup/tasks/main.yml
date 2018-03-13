@@ -26,7 +26,6 @@
     update_cache: yes
   with_items:
     - p7zip
-    - p7zip-plugins
     - unrar
     - tar
     - rsync

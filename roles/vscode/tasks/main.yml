@@ -28,7 +28,12 @@
     - name: install visual-studio-code
       command: yaourt -S visual-studio-code-bin --noconfirm
 
-    - name: Setup Templates
+    - name: setup config dir
+      file:
+        path: "{{ ansible_env.HOME }}/.config/Code/User"
+        state: directory
+
+    - name: setup Templates
       template:
         src: "{{ item }}.j2"
         dest: "{{ ansible_env.HOME }}/.config/Code/User/{{ item }}"
