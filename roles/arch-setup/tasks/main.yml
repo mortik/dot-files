@@ -3,16 +3,22 @@
   pacman:
     update_cache: yes
     upgrade: yes
+  become: yes
+  become_method: sudo
 
 - name: install dev tools
   pacman:
     name: base-devel
     update_cache: yes
+  become: yes
+  become_method: sudo
 
 - name: install yaourt
   pacman:
     name: yaourt
     update_cache: yes
+  become: yes
+  become_method: sudo
 
 - name: install pamac
   command: yaourt -S pamac-aur --noconfirm
@@ -28,6 +34,8 @@
     - tar
     - rsync
     - conky
+  become: yes
+  become_method: sudo
 
 - name: install themes
   command: yaourt -S paper-icon-theme-git materia-theme --noconfirm

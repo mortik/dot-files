@@ -4,10 +4,10 @@ echo "Starting Setup..."
 echo
 
 # update
-pacman -Syu
+sudo pacman -Syu
 
 # install ansible
-pacman -S ansible
+sudo pacman -S ansible
 
 if [ ! -f vault.yml ]; then
   cp vault.example-arch.yml vault.yml

@@ -10,6 +10,8 @@
     name: gnupg
     state: latest
     update_cache: yes
+  become: yes
+  become_method: sudo
   when: ansible_os_family == 'Archlinux'
 
 - name: setup gpg dir

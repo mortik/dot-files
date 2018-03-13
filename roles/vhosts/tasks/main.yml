@@ -58,5 +58,5 @@
       127.0.0.1 {{ item.domain }}
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.domain }}"
   with_items: "{{ vhosts }}"
-  become: True
+  become: yes
   become_method: sudo
