@@ -15,7 +15,6 @@
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
     - { role: tig, tags: tig }
-    - { role: forego, tags: forego }
     - { role: nginx, tags: nginx }
     - { role: google-chrome, tags: google-chrome }
     - { role: vhosts, tags: vhosts }
