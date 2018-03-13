@@ -1,0 +1,10 @@
+---
+- name: install chrome
+  homebrew_cask:
+    name: google-chrome
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install chrome
+  command: yaourt -S google-chrome --noconfirm
+  when: ansible_os_family == 'Archlinux'

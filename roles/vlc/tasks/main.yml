@@ -1,0 +1,32 @@
+---
+- block:
+
+    - name: install codecs
+      pacman:
+        name: "{{ item }}"
+        update_cache: yes
+      with_items:
+        - a52dec
+        - faac
+        - faad2
+        - flac
+        - jasper
+        - lame
+        - libdca
+        - libdv
+        - libmad
+        - libmpeg2
+        - libtheora
+        - libvorbis
+        - libxv
+        - wavpack
+        - x264
+        - xvidcore
+        - gstreamer0.10-plugins
+
+    - name: install vlc
+      pacman:
+        name: vlc
+        update_cache: yes
+
+  when: ansible_os_family == 'Archlinux'

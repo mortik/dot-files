@@ -1,0 +1,15 @@
+user: ""
+git_user_name: ""
+git_user_email: ""
+github_user: ""
+github_token: ""
+ssh_key_name: ""
+ssh_key_pass: ""
+gpg_default_key_id: ""
+editor: "code"
+vhosts:
+  - { domain: "rails-app.dev", path: "{{ansible_env.HOME }}/dev/rails", port: 3000, type: rails }
+  - { domain: "phoenix-app.dev", path: "{{ansible_env.HOME }}/dev/phoenix", port: 4000, type: phoenix }
+  - { domain: "static.dev", path: "{{ansible_env.HOME }}/dev/static", type: static }
+vscode_projects:
+  - { name: ".dotfiles", path: "$home/.dotfiles" }

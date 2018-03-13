@@ -1,4 +1,17 @@
 ---
+- name: install git
+  homebrew:
+    name: git
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install git
+  pacman:
+    name: git
+    state: latest
+    update_cache: yes
+  when: ansible_os_family == 'Archlinux'
+
 - name: copy files
   copy:
     src: "{{ item }}"

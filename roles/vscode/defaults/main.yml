@@ -1,29 +1,47 @@
 ---
 vscode_extensions:
+  - DavidAnson.vscode-markdownlint
+  - HookyQR.beautify
   - PKief.material-icon-theme
   - PeterJausovec.vscode-docker
-  - esbenp.prettier-vscode
+  - WallabyJs.quokka-vscode
   - alefragnani.project-manager
   - bibhasdn.unique-lines
+  - castwide.solargraph
+  - codezombiech.gitignore
+  - cssho.vscode-svgviewer
   - dbaeumer.vscode-eslint
-  - donjayamanne.python
-  - AndrsDC.base16-themes
+  - eamodio.gitlens
+  - eg2.vscode-npm-script
+  - esbenp.prettier-vscode
+  - guosong.vscode-util
   - hollowtree.vue-snippets
-  - jcbuisson.vue
   - kumar-harsh.graphql-for-vscode
   - lukehoban.Go
   - mauve.terraform
   - minhthai.vscode-todo-parser
   - misogi.ruby-rubocop
+  - mjmcloug.vscode-elixir
   - mohsen1.prettify-json
+  - ms-python.python
+  - ms-vscode.azure-account
   - ms-vscode.sublime-keybindings
+  - msjsdiag.debugger-for-chrome
   - octref.vetur
+  - pgourlain.erlang
+  - pnp.polacode
   - rebornix.Ruby
   - richie5um2.vscode-sort-json
   - sianglim.slim
   - sleistner.vscode-fileutils
+  - splintah.theme-one-spacegrey
   - vayan.haml
+  - vncz.vscode-apielements
+  - waderyan.gitblame
+  - wholroyd.jinja
+  - wix.vscode-import-cost
   - wmaurer.change-case
+  - zhuangtongfa.Material-theme
 
 vscode_projects:
   - { name: ".dotfiles", path: "$home/.dotfiles" }

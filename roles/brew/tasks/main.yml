@@ -14,10 +14,3 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ brew_apps }}"
-
-- name: Start services
-  shell: "brew services restart {{ item }}"
-  become: True
-  become_method: sudo
-  when: brew_start_services == True
-  with_items: "{{ brew_services }}"

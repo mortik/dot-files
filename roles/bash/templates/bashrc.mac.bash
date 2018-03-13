@@ -32,6 +32,7 @@ export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=$PATH:/usr/local/go/bin
 export PATH=./bin:$PATH
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 
 # Set editor
 export EDITOR={{ editor }}
@@ -42,9 +43,6 @@ ssh-add -A 2> /dev/null
 
 # VM Setup
 export VM_PATH=~/Documents/Virtual-Machines.localized
-
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 # shellcheck source=/dev/null
 for config in $HOME/.bashrc.d/*.bash ; do

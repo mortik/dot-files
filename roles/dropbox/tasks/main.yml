@@ -1,0 +1,10 @@
+---
+- name: install dropbox
+  homebrew_cask:
+    name: dropbox
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install dropbox
+  command: yaourt -S dropbox --noconfirm
+  when: ansible_os_family == 'Archlinux'

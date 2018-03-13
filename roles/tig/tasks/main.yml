@@ -1,0 +1,13 @@
+---
+- name: install tig
+  homebrew:
+    name: tig
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install tig
+  pacman:
+    name: tig
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

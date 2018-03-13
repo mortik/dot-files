@@ -6,6 +6,7 @@
         "editor.selectionBackground": "#0F5897"
     },
     "workbench.startupEditor": "none",
+    "workbench.fontAliasing": "antialiased",
     "window.openFoldersInNewWindow": "on",
     "window.openFilesInNewWindow": "off",
     "window.newWindowDimensions": "inherit",
@@ -21,7 +22,6 @@
         "language": "vue",
         "autoFix": true
     }],
-    "vetur.validation.template": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.exclude": {
@@ -35,11 +35,36 @@
         "**/coverage/**": true,
         "**/.eslintcache": true
     },
-    "window.zoomLevel": 1,
-    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 0,
     "projectManager.openInNewWindowWhenClickingInStatusBar": false,
-    "projectManager.groupList": true,
     "projectManager.git.baseFolders": ["{{ ansible_env.HOME }}/dev"],
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Base16 Dark Ocean"
+    "[apiblueprint]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "docker.showExplorer": false,
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+    "editor.minimap.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.rulers": [
+        100
+    ],
+    "material-icon-theme.showUpdateMessage": false,
+    "go.inferGopath": true,
+    "gitlens.keymap": "alternate"
 }

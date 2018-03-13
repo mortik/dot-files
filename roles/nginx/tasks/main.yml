@@ -1,0 +1,13 @@
+---
+- name: install nginx
+  homebrew:
+    name: nginx
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install nginx
+  pacman:
+    name: nginx-mainline
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

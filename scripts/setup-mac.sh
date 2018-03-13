@@ -15,8 +15,10 @@ else
     brew update --all && brew upgrade && brew cleanup
 fi
 
+brew install ansible
+
 if [ ! -f vault.yml ]; then
-  cp vault.example.yml vault.yml
+  cp vault.example-mac.yml vault.yml
 fi
 
 echo

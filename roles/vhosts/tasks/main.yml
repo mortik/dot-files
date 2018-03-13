@@ -1,11 +1,6 @@
 ---
 - block:
 
-    - name: install nginx
-      homebrew: name=nginx state=present
-      notify:
-        - restart nginx
-
     - name: setup nginx config
       copy:
         src: "{{ item }}"
@@ -14,7 +9,7 @@
         - nginx.conf
         - proxy_params_http
       notify:
-        - restart nginx
+        - restart nginx homebrew
 
     - name: create templates
       template:
@@ -26,16 +21,42 @@
         port: "{{ item.port }}"
       with_items: "{{ vhosts }}"
       notify:
-        - restart nginx
-
-    - name: Add mappings to /etc/hosts
-      blockinfile:
-        path: /etc/hosts
-        block: |
-          127.0.0.1 {{ item.domain }}
-        marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.domain }}"
-      with_items: "{{ vhosts }}"
-      become: True
-      become_method: sudo
+        - restart nginx homebrew
 
   when: ansible_os_family == 'Darwin'
+
+- block:
+
+    - name: setup nginx config
+      copy:
+        src: "{{ item }}"
+        dest: "/etc/nginx/{{ item }}"
+      with_items:
+        - nginx.conf
+        - proxy_params_http
+      notify:
+        - restart nginx
+
+    - name: create templates
+      template:
+        src: "{{ item.type }}.j2"
+        dest: "/etc/nginx/servers/{{ item.domain }}"
+      vars:
+        domain: "{{ item.domain }}"
+        path: "{{ item.path }}"
+        port: "{{ item.port }}"
+      with_items: "{{ vhosts }}"
+      notify:
+        - restart nginx
+
+  when: ansible_os_family == 'Archlinux'
+
+- name: Add mappings to /etc/hosts
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      127.0.0.1 {{ item.domain }}
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.domain }}"
+  with_items: "{{ vhosts }}"
+  become: True
+  become_method: sudo

@@ -1,32 +1,63 @@
 ---
-- name: install bash
-  homebrew: name=bash state=present
-
-- name: setup bash_profile
-  copy:
-    src: .bash_profile
-    dest: "{{ ansible_env.HOME }}/.bash_profile"
-
-- name: setup bashrc
-  template:
-    src: ".bashrc"
-    dest: "{{ ansible_env.HOME }}/.bashrc"
-
 - name: create bashrc.d folder
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"
     state: directory
+
+- block:
+
+    - name: install bash
+      homebrew:
+        name: bash
+        state: latest
+
+    - name: setup bashrc
+      template:
+        src: "bashrc.mac.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc"
+
+    - name: setup bash_profile
+      copy:
+        src: bash_profile.mac.bash
+        dest: "{{ ansible_env.HOME }}/.bash_profile"
+
+    - name: setup bash configs
+      copy:
+        src: "{{ item }}"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
+      with_items:
+        - bash_completion.bash
+        - android.bash
+
+  when: ansible_os_family == 'Darwin'
+
+- block:
+
+    - name: install bash
+      pacman:
+        name: bash
+        state: latest
+        update_cache: yes
+
+    - name: setup bashrc
+      template:
+        src: "bashrc.arch.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc"
+
+    - name: setup bash configs
+      copy:
+        src: "{{ item }}"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
+      with_items:
+        - bashrc.arch.bash
+
+  when: ansible_os_family == 'Archlinux'
 
 - name: copy bashrc.d files
   copy:
     src: "{{ item }}"
     dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
   with_items:
-    - android.bash
     - ansible.bash
-    - bash_completion.bash
-    - gnupg.bash
-    - go.bash
     - prompt.bash
-    - rbenv.bash
     - travis.bash

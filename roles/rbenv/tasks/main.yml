@@ -1,0 +1,29 @@
+---
+- block:
+
+    - name: install rbenv
+      homebrew:
+        name: rbenv
+        state: latest
+
+    - name: setup bash config
+      copy:
+        src: rbenv.mac.bash
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.mac.bash"
+
+  when: ansible_os_family == 'Darwin'
+
+- block:
+
+    - name: install rbenv
+      command: yaourt -S rbenv --noconfirm
+
+    - name: install ruby-build
+      command: yaourt -S ruby-build --noconfirm
+
+    - name: setup bash config
+      copy:
+        src: rbenv.arch.bash
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.arch.bash"
+
+  when: ansible_os_family == 'Archlinux'

@@ -4,4 +4,4 @@ syntax on
 :imap ii <Esc>
 set backspace=indent,eol,start
 
-autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd Filetype gitcommit setlocal spell textwidth=80

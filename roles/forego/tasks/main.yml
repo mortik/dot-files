@@ -1,0 +1,13 @@
+---
+- name: install forego
+  homebrew:
+    name: forego
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install forego
+  pacman:
+    name: forego-git
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

@@ -1,4 +1,17 @@
 ---
+- name: install gnupg
+  homebrew:
+    name: gnupg
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install gnupg
+  pacman:
+    name: gnupg
+    state: latest
+    update_cache: yes
+  when: ansible_os_family == 'Archlinux'
+
 - name: setup gpg dir
   file:
     path: "{{ ansible_env.HOME }}/.gnupg"
@@ -8,3 +21,8 @@
   template:
     src: gpg.conf.j2
     dest: "{{ ansible_env.HOME }}/.gnupg/gpg.conf"
+
+- name: setup gnupg bash
+  copy:
+    src: gnupg.bash
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/gnupg.bash"

@@ -1,0 +1,51 @@
+---
+- name: full system upgrade
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: install dev tools
+  pacman:
+    name: base-devel
+    update_cache: yes
+
+- name: install yaourt
+  pacman:
+    name: yaourt
+    update_cache: yes
+
+- name: install pamac
+  command: yaourt -S pamac-aur --noconfirm
+
+- name: install tools
+  pacman:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - p7zip
+    - p7zip-plugins
+    - unrar
+    - tar
+    - rsync
+    - conky
+
+- name: install themes
+  command: yaourt -S paper-icon-theme-git materia-theme --noconfirm
+
+- name: set gtk-theme
+  command: gsettings set org.gnome.desktop.interface gtk-theme "Materia-dark"
+
+- name: set theme
+  command: gsettings set org.gnome.desktop.wm.preferences theme "Materia-dark"
+
+- name: set icons
+  command: gsettings set org.gnome.desktop.interface icon-theme "Paper"
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.user-theme name  "Materia-dark"
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme true

@@ -1,0 +1,10 @@
+---
+- name: install spotify
+  homebrew_cask:
+    name: spotify
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install spotify
+  command: yaourt -S spotify --noconfirm
+  when: ansible_os_family == 'Archlinux'
