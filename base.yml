@@ -36,3 +36,4 @@
     - { role: wkhtmltopdf, tags: wkhtmltopdf }
     - { role: postman, tags: postman }
     - { role: youtube-dl, tags: youtube-dl }
+    - { role: copyq, tags: copyq }

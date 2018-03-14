@@ -1,0 +1,4 @@
+---
+- name: install copyq
+  command: yaourt -S copyq --noconfirm
+  when: ansible_os_family == 'Archlinux'
