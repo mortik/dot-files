@@ -1,0 +1,15 @@
+---
+- name: install youtube-dl
+  homebrew:
+    name: youtube-dl
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install youtube-dl
+  pacman:
+    name: youtube-dl
+    update_cache: yes
+    state: present
+  become: yes
+  become_method: sudo
+  when: ansible_os_family == 'Archlinux'
