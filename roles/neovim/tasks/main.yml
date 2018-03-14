@@ -34,3 +34,12 @@
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
 
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- name: setup bash config
+  copy:
+    src: "neovim.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/neovim.bash"
