@@ -51,13 +51,13 @@
 - name: set dash-to-dock settings
   command: "gsettings get org.gnome.shell.extensions.dash-to-dock {{ item.key }} {{ item.value }}"
   with_items:
-    - { key: 'extend-height', value: false }
-    - { key: 'apply-custom-theme', value: false }
-    - { key: 'dash-max-icon-size', value: 48 }
-    - { key: 'background-opacity', value: 0.0 }
-    - { key: 'custom-theme-shrink', value: true }
-    - { key: 'icon-size-fixed', value: true }
-    - { key: 'custom-theme-running-dots', value: false }
+    - { key: 'extend-height', value: 'false' }
+    - { key: 'apply-custom-theme', value: 'false' }
+    - { key: 'dash-max-icon-size', value: '48' }
+    - { key: 'background-opacity', value: '0.0' }
+    - { key: 'custom-theme-shrink', value: 'true' }
+    - { key: 'icon-size-fixed', value: 'true' }
+    - { key: 'custom-theme-running-dots', value: 'false' }
 
 - name: set terminal settings
   command: "gsettings get org.gnome.Terminal.Legacy.Settings {{ item.key }} {{ item.value }}"

@@ -33,8 +33,15 @@
       become: yes
       become_method: sudo
 
+    - name: check if postgres data is present
+      stat:
+        path: /var/lib/postgres/data/postgresql.conf
+      register: postgres_data_present
+      changed_when: false
+
     - name: setup base db
       command: initdb -D '/var/lib/postgres/data'
+      when: postgres_data_present.stat.exists == False
       become: yes
       become_user: postgres
 
