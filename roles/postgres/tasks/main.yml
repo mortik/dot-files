@@ -38,6 +38,8 @@
         path: /var/lib/postgres/data/postgresql.conf
       register: postgres_data_present
       changed_when: false
+      become: yes
+      become_method: sudo
 
     - name: setup base db
       command: initdb -D '/var/lib/postgres/data'
