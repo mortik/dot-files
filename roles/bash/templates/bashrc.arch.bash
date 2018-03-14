@@ -2,8 +2,6 @@
 
 [[ $- != *i* ]] && return
 
-[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-
 export CDPATH={{ bash_cdpath }}
 
 # append to the history file, don't overwrite it
@@ -39,9 +37,6 @@ export PATH=./bin:$PATH
 
 # Set editor
 export EDITOR={{ editor }}
-
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 # ex - archive extractor
 # usage: ex <file>

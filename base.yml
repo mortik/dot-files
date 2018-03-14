@@ -15,6 +15,8 @@
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
     - { role: tig, tags: tig }
+    - { role: awscli, tags: awscli }
+    - { role: hub, tags: hub }
     - { role: nginx, tags: nginx }
     - { role: google-chrome, tags: google-chrome }
     - { role: vhosts, tags: vhosts }

@@ -14,7 +14,7 @@
     - name: setup bash configs
       copy:
         src: nvm.mac.bash
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.mac.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
 
   when: ansible_os_family == 'Darwin'
 
@@ -26,6 +26,6 @@
     - name: setup bash configs
       copy:
         src: nvm.arch.bash
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.arch.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
 
   when: ansible_os_family == 'Archlinux'

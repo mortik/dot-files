@@ -11,7 +11,16 @@
 
 - name: copy aliases
   copy:
-    src: "{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.bashrc.d/aliases/{{ item }}"
+    src: "{{ item }}.mac.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/aliases/{{ item }}.bash"
   with_items:
-    - main.bash
+    - main
+  when: ansible_os_family == 'Darwin'
+
+- name: copy aliases
+  copy:
+    src: "{{ item }}.arch.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/aliases/{{ item }}.bash"
+  with_items:
+    - main
+  when: ansible_os_family == 'Archlinux'

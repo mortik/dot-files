@@ -1,0 +1,15 @@
+---
+- name: install aws-cli
+  homebrew:
+    name: awscli
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install aws-cli
+  pacman:
+    name: aws-cli
+    update_cache: yes
+    state: latest
+  become: yes
+  become_method: sudo
+  when: ansible_os_family == 'Archlinux'

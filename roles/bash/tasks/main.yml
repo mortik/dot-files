@@ -21,13 +21,10 @@
         src: bash_profile.mac.bash
         dest: "{{ ansible_env.HOME }}/.bash_profile"
 
-    - name: setup bash configs
+    - name: setup bash completion
       copy:
-        src: "{{ item }}"
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/{{ item }}"
-      with_items:
-        - bash_completion.bash
-        - android.bash
+        src: "bash_completion.mac.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
 
   when: ansible_os_family == 'Darwin'
 
@@ -45,6 +42,11 @@
       template:
         src: "bashrc.arch.bash"
         dest: "{{ ansible_env.HOME }}/.bashrc"
+
+    - name: setup bash completion
+      copy:
+        src: "bash_completion.arch.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
 
   when: ansible_os_family == 'Archlinux'
 

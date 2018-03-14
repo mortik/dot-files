@@ -24,9 +24,7 @@ brew_apps:
   - hh
   - mas
   - heroku
-  - awscli
   - bash-completion
-  - hub
 cask_apps:
   - dash
   - 1password
