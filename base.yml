@@ -34,3 +34,4 @@
     - { role: shellcheck, tags: shellcheck }
     - { role: go, tags: go }
     - { role: wkhtmltopdf, tags: wkhtmltopdf }
+    - { role: postman, tags: postman }

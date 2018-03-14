@@ -1,0 +1,10 @@
+---
+- name: install postman
+  homebrew_cask:
+    name: postman
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install postman
+  command: yaourt -S postman-bin --noconfirm
+  when: ansible_os_family == 'Archlinux'
