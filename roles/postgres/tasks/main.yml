@@ -5,11 +5,45 @@
     state: present
   when: ansible_os_family == 'Darwin'
 
-- name: install postgres
-  pacman:
-    name: postgresql
-    update_cache: yes
-    state: present
-  become: yes
-  become_method: sudo
+- block:
+
+    - name: install postgres
+      pacman:
+        name: postgresql
+        update_cache: yes
+        state: present
+      become: yes
+      become_method: sudo
+
+    - name: create postgres dir
+      file:
+        path: "/var/lib/postgres"
+        state: directory
+        owner: postgres
+        group: postgres
+      become: yes
+      become_method: sudo
+
+    - name: create postgres data dirs
+      file:
+        path: "/var/lib/postgres/data"
+        state: directory
+        owner: postgres
+        group: postgres
+      become: yes
+      become_method: sudo
+
+    - name: setup base db
+      command: initdb -D '/var/lib/postgres/data'
+      become: yes
+      become_user: postgres
+
+    - name: start and enable postgres
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes
+      become: yes
+      become_method: sudo
+
   when: ansible_os_family == 'Archlinux'
