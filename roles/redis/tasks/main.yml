@@ -1,0 +1,13 @@
+---
+- name: install redis
+  homebrew:
+    name: redis
+    state: present
+  when: ansible_os_family == 'Darwin'
+
+- name: install redis
+  pacman:
+    name: redis
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Archlinux'

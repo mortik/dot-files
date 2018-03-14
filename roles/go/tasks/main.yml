@@ -1,0 +1,23 @@
+---
+- name: install go
+  homebrew:
+    name: go
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install go
+  pacman:
+    name: go
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- name: setup bash config
+  copy:
+    src: "go.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/go.bash"

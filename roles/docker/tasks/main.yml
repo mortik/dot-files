@@ -1,0 +1,13 @@
+---
+- name: install docker
+  homebrew:
+    name: docker
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install docker
+  pacman:
+    name: docker
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

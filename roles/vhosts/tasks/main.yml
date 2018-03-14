@@ -34,6 +34,8 @@
       with_items:
         - nginx.conf
         - proxy_params_http
+      become: yes
+      become_method: sudo
       notify:
         - restart nginx
 
@@ -46,6 +48,8 @@
         path: "{{ item.path }}"
         port: "{{ item.port }}"
       with_items: "{{ vhosts }}"
+      become: yes
+      become_method: sudo
       notify:
         - restart nginx
 

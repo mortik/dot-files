@@ -12,6 +12,11 @@
         repo: https://github.com/michaeldfallen/git-radar
         dest: "{{ ansible_env.HOME }}/.git-radar"
 
+    - name: make sure bashrc.d folder is present
+      file:
+        path: "{{ ansible_env.HOME }}/.bashrc.d"
+        state: directory
+
     - name: setup for bash
       copy:
         src: git-radar.bash

@@ -1,0 +1,13 @@
+---
+- name: install shellcheck
+  homebrew:
+    name: shellcheck
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install shellcheck
+  pacman:
+    name: shellcheck
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

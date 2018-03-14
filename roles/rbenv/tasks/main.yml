@@ -1,4 +1,10 @@
 ---
+
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
 - block:
 
     - name: install rbenv

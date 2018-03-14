@@ -52,4 +52,19 @@
   command: gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
 - name: set user theme
-  command: gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme true
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 48
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.0
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
+
+- name: set user theme
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots false

@@ -24,6 +24,11 @@
     src: gpg.conf.j2
     dest: "{{ ansible_env.HOME }}/.gnupg/gpg.conf"
 
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
 - name: setup gnupg bash
   copy:
     src: gnupg.bash

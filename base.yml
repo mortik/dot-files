@@ -23,10 +23,12 @@
     - { role: spotify, tags: spotify }
     - { role: vlc, tags: vlc }
     - { role: nvm, tags: nvm }
-    # - { role: postgres, tags: postgres }
-    # - { role: redis, tags: redis }
-    # - { role: terraform, tags: terraform }
-    # - { role: docker, tags: docker }
-    # - { role: go, tags: go }
-    # - { role: shellcheck, tags: shellcheck }
-    # - { role: wkhtmltopdf, tags: wkhtmltopdf }
+    - { role: zoom, tags: zoom }
+    - { role: neovim, tags: neovim }
+    - { role: postgres, tags: postgres }
+    - { role: redis, tags: redis }
+    - { role: terraform, tags: terraform }
+    - { role: docker, tags: docker }
+    - { role: shellcheck, tags: shellcheck }
+    - { role: go, tags: go }
+    - { role: wkhtmltopdf, tags: wkhtmltopdf }

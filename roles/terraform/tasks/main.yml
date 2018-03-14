@@ -1,0 +1,13 @@
+---
+- name: install terraform
+  homebrew:
+    name: terraform
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install terraform
+  pacman:
+    name: terraform
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'Archlinux'

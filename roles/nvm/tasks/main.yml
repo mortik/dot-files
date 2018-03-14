@@ -1,22 +1,31 @@
 ---
-- name: install nvm
-  homebrew:
-    name: nvm
-    state: latest
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- block:
+
+    - name: install nvm
+      homebrew:
+        name: nvm
+        state: latest
+
+    - name: setup bash configs
+      copy:
+        src: nvm.mac.bash
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.mac.bash"
+
   when: ansible_os_family == 'Darwin'
 
-- name: setup bash configs
-  copy:
-    src: nvm.mac.bash
-    dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.mac.bash"
-  when: ansible_os_family == 'Darwin'
+- block:
 
-- name: install nvm
-  command: yaourt -S nvm --noconfirm
-  when: ansible_os_family == 'Archlinux'
+    - name: install nvm
+      command: yaourt -S nvm --noconfirm
 
-- name: setup bash configs
-  copy:
-    src: nvm.arch.bash
-    dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.arch.bash"
+    - name: setup bash configs
+      copy:
+        src: nvm.arch.bash
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.arch.bash"
+
   when: ansible_os_family == 'Archlinux'

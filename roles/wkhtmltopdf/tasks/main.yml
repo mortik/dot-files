@@ -1,0 +1,13 @@
+---
+- name: install wkhtmltopdf
+  homebrew_cask:
+    name: wkhtmltopdf
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install wkhtmltopdf
+  pacman:
+    name: wkhtmltopdf
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Archlinux'

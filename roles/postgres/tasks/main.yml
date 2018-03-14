@@ -1,0 +1,13 @@
+---
+- name: install postgres
+  homebrew:
+    name: postgres
+    state: present
+  when: ansible_os_family == 'Darwin'
+
+- name: install postgres
+  pacman:
+    name: postgresql
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Archlinux'

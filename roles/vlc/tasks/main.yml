@@ -34,3 +34,9 @@
       become_method: sudo
 
   when: ansible_os_family == 'Archlinux'
+
+- name: install vlc
+  homebrew_cask:
+    name: vlc
+    state: latest
+  when: ansible_os_family == 'Darwin'

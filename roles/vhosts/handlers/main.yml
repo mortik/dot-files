@@ -1,8 +1,10 @@
 ---
 - name: restart nginx homebrew
   command: brew services restart nginx
-  become: True
+  become: yes
   become_method: sudo
 
 - name: restart nginx
   command: systemctl restart nginx
+  become: yes
+  become_method: sudo

@@ -1,4 +1,9 @@
 ---
+- name: make sure bashrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
 - name: create bashrc.d/aliases folder
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d/aliases"
