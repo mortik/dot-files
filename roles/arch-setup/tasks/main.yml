@@ -62,4 +62,4 @@
 - name: set terminal settings
   command: "gsettings set org.gnome.Terminal.Legacy.Settings {{ item.key }} {{ item.value }}"
   with_items:
-    - { key: 'default-show-menubar', value: false }
+    - { key: 'default-show-menubar', value: 'false' }
