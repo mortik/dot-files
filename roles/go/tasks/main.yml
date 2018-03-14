@@ -10,6 +10,8 @@
     name: go
     update_cache: yes
     state: latest
+  become: yes
+  become_method: sudo
   when: ansible_os_family == 'Archlinux'
 
 - name: make sure bashrc.d folder is present

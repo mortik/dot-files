@@ -10,4 +10,6 @@
     name: redis
     update_cache: yes
     state: present
+  become: yes
+  become_method: sudo
   when: ansible_os_family == 'Archlinux'
