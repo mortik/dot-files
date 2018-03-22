@@ -8,3 +8,7 @@
 - name: install dropbox
   command: yaourt -S dropbox --noconfirm
   when: ansible_os_family == 'Archlinux'
+
+- name: install dropbox files integration
+  command: yaourt -S nautilus-dropbox --noconfirm
+  when: ansible_os_family == 'Archlinux'

@@ -63,3 +63,6 @@
   command: "gsettings set org.gnome.Terminal.Legacy.Settings {{ item.key }} {{ item.value }}"
   with_items:
     - { key: 'default-show-menubar', value: 'false' }
+
+- name: update yaourt
+  command: yaourt -Syun --noconfirm
