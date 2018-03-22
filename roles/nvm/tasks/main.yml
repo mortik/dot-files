@@ -28,4 +28,12 @@
         src: nvm.arch.bash
         dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
 
+    - name: install yarn
+      pacman:
+        name: yarn
+        state: latest
+        update_cache: yes
+      become: yes
+      become_method: sudo
+
   when: ansible_os_family == 'Archlinux'
