@@ -1,0 +1,18 @@
+---
+- block:
+
+    - name: add hh repo
+      apt_repository:
+        repo: ppa:ultradvorka/ppa
+        state: present
+        update_cache: yes
+
+    - name: install hh
+      apt:
+        name: hh
+        update_cache: yes
+        state: latest
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

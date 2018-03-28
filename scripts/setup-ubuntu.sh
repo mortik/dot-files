@@ -4,10 +4,10 @@ echo "Starting Setup..."
 echo
 
 # update
-sudo apt-get update && sudo apt-get upgrade
+sudo apt update && sudo apt -yq upgrade
 
 # install ansible
-sudo apt-get install ansible
+sudo apt -yq install ansible
 
 if [ ! -f vault.yml ]; then
   cp vault.example-linux.yml vault.yml

@@ -16,6 +16,7 @@
     - { role: vscode, tags: vscode }
     - { role: neovim, tags: neovim }
     - { role: tig, tags: tig }
+    - { role: hh, tags: hh }
     - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
     - { role: google-chrome, tags: google-chrome }

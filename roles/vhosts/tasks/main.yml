@@ -3,10 +3,16 @@
 
     - name: setup nginx config
       copy:
+        src: nginx.mac.conf
+        dest: /usr/local/etc/nginx/nginx.mac.conf
+      notify:
+        - restart nginx homebrew
+
+    - name: setup nginx config
+      copy:
         src: "{{ item }}"
         dest: "/usr/local/etc/nginx/{{ item }}"
       with_items:
-        - nginx.conf
         - proxy_params_http
       notify:
         - restart nginx homebrew
@@ -29,10 +35,18 @@
 
     - name: setup nginx config
       copy:
+        src: nginx.linux.conf
+        dest: /etc/nginx/nginx.conf
+      become: yes
+      become_method: sudo
+      notify:
+        - restart nginx systemctl
+
+    - name: setup modules
+      copy:
         src: "{{ item }}"
         dest: "/etc/nginx/{{ item }}"
       with_items:
-        - nginx.conf
         - proxy_params_http
       become: yes
       become_method: sudo
@@ -59,10 +73,18 @@
 
     - name: setup nginx config
       copy:
+        src: nginx.linux.conf
+        dest: /etc/nginx/nginx.conf
+      become: yes
+      become_method: sudo
+      notify:
+        - restart nginx
+
+    - name: setup modules
+      copy:
         src: "{{ item }}"
         dest: "/etc/nginx/{{ item }}"
       with_items:
-        - nginx.conf
         - proxy_params_http
       become: yes
       become_method: sudo

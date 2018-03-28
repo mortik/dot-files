@@ -56,7 +56,7 @@
 
     - name: add icon set ppa
       apt_repository:
-        repo: 'ppa:snwh/pulp'
+        repo: ppa:snwh/pulp
         state: present
         update_cache: yes
 
@@ -68,22 +68,32 @@
 
     - name: install gnome tools
       apt:
-        name: gnome-tweak-tool
+        name: "{{ item }}"
         state: latest
         update_cache: yes
+      with_items:
+        - gnome-tweak-tool
+        - gnome-shell-extension-dashtodock
+        - gnome-shell-extension-mediaplayer
+        - gnome-shell-extensions
+
+    - name: set extensions
+      command: gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
 
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu'
 
-- name: set gtk-theme
-  command: gsettings set org.gnome.desktop.interface gtk-theme "Materia-dark-compact"
+- name: set icons
+  command: "gsettings set org.gnome.desktop.interface {{ item.key }} {{ item.value }}"
+  with_items:
+    - { key: 'gtk-theme', value: 'Materia-dark-compact' }
+    - { key: 'icon-theme', value: 'Paper' }
+    - { key: 'clock-show-date', value: 'true' }
+    - { key: 'show-battery-percentage', value: 'true' }
 
 - name: set theme
-  command: gsettings set org.gnome.desktop.wm.preferences theme "Materia-dark-compact"
-
-- name: set icons
-  command: gsettings set org.gnome.desktop.interface icon-theme "Paper"
+  command: gsettings set org.gnome.shell.extensions.user-theme name "Materia-dark-compact"
 
 - name: set dash-to-dock settings
   command: "gsettings set org.gnome.shell.extensions.dash-to-dock {{ item.key }} {{ item.value }}"
@@ -102,7 +112,39 @@
   with_items:
     - { key: 'default-show-menubar', value: 'false' }
     - { key: 'new-terminal-mode', value: 'tab' }
-    - { key: 'new-terminal-mode', value: 'tab' }
 
 - name: set favorites
   command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+
+- name: backup login
+  copy:
+    src: "/usr/share/gnome-shell/gnome-shell-theme.gresource"
+    dest: "/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"
+    remote_src: yes
+  become: yes
+  become_method: sudo
+
+- name: backup login styles
+  copy:
+    src: "/usr/share/gnome-shell/theme/ubuntu.css"
+    dest: "/usr/share/gnome-shell/theme/ubuntu.css.backup"
+    remote_src: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
+
+- name: install login theme
+  command: glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+  args:
+    chdir: /usr/share/themes/Materia-dark-compact/gnome-shell
+  become: yes
+  become_method: sudo
+
+- name: install login styles
+  copy:
+    src: "/usr/share/themes/Materia-dark-compact/gnome-shell/gnome-shell.css"
+    dest: "/usr/share/gnome-shell/theme/ubuntu.css"
+    remote_src: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
