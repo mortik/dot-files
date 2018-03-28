@@ -1,0 +1,108 @@
+---
+- block:
+
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
+      become: yes
+      become_method: sudo
+
+    - name: install dev tools
+      pacman:
+        name: base-devel
+        update_cache: yes
+      become: yes
+      become_method: sudo
+
+    - name: install yaourt
+      pacman:
+        name: yaourt
+        update_cache: yes
+      become: yes
+      become_method: sudo
+
+    - name: install tools
+      pacman:
+        name: "{{ item }}"
+        update_cache: yes
+      with_items:
+        - p7zip
+        - unrar
+        - tar
+        - rsync
+        - conky
+      become: yes
+      become_method: sudo
+
+    - name: install themes
+      command: yaourt -S paper-icon-theme-git materia-theme --noconfirm
+
+    - name: update yaourt
+      command: yaourt -Syun --noconfirm
+
+  when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: download theme
+      unarchive:
+        src: https://github.com/nana-4/materia-theme/archive/master.tar.gz
+        dest: /tmp
+        remote_src: yes
+
+    - name: install theme
+      command: /tmp/materia-theme-master/install.sh
+
+    - name: add icon set ppa
+      apt_repository:
+        repo: 'ppa:snwh/pulp'
+        state: present
+        update_cache: yes
+
+    - name: install icon set
+      apt:
+        name: paper-icon-theme
+        state: latest
+        update_cache: yes
+
+    - name: install gnome tools
+      apt:
+        name: gnome-tweak-tool
+        state: latest
+        update_cache: yes
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
+
+- name: set gtk-theme
+  command: gsettings set org.gnome.desktop.interface gtk-theme "Materia-dark-compact"
+
+- name: set theme
+  command: gsettings set org.gnome.desktop.wm.preferences theme "Materia-dark-compact"
+
+- name: set icons
+  command: gsettings set org.gnome.desktop.interface icon-theme "Paper"
+
+- name: set dash-to-dock settings
+  command: "gsettings set org.gnome.shell.extensions.dash-to-dock {{ item.key }} {{ item.value }}"
+  with_items:
+    - { key: 'extend-height', value: 'false' }
+    - { key: 'apply-custom-theme', value: 'false' }
+    - { key: 'dash-max-icon-size', value: '48' }
+    - { key: 'background-opacity', value: '0.0' }
+    - { key: 'transparency-mode', value: 'FIXED' }
+    - { key: 'custom-theme-shrink', value: 'true' }
+    - { key: 'icon-size-fixed', value: 'true' }
+    - { key: 'custom-theme-running-dots', value: 'false' }
+
+- name: set terminal settings
+  command: "gsettings set org.gnome.Terminal.Legacy.Settings {{ item.key }} {{ item.value }}"
+  with_items:
+    - { key: 'default-show-menubar', value: 'false' }
+    - { key: 'new-terminal-mode', value: 'tab' }
+    - { key: 'new-terminal-mode', value: 'tab' }
+
+- name: set favorites
+  command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"

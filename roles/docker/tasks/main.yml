@@ -13,3 +13,12 @@
   become: yes
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
+
+- name: install docker
+  apt:
+    name: docker
+    update_cache: yes
+    state: latest
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

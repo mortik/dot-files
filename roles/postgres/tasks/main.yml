@@ -56,3 +56,29 @@
       become_method: sudo
 
   when: ansible_os_family == 'Archlinux'
+
+
+- block:
+
+    - name: install postgres
+      apt:
+        pkg: "postgresql"
+        state: present
+
+    - name: install additional packages
+      apt:
+        pkg: "{{ item }}"
+        state: installed
+        update-cache: yes
+      with_items:
+        - postgresql-contrib
+        - python-psycopg2
+
+    - name: start postgres
+      service:
+        name: postgresql
+        state: started
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

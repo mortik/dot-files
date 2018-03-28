@@ -8,3 +8,9 @@
 - name: install spotify
   command: yaourt -S spotify --noconfirm
   when: ansible_os_family == 'Archlinux'
+
+- name: install spotify
+  command: snap install spotify
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

@@ -1,0 +1,38 @@
+---
+- name: install elixir
+  homebrew:
+    name: elixir
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install elixir
+  pacman:
+    name: elixir
+    update_cache: yes
+    state: latest
+  become: yes
+  become_method: sudo
+  when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: add repo
+      apt:
+        deb: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+        state: present
+
+    - name: install erlang
+      apt:
+        name: erlang
+        update_cache: yes
+        state: latest
+
+    - name: install elixir
+      apt:
+        name: elixir
+        update_cache: yes
+        state: latest
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

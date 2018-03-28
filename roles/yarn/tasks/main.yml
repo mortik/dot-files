@@ -1,0 +1,37 @@
+---
+- name: install yarn
+  homebrew:
+    name: yarn
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install yarn
+  pacman:
+    name: yarn
+    state: latest
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: add yarn apt key
+      apt_key:
+        url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        state: present
+
+    - name: copy sourceslist
+      copy:
+        src: yarnsources.list
+        dest: /etc/apt/sources.list.d/yarnsources.list
+
+    - name: install yarn
+      apt:
+        name: yarn
+        state: present
+        update-cache: yes
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

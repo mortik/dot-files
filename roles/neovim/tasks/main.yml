@@ -34,6 +34,15 @@
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
 
+- name: install neovim
+  apt:
+    name: neovim
+    state: latest
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
+
 - name: make sure bashrc.d folder is present
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"

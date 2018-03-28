@@ -28,27 +28,35 @@
 
   when: ansible_os_family == 'Darwin'
 
-- block:
-
-    - name: install bash
-      pacman:
-        name: bash
-        state: latest
-        update_cache: yes
-      become: yes
-      become_method: sudo
-
-    - name: setup bashrc
-      template:
-        src: "bashrc.arch.bash"
-        dest: "{{ ansible_env.HOME }}/.bashrc"
-
-    - name: setup bash completion
-      copy:
-        src: "bash_completion.arch.bash"
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
-
+- name: install bash
+  pacman:
+    name: bash
+    state: latest
+    update_cache: yes
+  become: yes
+  become_method: sudo
   when: ansible_os_family == 'Archlinux'
+
+- name: install bash
+  apt:
+    name: bash
+    state: latest
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
+
+- name: setup bashrc
+  template:
+    src: "bashrc.linux.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+  when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'
+
+- name: setup bash completion
+  copy:
+    src: "bash_completion.linux.bash"
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
+  when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'
 
 - name: copy bashrc.d files
   copy:

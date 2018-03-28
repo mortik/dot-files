@@ -13,3 +13,27 @@
   become: yes
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: add redis ppa
+      apt_repository:
+        repo: 'ppa:chris-lea/redis-server'
+        state: present
+        update_cache: yes
+      tags: redis
+
+    - name: install redis
+      apt:
+        pkg: redis-server
+        state: present
+      tags: redis
+
+    - name: start redis
+      service:
+        name: redis-server
+        state: started
+        enabled: yes
+      tags: redis
+
+  when: ansible_distribution == 'Ubuntu'

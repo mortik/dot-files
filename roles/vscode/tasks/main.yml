@@ -27,6 +27,16 @@
 
     - name: install visual-studio-code
       command: yaourt -S visual-studio-code-bin --noconfirm
+      when: ansible_os_family == 'Archlinux'
+
+    - name: install visual-studio-code
+      apt:
+        deb: https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable
+        state: present
+        update_cache: yes
+      become: yes
+      become_method: sudo
+      when: ansible_distribution == 'Ubuntu'
 
     - name: setup config dir
       file:
@@ -41,7 +51,7 @@
         - settings.json
         - projects.json
 
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'
 
 - name: install extensions
   command: "code --install-extension {{ item }}"

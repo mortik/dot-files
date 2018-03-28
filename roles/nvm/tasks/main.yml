@@ -18,22 +18,25 @@
 
   when: ansible_os_family == 'Darwin'
 
+- name: install nvm
+  command: yaourt -S nvm --noconfirm
+  when: ansible_os_family == 'Archlinux'
+
 - block:
 
+    - name: download install.sh
+      get_url:
+        url: https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh
+        dest: /tmp/nvm-install.sh
+        mode: 0755
+
     - name: install nvm
-      command: yaourt -S nvm --noconfirm
+      command: /tmp/nvm-install.sh
 
-    - name: setup bash configs
-      copy:
-        src: nvm.arch.bash
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
+  when: ansible_distribution == 'Ubuntu'
 
-    - name: install yarn
-      pacman:
-        name: yarn
-        state: latest
-        update_cache: yes
-      become: yes
-      become_method: sudo
-
-  when: ansible_os_family == 'Archlinux'
+- name: setup bash configs
+  copy:
+    src: nvm.linux.bash
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
+  when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'

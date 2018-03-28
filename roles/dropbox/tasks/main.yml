@@ -5,10 +5,21 @@
     state: latest
   when: ansible_os_family == 'Darwin'
 
-- name: install dropbox
-  command: yaourt -S dropbox --noconfirm
+- block:
+
+    - name: install dropbox
+      command: yaourt -S dropbox --noconfirm
+
+    - name: install dropbox files integration
+      command: yaourt -S nautilus-dropbox --noconfirm
+
   when: ansible_os_family == 'Archlinux'
 
-- name: install dropbox files integration
-  command: yaourt -S nautilus-dropbox --noconfirm
-  when: ansible_os_family == 'Archlinux'
+- name: install dropbox
+  apt:
+    name: nautilus-dropbox
+    state: latest
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

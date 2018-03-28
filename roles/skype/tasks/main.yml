@@ -1,17 +1,17 @@
 ---
-- name: install zoom
+- name: install skype
   homebrew_cask:
-    name: zoom
+    name: skype
     state: latest
   when: ansible_os_family == 'Darwin'
 
-- name: install zoom
-  command: yaourt -S zoom --noconfirm
+- name: install skype
+  command: yaourt -S skypeforlinux-stable-bin --noconfirm
   when: ansible_os_family == 'Archlinux'
 
 - name: install skype
   apt:
-    deb: https://zoom.us/client/latest/zoom_amd64.deb
+    deb: https://repo.skype.com/latest/skypeforlinux-64.deb
     state: present
     update_cache: yes
   become: yes

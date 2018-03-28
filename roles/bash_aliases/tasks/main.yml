@@ -19,8 +19,8 @@
 
 - name: copy aliases
   copy:
-    src: "{{ item }}.arch.bash"
+    src: "{{ item }}.linux.bash"
     dest: "{{ ansible_env.HOME }}/.bashrc.d/aliases/{{ item }}.bash"
   with_items:
     - main
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'

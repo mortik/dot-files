@@ -9,7 +9,16 @@
   pacman:
     name: wkhtmltopdf
     update_cache: yes
-    state: present
+    state: latest
   become: yes
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
+
+- name: install wkhtmltopdf
+  apt:
+    name: wkhtmltopdf
+    update_cache: yes
+    state: latest
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

@@ -37,7 +37,7 @@
       become: yes
       become_method: sudo
       notify:
-        - restart nginx
+        - restart nginx systemctl
 
     - name: create templates
       template:
@@ -51,9 +51,53 @@
       become: yes
       become_method: sudo
       notify:
-        - restart nginx
+        - restart nginx systemctl
 
   when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: setup nginx config
+      copy:
+        src: "{{ item }}"
+        dest: "/etc/nginx/{{ item }}"
+      with_items:
+        - nginx.conf
+        - proxy_params_http
+      become: yes
+      become_method: sudo
+      notify:
+        - restart nginx
+
+    - name: create templates
+      template:
+        src: "{{ item.type }}.j2"
+        dest: "/etc/nginx/sites-available/{{ item.domain }}"
+      vars:
+        domain: "{{ item.domain }}"
+        path: "{{ item.path }}"
+        port: "{{ item.port }}"
+      with_items: "{{ vhosts }}"
+      become: yes
+      become_method: sudo
+      notify:
+        - restart nginx
+
+    - name: symlink site configuration
+      file:
+        src: "/etc/nginx/sites-available/{{ item.domain }}"
+        dest: "/etc/nginx/sites-enabled/{{ item.domain }}"
+        owner: root
+        group: root
+        mode: 0644
+        state: link
+      with_items: "{{ vhosts }}"
+      become: yes
+      become_method: sudo
+      notify:
+        - restart nginx
+
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Add mappings to /etc/hosts
   blockinfile:

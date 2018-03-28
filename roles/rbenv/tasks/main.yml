@@ -15,7 +15,7 @@
     - name: setup bash config
       copy:
         src: rbenv.mac.bash
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.mac.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.bash"
 
   when: ansible_os_family == 'Darwin'
 
@@ -27,9 +27,33 @@
     - name: install ruby-build
       command: yaourt -S ruby-build --noconfirm
 
-    - name: setup bash config
-      copy:
-        src: rbenv.arch.bash
-        dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.arch.bash"
-
   when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: install rbenv
+      git:
+        repo: https://github.com/rbenv/rbenv
+        dest: "{{ ansible_env.HOME }}/.rbenv"
+        update: true
+        force: true
+
+    - name: create plugin dir
+      file:
+        path: "{{ ansible_env.HOME }}/.rbenv/plugins"
+        state: directory
+
+    - name: install ruby-build
+      git:
+        repo: https://github.com/sstephenson/ruby-build
+        dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
+        update: true
+        force: true
+
+  when: ansible_distribution == 'Ubuntu'
+
+- name: setup bash config
+  copy:
+    src: rbenv.linux.bash
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.bash"
+  when: ansible_distribution == 'Ubuntu' or ansible_os_family == 'Archlinux'

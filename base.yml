@@ -2,7 +2,7 @@
 - hosts: local
   connection: local
   roles:
-    - { role: arch-setup, tags: setup, when: "ansible_os_family == 'Archlinux'" }
+    - { role: linux-setup, tags: setup, when: "ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'" }
     - { role: git, tags: git }
     - { role: ssh, tags: ssh }
     - { role: brew, tags: brew, when: "ansible_os_family == 'Darwin'" }
@@ -14,26 +14,27 @@
     - { role: gpg, tags: gpg }
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
+    - { role: neovim, tags: neovim }
     - { role: tig, tags: tig }
+    - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
-    - { role: hub, tags: hub }
-    - { role: nginx, tags: nginx }
     - { role: google-chrome, tags: google-chrome }
-    - { role: vhosts, tags: vhosts }
-    - { role: rbenv, tags: rbenv }
     - { role: dropbox, tags: dropbox }
+    - { role: zoom, tags: zoom }
+    - { role: skype, tags: skype }
     - { role: spotify, tags: spotify }
     - { role: vlc, tags: vlc }
+    - { role: rbenv, tags: rbenv }
     - { role: nvm, tags: nvm }
-    - { role: zoom, tags: zoom }
-    - { role: neovim, tags: neovim }
+    - { role: yarn, tags: yarn }
+    - { role: go, tags: go }
+    - { role: elixir, tags: elixir }
+    - { role: nginx, tags: nginx }
     - { role: postgres, tags: postgres }
-    - { role: redis, tags: redis }
+    # - { role: redis, tags: redis }
+    - { role: wkhtmltopdf, tags: wkhtmltopdf }
     - { role: terraform, tags: terraform }
     - { role: docker, tags: docker }
     - { role: shellcheck, tags: shellcheck }
-    - { role: go, tags: go }
-    - { role: wkhtmltopdf, tags: wkhtmltopdf }
-    - { role: postman, tags: postman }
     - { role: youtube-dl, tags: youtube-dl }
-    - { role: copyq, tags: copyq }
+    - { role: vhosts, tags: vhosts }

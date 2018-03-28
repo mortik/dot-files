@@ -13,3 +13,12 @@
   become: yes
   become_method: sudo
   when: ansible_os_family == 'Archlinux'
+
+- name: install shellcheck
+  apt:
+    name: shellcheck
+    update_cache: yes
+    state: latest
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

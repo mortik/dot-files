@@ -1,0 +1,32 @@
+---
+- name: install insomnia
+  homebrew_cask:
+    name: insomnia
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install insomnia
+  command: yaourt -S insomnia --noconfirm
+  when: ansible_os_family == 'Archlinux'
+
+- block:
+
+    - name: add insomnia key
+      apt_key:
+        url: https://insomnia.rest/keys/debian-public.key.asc
+        state: present
+
+    - name: copy sourceslist
+      copy:
+        src: insomniasources.list
+        dest: /etc/apt/sources.list.d/insomniasources.list
+
+    - name: install insomnia
+      apt:
+        name: insomnia
+        state: latest
+        update_cache: yes
+
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'

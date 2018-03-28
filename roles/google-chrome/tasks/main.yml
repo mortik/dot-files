@@ -8,3 +8,12 @@
 - name: install chrome
   command: yaourt -S google-chrome --noconfirm
   when: ansible_os_family == 'Archlinux'
+
+- name: install chrome
+  apt:
+    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    state: present
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
