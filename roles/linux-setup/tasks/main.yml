@@ -78,7 +78,10 @@
         - gnome-shell-extensions
 
     - name: set extensions
-      command: gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
+      command: gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'mediaplayer@patapon.info', 'drive-info@gnome-shell-extensions.gcampax.github.com']"
+
+    - name: restart gnome-shell
+      command: killall -3 gnome-shell
 
   become: yes
   become_method: sudo
@@ -94,6 +97,9 @@
 
 - name: set theme
   command: gsettings set org.gnome.shell.extensions.user-theme name "Materia-dark-compact"
+
+- name: hide desktop icons
+  command: gsettings set org.gnome.desktop.background show-desktop-icons false
 
 - name: set dash-to-dock settings
   command: "gsettings set org.gnome.shell.extensions.dash-to-dock {{ item.key }} {{ item.value }}"
