@@ -12,8 +12,6 @@ WHITE="\[\033[0;37m\]"
 LIGHT_GRAY="\[\033[0;38m\]"
 COLOR_NONE="\[\e[0m\]"
 
-export GIT_RADAR_FETCH_TIME=30
-
 function set_prompt_symbol () {
   if test "$1" -eq 0 ; then
       PROMPT_SYMBOL="${CYAN}❯${COLOR_NONE}"
