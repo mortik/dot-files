@@ -39,7 +39,7 @@
       command: yaourt -S paper-icon-theme-git materia-theme --noconfirm
 
     - name: update yaourt
-      command: yaourt -Syun --noconfirm
+      command: yaourt -Syua --noconfirm
 
   when: ansible_os_family == 'Archlinux'
 
@@ -83,11 +83,34 @@
     - name: restart gnome-shell
       command: killall -3 gnome-shell
 
+    - name: backup login
+      copy:
+        src: "/usr/share/gnome-shell/gnome-shell-theme.gresource"
+        dest: "/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"
+        remote_src: yes
+
+    - name: backup login styles
+      copy:
+        src: "/usr/share/gnome-shell/theme/ubuntu.css"
+        dest: "/usr/share/gnome-shell/theme/ubuntu.css.backup"
+        remote_src: yes
+
+    - name: install login theme
+      command: glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+      args:
+        chdir: /usr/share/themes/Materia-dark-compact/gnome-shell
+
+    - name: install login styles
+      copy:
+        src: "/usr/share/themes/Materia-dark-compact/gnome-shell/gnome-shell.css"
+        dest: "/usr/share/gnome-shell/theme/ubuntu.css"
+        remote_src: yes
+
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu'
 
-- name: set icons
+- name: set interface settings
   command: "gsettings set org.gnome.desktop.interface {{ item.key }} {{ item.value }}"
   with_items:
     - { key: 'gtk-theme', value: 'Materia-dark-compact' }
@@ -120,37 +143,4 @@
     - { key: 'new-terminal-mode', value: 'tab' }
 
 - name: set favorites
-  command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
-
-- name: backup login
-  copy:
-    src: "/usr/share/gnome-shell/gnome-shell-theme.gresource"
-    dest: "/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"
-    remote_src: yes
-  become: yes
-  become_method: sudo
-
-- name: backup login styles
-  copy:
-    src: "/usr/share/gnome-shell/theme/ubuntu.css"
-    dest: "/usr/share/gnome-shell/theme/ubuntu.css.backup"
-    remote_src: yes
-  become: yes
-  become_method: sudo
-  when: ansible_distribution == 'Ubuntu'
-
-- name: install login theme
-  command: glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
-  args:
-    chdir: /usr/share/themes/Materia-dark-compact/gnome-shell
-  become: yes
-  become_method: sudo
-
-- name: install login styles
-  copy:
-    src: "/usr/share/themes/Materia-dark-compact/gnome-shell/gnome-shell.css"
-    dest: "/usr/share/gnome-shell/theme/ubuntu.css"
-    remote_src: yes
-  become: yes
-  become_method: sudo
-  when: ansible_distribution == 'Ubuntu'
+  command: gsettings set org.gnome.shell favorite-apps "['hyper.desktop', 'org.gnome.Nautilus.desktop']"

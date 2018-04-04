@@ -2,6 +2,7 @@
 - hosts: local
   connection: local
   roles:
+    - { role: hyper, tags: hyper }
     - { role: linux-setup, tags: setup, when: "ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'" }
     - { role: git, tags: git }
     - { role: ssh, tags: ssh }
@@ -9,7 +10,6 @@
     - { role: cask, tags: cask, when: "ansible_os_family == 'Darwin'" }
     - { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
     - { role: bash, tags: bash }
-    - { role: git-radar, tags: git-radar }
     - { role: bash_aliases, tags: bash_aliases }
     - { role: gpg, tags: gpg }
     - { role: rc-files, tags: rc-files }

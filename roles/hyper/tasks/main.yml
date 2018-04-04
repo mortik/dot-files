@@ -1,0 +1,20 @@
+---
+- name: install hyper
+  homebrew_cask:
+    name: hyper
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install hyper
+  apt:
+    deb: https://releases.hyper.is/download/deb
+    state: present
+    update_cache: yes
+  become: yes
+  become_method: sudo
+  when: ansible_distribution == 'Ubuntu'
+
+- name: setup config
+  copy:
+    src: hyper.js
+    dest: "{{ ansible_env.HOME }}/.hyper.js"
