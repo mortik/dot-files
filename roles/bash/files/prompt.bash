@@ -14,7 +14,7 @@ COLOR_NONE="\[\e[0m\]"
 
 function set_prompt_symbol () {
   if test "$1" -eq 0 ; then
-      PROMPT_SYMBOL="${CYAN}❯${COLOR_NONE}"
+      PROMPT_SYMBOL="${PINK}❯${COLOR_NONE}"
   else
       PROMPT_SYMBOL="${RED}❯${COLOR_NONE}"
   fi
@@ -25,7 +25,7 @@ function set_virtualenv () {
       PYTHON_VIRTUALENV=""
   else
       VIRTUAL_ENV=$(basename "$VIRTUAL_ENV")
-      PYTHON_VIRTUALENV="${BLUE}[$VIRTUAL_ENV]${COLOR_NONE} "
+      PYTHON_VIRTUALENV=" ${BLUE}[$VIRTUAL_ENV]${COLOR_NONE}"
   fi
 }
 
@@ -43,19 +43,6 @@ function set_ruby_version () {
   fi
 }
 
-function set_user_prompt () {
-  if [ "$(id -u)" == '0' ]; then
-    color="${RED}"
-  else
-    color="${PINK}"
-  fi
-  USER_PROMPT="${color}\u${COLOR_NONE} at "
-}
-
-function set_machine_prompt () {
-  MACHINE_PROMPT="${RED}\h${COLOR_NONE}"
-}
-
 function set_bash_prompt () {
   set_prompt_symbol $?
 
@@ -63,10 +50,7 @@ function set_bash_prompt () {
 
   set_ruby_version
 
-  set_user_prompt
-
-  set_machine_prompt
-  PS1="\n${CYAN}\t${COLOR_NONE} ${PYTHON_VIRTUALENV}${USER_PROMPT}${MACHINE_PROMPT}${RUBY_VERSION} ${PROMPT_SYMBOL} "
+  PS1="\n${CYAN}\t${COLOR_NONE} \w${PYTHON_VIRTUALENV}${RUBY_VERSION}\n${PROMPT_SYMBOL} "
 }
 
 PROMPT_COMMAND=set_bash_prompt

@@ -1,16 +1,11 @@
 module.exports = {
   config: {
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
-    updateChannel: 'stable',
+    updateChannel: 'canary',
 
-    // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
-    // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
@@ -22,8 +17,7 @@ module.exports = {
     // color of the text
     foregroundColor: '#fff',
 
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    vibrancy: '',
+    backgroundColor: '#000',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -119,9 +113,7 @@ module.exports = {
     'hyper-quit',
     'hyper-confirm',
     'hyper-match',
-    'hyperminimal',
-    'hyper-transparent',
-    'gitrocket',
+    'hyperterm-material-spacegray',
   ],
 
   // in development, you can create a directory under
