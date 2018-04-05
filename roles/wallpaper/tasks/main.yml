@@ -1,0 +1,19 @@
+---
+- name: copy wallpaper
+  copy:
+    src: wallpaper.jpg
+    dest: "{{ ansible_env.HOME }}/Pictures/wallpaper.jpg"
+
+- name: set wallpaper
+  command: "osascript -e 'tell application \"Finder\" to set desktop picture to POSIX file \"{{ ansible_env.HOME }}/Pictures/wallpaper.jpg\"'"
+  when: ansible_os_family == 'Darwin'
+
+- block:
+
+    - name: set wallpaper
+      command: "gsettings get org.gnome.desktop.background picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
+
+    - name: set lockscreen
+      command: "gsettings get org.gnome.desktop.screensaver picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
+
+  when: ansible_distribution == 'Ubuntu' or ansible_os_family == 'Archlinux'

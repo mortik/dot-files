@@ -143,4 +143,4 @@
     - { key: 'new-terminal-mode', value: 'tab' }
 
 - name: set favorites
-  command: gsettings set org.gnome.shell favorite-apps "['hyper.desktop', 'org.gnome.Nautilus.desktop']"
+  command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
