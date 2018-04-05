@@ -9,6 +9,7 @@
     - { role: brew, tags: brew, when: "ansible_os_family == 'Darwin'" }
     - { role: cask, tags: cask, when: "ansible_os_family == 'Darwin'" }
     - { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
+    - { role: git-radar, tags: git-radar }
     - { role: bash, tags: bash }
     - { role: bash_aliases, tags: bash_aliases }
     - { role: gpg, tags: gpg }

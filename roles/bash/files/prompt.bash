@@ -12,6 +12,8 @@ WHITE="\[\033[0;37m\]"
 LIGHT_GRAY="\[\033[0;38m\]"
 COLOR_NONE="\[\e[0m\]"
 
+export GIT_RADAR_FETCH_TIME=30
+
 function set_prompt_symbol () {
   if test "$1" -eq 0 ; then
       PROMPT_SYMBOL="${PINK}❯${COLOR_NONE}"
@@ -43,6 +45,19 @@ function set_ruby_version () {
   fi
 }
 
+function set_user_prompt () {
+  if [ "$(id -u)" == '0' ]; then
+    color="${RED}"
+  else
+    color="${PINK}"
+  fi
+  USER_PROMPT="${color}\u${COLOR_NONE} at "
+}
+
+function set_machine_prompt () {
+  MACHINE_PROMPT="${RED}\h${COLOR_NONE} "
+}
+
 function set_bash_prompt () {
   set_prompt_symbol $?
 
@@ -50,7 +65,11 @@ function set_bash_prompt () {
 
   set_ruby_version
 
-  PS1="\n${CYAN}\t${COLOR_NONE} \w${PYTHON_VIRTUALENV}${RUBY_VERSION}\n${PROMPT_SYMBOL} "
+  set_user_prompt
+
+  set_machine_prompt
+
+  PS1="\n${CYAN}\t${COLOR_NONE} ${USER_PROMPT}${MACHINE_PROMPT}\w${PYTHON_VIRTUALENV}${RUBY_VERSION}\$(git-radar --bash)\n${PROMPT_SYMBOL} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
