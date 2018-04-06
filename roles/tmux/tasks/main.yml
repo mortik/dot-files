@@ -1,0 +1,18 @@
+---
+- name: install tmux
+  homebrew:
+    name: tmux
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
+- name: install tmux
+  apt:
+    name: tmux
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == 'Ubuntu'
+
+- name: copy tmux conf
+  copy:
+    src: "tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"

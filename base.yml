@@ -15,12 +15,14 @@
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
     - { role: neovim, tags: neovim }
+    - { role: tmux, tags: tmux }
     - { role: tig, tags: tig }
     - { role: hh, tags: hh }
     - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
     - { role: google-chrome, tags: google-chrome }
     # - { role: hyper, tags: hyper }
+    # - { role: guake, tags: guake }
     - { role: dropbox, tags: dropbox }
     - { role: zoom, tags: zoom }
     - { role: skype, tags: skype }

@@ -1,0 +1,7 @@
+---
+- name: install guake
+  apt:
+    name: guake
+    update_cache: yes
+    state: latest
+  when: ansible_distribution == 'Ubuntu'

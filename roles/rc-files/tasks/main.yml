@@ -8,5 +8,4 @@
     - .vimrc
     - .tigrc
     - .screenrc
-    - .tmux.conf
   tags: rc-files

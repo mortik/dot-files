@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AlwaysAcceptFirstMouse</key>
@@ -386,13 +388,19 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>489 1286 606 469 0 1050 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>629 1726 918 452 0 1050 2560 1418 </string>
+	<string>315 418 918 512 0 0 1680 1028 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>127 444 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1630 1028 0 0 1680 1028 </string>
+	<string>0 0 1680 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 526 650 502 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>233 78 650 502 0 0 1680 1028 </string>
+	<key>NeverWarnAboutShortLivedSessions_2747C4F2-C1F5-43EF-98E5-4E859A0FE0D9</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_2747C4F2-C1F5-43EF-98E5-4E859A0FE0D9_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -607,7 +615,7 @@
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -666,6 +674,8 @@
 				<key>Red Component</key>
 				<real>0.16862745098039217</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>0</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -692,9 +702,11 @@
 			<key>Guid</key>
 			<string>2747C4F2-C1F5-43EF-98E5-4E859A0FE0D9</string>
 			<key>Horizontal Spacing</key>
-			<real>1</real>
+			<real>1.0207725432981927</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Text</key>
+			<string>tmux attach</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1082,11 +1094,11 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0955501694277108</real>
+			<real>1.1435958678463856</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/mortik</string>
 		</dict>
@@ -1142,6 +1154,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/mortik/.dotfiles/iterm</string>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1153,7 +1167,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-22T08:08:21Z</date>
+	<date>2018-04-05T22:04:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1166,6 +1180,10 @@
 	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1522050688</real>
+	<key>UseBorder</key>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>WordCharacters</key>

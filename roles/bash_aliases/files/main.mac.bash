@@ -31,6 +31,8 @@ alias check-port='sudo lsof -i :'
 
 alias be='bundle exec'
 
+alias tmux-kill-all="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+
 alias utube-audio='youtube-dl -x --audio-format mp3'
 alias utube='youtube-dl -f mp4'
 
