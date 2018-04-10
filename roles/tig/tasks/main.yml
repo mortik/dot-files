@@ -22,3 +22,8 @@
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu'
+
+- name: copy tigrc
+  copy:
+    src: "tigrc"
+    dest: "{{ ansible_env.HOME }}/.tigrc"

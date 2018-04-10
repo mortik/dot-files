@@ -6,6 +6,5 @@
   with_items:
     - .gemrc
     - .vimrc
-    - .tigrc
     - .screenrc
   tags: rc-files

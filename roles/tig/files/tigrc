@@ -18,3 +18,6 @@ bind status + !git commit --amend
 bind main ! !git reset %(commit)
 bind main T !@git tag %(prompt) %(commit)
 bind refs 3 !git rebase -i %(branch)
+
+bind refs n !@git branch "%(prompt Enter branch name: )"
+bind refs d !?@git branch -d "%(prompt Enter branch name: )"
