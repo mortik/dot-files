@@ -155,3 +155,23 @@
 
 - name: set favorites
   command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+
+- name: copy terminal script
+  command: gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+
+- name: setup terminal-profile script
+  copy:
+    src: terminal-profile.sh
+    dest: "{{ ansible_env.HOME }}/.terminal-profile.sh"
+    mode: u+rwx
+  tags: terminal-profile
+
+- name: add profile
+  copy:
+    src: profile.conf
+    dest: "{{ ansible_env.HOME }}/.profile.conf"
+  tags: terminal-profile
+
+- name: import profile
+  command: "{{ ansible_env.HOME }}/.terminal-profile.sh import {{ ansible_env.HOME }}/.profile.conf"
+  tags: terminal-profile
