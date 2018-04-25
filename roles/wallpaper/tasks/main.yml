@@ -11,9 +11,9 @@
 - block:
 
     - name: set wallpaper
-      command: "gsettings get org.gnome.desktop.background picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
+      command: "gsettings set org.gnome.desktop.background picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
 
     - name: set lockscreen
-      command: "gsettings get org.gnome.desktop.screensaver picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
+      command: "gsettings set org.gnome.desktop.screensaver picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'"
 
   when: ansible_distribution == 'Ubuntu' or ansible_os_family == 'Archlinux'

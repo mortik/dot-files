@@ -9,7 +9,7 @@
   command: yaourt -S zoom --noconfirm
   when: ansible_os_family == 'Archlinux'
 
-- name: install skype
+- name: install zoom
   apt:
     deb: https://zoom.us/client/latest/zoom_amd64.deb
     state: present
