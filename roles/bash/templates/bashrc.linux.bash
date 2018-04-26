@@ -8,13 +8,9 @@ export CDPATH={{ bash_cdpath }}
 shopt -s histappend
 
 # add this configuration to ~/.bashrc
-export HH_CONFIG=hicolor
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=10000
 export HISTSIZE=${HISTFILESIZE}
-
-# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 xhost +local:root > /dev/null 2>&1
 

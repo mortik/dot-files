@@ -17,7 +17,7 @@
     - { role: neovim, tags: neovim }
     - { role: tmux, tags: tmux }
     - { role: tig, tags: tig }
-    - { role: hh, tags: hh }
+    # - { role: hh, tags: hh }
     - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
     - { role: google-chrome, tags: google-chrome }

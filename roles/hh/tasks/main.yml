@@ -13,6 +13,16 @@
         update_cache: yes
         state: latest
 
+    - name: make sure bashrc.d folder is present
+      file:
+        path: "{{ ansible_env.HOME }}/.bashrc.d"
+        state: directory
+
+    - name: setup bash config
+      copy:
+        src: "hh.bash"
+        dest: "{{ ansible_env.HOME }}/.bashrc.d/hh.bash"
+
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu'
