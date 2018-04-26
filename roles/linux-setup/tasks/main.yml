@@ -45,15 +45,6 @@
 
 - block:
 
-    - name: download theme
-      unarchive:
-        src: https://github.com/nana-4/materia-theme/archive/master.tar.gz
-        dest: /tmp
-        remote_src: yes
-
-    - name: install theme
-      command: /tmp/materia-theme-master/install.sh
-
     - name: add icon set ppa
       apt_repository:
         repo: ppa:snwh/pulp
@@ -84,38 +75,20 @@
         update_cache: yes
       with_items:
         - gnome-tweak-tool
-        - gnome-shell-extension-dashtodock
-        - gnome-shell-extension-mediaplayer
-        - gnome-shell-extensions
+        - breeze-cursor-theme
 
-    - name: set extensions
-      command: gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'mediaplayer@patapon.info', 'drive-info@gnome-shell-extensions.gcampax.github.com']"
-
-    - name: restart gnome-shell
-      command: killall -3 gnome-shell
-
-    - name: backup login
+    - name: copy login wallpaper
       copy:
-        src: "/usr/share/gnome-shell/gnome-shell-theme.gresource"
-        dest: "/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"
-        remote_src: yes
+        src: login-wallpaper.jpg
+        dest: "/usr/share/backgrounds/login-wallpaper.jpg"
 
-    - name: backup login styles
+    - name: install gnome-shell styles
       copy:
-        src: "/usr/share/gnome-shell/theme/ubuntu.css"
-        dest: "/usr/share/gnome-shell/theme/ubuntu.css.backup"
-        remote_src: yes
-
-    - name: install login theme
-      command: glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
-      args:
-        chdir: /usr/share/themes/Materia-dark-compact/gnome-shell
-
-    - name: install login styles
-      copy:
-        src: "/usr/share/themes/Materia-dark-compact/gnome-shell/gnome-shell.css"
+        src: "ubuntu.css"
         dest: "/usr/share/gnome-shell/theme/ubuntu.css"
-        remote_src: yes
+
+    # - name: restart gnome-shell
+    #   command: killall -3 gnome-shell
 
   become: yes
   become_method: sudo
@@ -124,13 +97,11 @@
 - name: set interface settings
   command: "gsettings set org.gnome.desktop.interface {{ item.key }} {{ item.value }}"
   with_items:
-    - { key: 'gtk-theme', value: 'Materia-dark-compact' }
+    - { key: 'gtk-theme', value: 'Adwaita-dark' }
     - { key: 'icon-theme', value: 'Paper' }
+    - { key: 'cursor-theme', value: 'breeze_cursors' }
     - { key: 'clock-show-date', value: 'true' }
     - { key: 'show-battery-percentage', value: 'true' }
-
-- name: set theme
-  command: gsettings set org.gnome.shell.extensions.user-theme name "Materia-dark-compact"
 
 - name: hide desktop icons
   command: gsettings set org.gnome.desktop.background show-desktop-icons false
@@ -145,7 +116,8 @@
     - { key: 'transparency-mode', value: 'FIXED' }
     - { key: 'custom-theme-shrink', value: 'true' }
     - { key: 'icon-size-fixed', value: 'true' }
-    - { key: 'custom-theme-running-dots', value: 'false' }
+    - { key: 'dock-position', value: 'RIGHT' }
+    - { key: 'running-indicator-style', value: 'DEFAULT' }
 
 - name: set terminal settings
   command: "gsettings set org.gnome.Terminal.Legacy.Settings {{ item.key }} {{ item.value }}"
