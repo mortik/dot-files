@@ -35,7 +35,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   precomposeunicode = true
-  editor = nvim
+  editor = code --wait
 [push]
   default = current
 [filter "media"]
@@ -68,9 +68,7 @@
   insteadOf = git@github.com:
 [url "https://"]
   insteadOf = git://
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[mergetool]
-	prompt = false
-	keepBackup = true
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
