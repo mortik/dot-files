@@ -86,9 +86,9 @@
       copy:
         src: "ubuntu.css"
         dest: "/usr/share/gnome-shell/theme/ubuntu.css"
-
-    # - name: restart gnome-shell
-    #   command: killall -3 gnome-shell
+      tags: styles
+      notify:
+        - restart gnome-shell
 
   become: yes
   become_method: sudo
