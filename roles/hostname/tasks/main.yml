@@ -8,7 +8,7 @@
       command: "scutil --set LocalHostName {{ hostname }}"
 
     - name: set computer name
-      command: "sudo scutil --set ComputerName {{ hostname }}"
+      command: "scutil --set ComputerName {{ hostname }}"
 
     - name: flush dns cache
       command: dscacheutil -flushcache
