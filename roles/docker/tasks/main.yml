@@ -5,6 +5,12 @@
     state: latest
   when: ansible_os_family == 'Darwin'
 
+- name: install docker app
+  homebrew_cask:
+    name: docker
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
 - name: install docker
   pacman:
     name: docker
