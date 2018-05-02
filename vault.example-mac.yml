@@ -1,6 +1,7 @@
 mas_email: ""
 mas_password: ""
 user: ""
+hostname: ""
 git_user_name: ""
 git_user_email: ""
 github_user: ""
