@@ -25,7 +25,10 @@ brew_apps:
   - hh
   - mas
   - heroku
+  - awscli
   - bash-completion
+  - hub
+brew_start_services: False
 cask_apps:
   - dash
   - 1password
@@ -34,8 +37,10 @@ cask_apps:
   - iterm2
   - alfred
   - flux
-  - virtualbox
-  - gpgtools
+  - gpg-suite
   - imageoptim
   - sketch
   - moneymoney
+  - viscosity
+  - mountain
+  - tableplus
