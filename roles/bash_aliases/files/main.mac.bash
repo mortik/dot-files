@@ -78,6 +78,9 @@ function cl () {
    fi
 }
 
+alias gt='gittower .'
+alias git-remove-untracked='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
+
 alias l='ls -lah'
 
 alias e='$EDITOR .'
