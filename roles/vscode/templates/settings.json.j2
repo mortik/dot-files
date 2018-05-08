@@ -37,7 +37,10 @@
     },
     "window.zoomLevel": 0,
     "projectManager.openInNewWindowWhenClickingInStatusBar": false,
-    "projectManager.git.baseFolders": ["{{ ansible_env.HOME }}/dev"],
+    "projectManager.git.baseFolders": [
+        "{{ ansible_env.HOME }}/dev",
+        "{{ ansible_env.HOME }}/work",
+    ],
     "workbench.iconTheme": "material-icon-theme",
     "[apiblueprint]": {
         "files.trimTrailingWhitespace": false
