@@ -1,11 +1,5 @@
 ---
 - name: install zoom
-  homebrew_cask:
-    name: zoom
-    state: latest
-  when: ansible_os_family == 'Darwin'
-
-- name: install zoom
   command: yaourt -S zoom --noconfirm
   when: ansible_os_family == 'Archlinux'
 
