@@ -7,7 +7,6 @@ vscode_extensions:
   - WallabyJs.quokka-vscode
   - alefragnani.project-manager
   - bibhasdn.unique-lines
-  - castwide.solargraph
   - codezombiech.gitignore
   - cssho.vscode-svgviewer
   - dbaeumer.vscode-eslint
@@ -17,7 +16,6 @@ vscode_extensions:
   - guosong.vscode-util
   - hollowtree.vue-snippets
   - kumar-harsh.graphql-for-vscode
-  - lukehoban.Go
   - mauve.terraform
   - minhthai.vscode-todo-parser
   - misogi.ruby-rubocop
@@ -25,6 +23,7 @@ vscode_extensions:
   - mohsen1.prettify-json
   - ms-python.python
   - ms-vscode.azure-account
+  - ms-vscode.Go
   - ms-vscode.sublime-keybindings
   - msjsdiag.debugger-for-chrome
   - octref.vetur

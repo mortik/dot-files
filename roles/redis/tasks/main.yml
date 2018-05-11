@@ -36,4 +36,6 @@
         enabled: yes
       tags: redis
 
+  become: yes
+  become_method: sudo
   when: ansible_distribution == 'Ubuntu'

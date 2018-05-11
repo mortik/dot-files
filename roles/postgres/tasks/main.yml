@@ -68,7 +68,7 @@
     - name: install additional packages
       apt:
         pkg: "{{ item }}"
-        state: installed
+        state: present
         update-cache: yes
       with_items:
         - postgresql-contrib

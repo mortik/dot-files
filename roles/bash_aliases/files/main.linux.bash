@@ -38,6 +38,8 @@ alias ..='cd ..'
 
 alias go-run='go run !(*_test).go'
 
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
 alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 
 # middleman
