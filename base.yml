@@ -2,6 +2,7 @@
 - hosts: local
   connection: local
   roles:
+    - { role: mac-setup, tags: setup, when: "ansible_os_family == 'Darwin'" }
     - { role: linux-setup, tags: setup, when: "ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'" }
     - { role: git, tags: git }
     - { role: git-crypt, tags: git-crypt }
