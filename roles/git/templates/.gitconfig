@@ -35,7 +35,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   precomposeunicode = true
-  editor = code --wait
+  editor = vim
 [push]
   default = current
 [filter "media"]
@@ -50,20 +50,18 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-[merge]
-	tool = Kaleidoscope
 [diff]
   tool = default-difftool
 [difftool "default-difftool"]
 	prompt = false
   cmd = code --wait --diff $LOCAL $REMOTE
 [github]
-  user = {{ github_user }}
-  token = {{ github_token }}
+  user = mortik
+  token = 599e90a4ec14e112ea185c6ceb17ac10912b2bb3
 [commit]
   gpgsign = true
 [gpg]
-  program = /usr/local/bin/gpg
+	program = gpg2
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://"]

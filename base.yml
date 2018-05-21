@@ -12,7 +12,7 @@
     - { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
     - { role: git-radar, tags: git-radar }
     - { role: bash, tags: bash }
-    - { role: bash_aliases, tags: bash_aliases }
+    - { role: bash_aliases, tags: bash-aliases }
     - { role: gpg, tags: gpg }
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
