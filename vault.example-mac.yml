@@ -44,3 +44,5 @@ cask_apps:
   - viscosity
   - mountain
   - tableplus
+  - fantastical
+  - postman

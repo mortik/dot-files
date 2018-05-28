@@ -20,7 +20,7 @@
     - { role: tmux, tags: tmux }
     - { role: tig, tags: tig }
     - { role: hh, tags: hh }
-    - { role: insomnia, tags: insomnia }
+    # - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
     - { role: google-chrome, tags: google-chrome }
     # - { role: hyper, tags: hyper }
