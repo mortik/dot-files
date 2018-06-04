@@ -1,10 +1,10 @@
-[
-  {
-    "key": "ctrl+cmd+p",
-    "command": "projectManager.listProjectsNewWindow"
-  },
-  {
-    "key": "alt+cmd+p",
-    "command": "-projectManager.listProjects"
-  }
-]
+[{
+  "key": "alt+s",
+  "command": "-gitlens.showQuickRepoStatus",
+}, {
+  "key": "ctrl+cmd+p",
+  "command": "projectManager.listProjectsNewWindow"
+}, {
+  "key": "alt+cmd+p",
+  "command": "-projectManager.listProjects"
+}]
