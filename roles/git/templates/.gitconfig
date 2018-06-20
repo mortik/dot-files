@@ -38,6 +38,8 @@
   editor = vim
 [push]
   default = current
+[pull]
+  rebase = true
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -67,6 +69,6 @@
 [url "https://"]
   insteadOf = git://
 [merge]
-    tool = vscode
+  tool = vscode
 [mergetool "vscode"]
-    cmd = code --wait $MERGED
+  cmd = code --wait $MERGED
