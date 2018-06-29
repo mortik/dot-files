@@ -11,6 +11,15 @@
         name: bash
         state: latest
 
+    - name: Add path to /etc/shells
+      blockinfile:
+        path: /etc/shells
+        block: |
+          /usr/local/bin/bash
+        marker: "# {mark} ANSIBLE MANAGED BLOCK"
+      become: yes
+      become_method: sudo
+
     - name: setup bashrc
       template:
         src: "bashrc.mac.bash"
