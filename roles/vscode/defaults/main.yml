@@ -1,46 +1,50 @@
 ---
 vscode_extensions:
-  - DavidAnson.vscode-markdownlint
-  - HookyQR.beautify
-  - PKief.material-icon-theme
-  - PeterJausovec.vscode-docker
-  - WallabyJs.quokka-vscode
-  - alefragnani.project-manager
-  - bibhasdn.unique-lines
-  - codezombiech.gitignore
-  - cssho.vscode-svgviewer
-  - dbaeumer.vscode-eslint
-  - eamodio.gitlens
-  - eg2.vscode-npm-script
-  - esbenp.prettier-vscode
-  - guosong.vscode-util
-  - hollowtree.vue-snippets
-  - kumar-harsh.graphql-for-vscode
-  - mauve.terraform
-  - minhthai.vscode-todo-parser
-  - misogi.ruby-rubocop
-  - mjmcloug.vscode-elixir
-  - mohsen1.prettify-json
-  - ms-python.python
-  - ms-vscode.azure-account
-  - ms-vscode.Go
-  - ms-vscode.sublime-keybindings
-  - msjsdiag.debugger-for-chrome
-  - octref.vetur
-  - pgourlain.erlang
-  - pnp.polacode
-  - rebornix.Ruby
-  - richie5um2.vscode-sort-json
-  - sianglim.slim
-  - sleistner.vscode-fileutils
-  - splintah.theme-one-spacegrey
-  - vayan.haml
-  - vncz.vscode-apielements
-  - waderyan.gitblame
-  - wholroyd.jinja
-  - wix.vscode-import-cost
-  - wmaurer.change-case
-  - zhuangtongfa.Material-theme
+- DavidAnson.vscode-markdownlint
+- PeterJausovec.vscode-docker
+- alefragnani.project-manager
+- bibhasdn.unique-lines
+- codezombiech.gitignore
+- CraigMaslowski.erb
+- cssho.vscode-svgviewer
+- dbaeumer.vscode-eslint
+- deerawan.vscode-dash
+- donjayamanne.githistory
+- eamodio.gitlens
+- eg2.vscode-npm-script
+- esbenp.prettier-vscode
+- guosong.vscode-util
+- hollowtree.vue-snippets
+- HookyQR.beautify
+- kumar-harsh.graphql-for-vscode
+- mauve.terraform
+- minhthai.vscode-todo-parser
+- misogi.ruby-rubocop
+- mjmcloug.vscode-elixir
+- mohsen1.prettify-json
+- ms-python.python
+- ms-vscode.azure-account
+- ms-vscode.Go
+- ms-vscode.sublime-keybindings
+- ms-vsliveshare.vsliveshare
+- msjsdiag.debugger-for-chrome
+- octref.vetur
+- pgourlain.erlang
+- PKief.material-icon-theme
+- pnp.polacode
+- rebornix.ruby
+- richie5um2.vscode-sort-json
+- sianglim.slim
+- sleistner.vscode-fileutils
+- splintah.theme-one-spacegrey
+- vayan.haml
+- vncz.vscode-apielements
+- waderyan.gitblame
+- WallabyJs.quokka-vscode
+- wholroyd.jinja
+- wix.vscode-import-cost
+- wmaurer.change-case
+- zhuangtongfa.Material-theme
 
 vscode_projects:
   - { name: ".dotfiles", path: "$home/.dotfiles" }

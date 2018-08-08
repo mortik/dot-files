@@ -12,10 +12,10 @@
   notify:
     - restart dock
 
-- name: fix dock content
-  command: defaults write com.apple.dock contents-immutable -bool true
-  notify:
-    - restart dock
+# - name: fix dock content
+#   command: defaults write com.apple.dock contents-immutable -bool true
+#   notify:
+#     - restart dock
 
 - name: set dock position
   command: defaults write com.apple.dock orientation -string right
