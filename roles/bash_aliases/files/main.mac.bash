@@ -30,6 +30,7 @@ alias run-dev='forego start -f Procfile.dev'
 alias check-port='sudo lsof -i :'
 
 alias be='bundle exec'
+alias run-dummy='pushd test/dummy && bundle exec rails server && popd'
 
 alias tmux-kill-all="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
