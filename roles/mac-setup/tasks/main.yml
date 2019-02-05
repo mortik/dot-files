@@ -1,6 +1,7 @@
 ---
 - name: set dark menu bar
   command: osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to yes'
+  when: ansible_distribution_version is version_compare('10.14', '<')
 
 - name: set dock size
   command: defaults write com.apple.dock tilesize -int 40
@@ -9,20 +10,23 @@
 
 - name: fix dock size
   command: defaults write com.apple.dock size-immutable -bool true
+  when: dock_size_locked
   notify:
     - restart dock
 
-# - name: fix dock content
-#   command: defaults write com.apple.dock contents-immutable -bool true
-#   notify:
-#     - restart dock
+- name: fix dock content
+  command: defaults write com.apple.dock contents-immutable -bool true
+  when: dock_content_locked
+  notify:
+    - restart dock
 
 - name: set dock position
-  command: defaults write com.apple.dock orientation -string right
+  command: "defaults write com.apple.dock orientation -string {{ dock_position }}"
   notify:
     - restart dock
 
 - name: fix dock position
   command: defaults write com.apple.dock position-immutable -bool true
+  when: dock_position_locked
   notify:
     - restart dock
