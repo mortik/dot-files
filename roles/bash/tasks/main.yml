@@ -35,6 +35,14 @@
         src: "bash_completion.mac.bash"
         dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
 
+    - name: add brew bash to shells
+      command: echo /usr/local/bin/bash >> /etc/shells
+      become: yes
+      become_method: sudo
+
+    - name: set shell for user
+      command: chsh -s /usr/local/bin/bash
+
   when: ansible_os_family == 'Darwin'
 
 - name: install bash
