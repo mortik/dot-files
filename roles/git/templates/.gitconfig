@@ -63,7 +63,7 @@
 [commit]
   gpgsign = true
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://"]
