@@ -9,7 +9,7 @@
     - { role: ssh, tags: ssh }
     - { role: brew, tags: brew, when: "ansible_os_family == 'Darwin'" }
     - { role: cask, tags: cask, when: "ansible_os_family == 'Darwin'" }
-    - { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
+    #- { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
     - { role: git-radar, tags: git-radar }
     - { role: bash, tags: bash }
     - { role: bash_aliases, tags: bash-aliases }
@@ -22,10 +22,8 @@
     - { role: hh, tags: hh }
     # - { role: insomnia, tags: insomnia }
     - { role: awscli, tags: awscli }
-    - { role: google-chrome, tags: google-chrome }
-    # - { role: hyper, tags: hyper }
-    # - { role: guake, tags: guake }
-    - { role: dropbox, tags: dropbox }
+    # - { role: google-chrome, tags: google-chrome }
+    # - { role: dropbox, tags: dropbox }
     - { role: zoom, tags: zoom }
     - { role: skype, tags: skype }
     - { role: spotify, tags: spotify }
