@@ -1,34 +1,35 @@
 ---
 vscode_extensions:
-- DavidAnson.vscode-markdownlint
-- PeterJausovec.vscode-docker
 - alefragnani.project-manager
 - bibhasdn.unique-lines
 - codezombiech.gitignore
+- CoenraadS.bracket-pair-colorizer
 - CraigMaslowski.erb
 - cssho.vscode-svgviewer
+- DavidAnson.vscode-markdownlint
 - dbaeumer.vscode-eslint
-- deerawan.vscode-dash
 - donjayamanne.githistory
 - eamodio.gitlens
 - eg2.vscode-npm-script
-- esbenp.prettier-vscode
 - guosong.vscode-util
 - hollowtree.vue-snippets
 - HookyQR.beautify
+- jvandyke.vscode-circleci
 - kumar-harsh.graphql-for-vscode
 - mauve.terraform
+- mbessey.vscode-rufo
 - minhthai.vscode-todo-parser
 - misogi.ruby-rubocop
 - mjmcloug.vscode-elixir
 - mohsen1.prettify-json
+- mrmlnc.vscode-json5
 - ms-python.python
 - ms-vscode.azure-account
 - ms-vscode.Go
 - ms-vscode.sublime-keybindings
 - ms-vsliveshare.vsliveshare
-- msjsdiag.debugger-for-chrome
 - octref.vetur
+- PeterJausovec.vscode-docker
 - pgourlain.erlang
 - PKief.material-icon-theme
 - pnp.polacode
@@ -39,10 +40,8 @@ vscode_extensions:
 - splintah.theme-one-spacegrey
 - vayan.haml
 - vncz.vscode-apielements
-- waderyan.gitblame
 - WallabyJs.quokka-vscode
 - wholroyd.jinja
-- wix.vscode-import-cost
 - wmaurer.change-case
 - zhuangtongfa.Material-theme
 

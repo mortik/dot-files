@@ -21,6 +21,7 @@ vhosts:
   - { domain: "static.dev", path: "{{ansible_env.HOME }}/dev/static", type: static }
 vscode_projects:
   - { name: ".dotfiles", path: "$home/.dotfiles" }
+vscode_circleci_api_key: ""
 brew_apps:
   - hh
   - mas
