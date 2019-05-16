@@ -12,6 +12,7 @@
   ps = push
   pr = pull-request -l WIP
   coa = commit --amend
+  retry-commit = commit -e -F .git/COMMIT_EDITMSG
   remove =ls-files --deleted | xargs git rm
   s = status -sb
   st = status
