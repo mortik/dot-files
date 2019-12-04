@@ -10,25 +10,24 @@
 
     - name: install codecs
       pacman:
-        name: "{{ item }}"
+        name:
+          - a52dec
+          - faac
+          - faad2
+          - flac
+          - jasper
+          - lame
+          - libdca
+          - libdv
+          - libmad
+          - libmpeg2
+          - libtheora
+          - libvorbis
+          - libxv
+          - wavpack
+          - x264
+          - xvidcore
         update_cache: yes
-      with_items:
-        - a52dec
-        - faac
-        - faad2
-        - flac
-        - jasper
-        - lame
-        - libdca
-        - libdv
-        - libmad
-        - libmpeg2
-        - libtheora
-        - libvorbis
-        - libxv
-        - wavpack
-        - x264
-        - xvidcore
 
     - name: install vlc
       pacman:

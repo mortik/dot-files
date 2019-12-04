@@ -67,12 +67,11 @@
 
     - name: install additional packages
       apt:
-        pkg: "{{ item }}"
+        pkg:
+          - postgresql-contrib
+          - python-psycopg2
         state: present
         update-cache: yes
-      with_items:
-        - postgresql-contrib
-        - python-psycopg2
 
     - name: start postgres
       service:
