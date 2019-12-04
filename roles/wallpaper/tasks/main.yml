@@ -1,7 +1,7 @@
 ---
 - name: copy wallpaper
   copy:
-    src: wallpaper-600.jpg
+    src: "wallpaper-{{ wallpaper }}.jpg"
     dest: "{{ ansible_env.HOME }}/Pictures/wallpaper.jpg"
 
 - name: set wallpaper
