@@ -6,6 +6,11 @@
         name: visual-studio-code
         state: latest
 
+    - name: Setup Dir
+      file:
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User"
+        state: directory
+
     - name: Setup Files
       copy:
         src: "{{ item }}"

@@ -7,9 +7,9 @@
 
 #- name: Install Homebrew Cask
 #  homebrew: name=cask state=present
-  
+
 - name: Install Cask Apps
   homebrew_cask:
-    name: "{{ item }}"
+    name: "{{ cask_apps }}"
     state: present
-  with_items: "{{ cask_apps }}"
+    allow_external_apps: True
