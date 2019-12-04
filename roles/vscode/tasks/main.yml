@@ -5,6 +5,7 @@
       homebrew_cask:
         name: visual-studio-code
         state: latest
+        accept_external_apps: True
 
     - name: Setup Dir
       file:

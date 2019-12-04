@@ -9,6 +9,7 @@
   homebrew_cask:
     name: docker
     state: latest
+    accept_external_apps: True
   when: ansible_os_family == 'Darwin'
 
 - name: install docker

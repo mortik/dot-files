@@ -3,6 +3,7 @@
   homebrew_cask:
     name: dropbox
     state: latest
+    accept_external_apps: True
   when: ansible_os_family == 'Darwin'
 
 - block:
