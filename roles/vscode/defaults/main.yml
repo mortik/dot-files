@@ -6,6 +6,7 @@ vscode_extensions:
 - CoenraadS.bracket-pair-colorizer
 - CraigMaslowski.erb
 - cssho.vscode-svgviewer
+- Daosro.stylelint
 - DavidAnson.vscode-markdownlint
 - dbaeumer.vscode-eslint
 - donjayamanne.githistory
@@ -34,7 +35,6 @@ vscode_extensions:
 - pnp.polacode
 - rebornix.ruby
 - richie5um2.vscode-sort-json
-- shinnn.stylelint
 - sianglim.slim
 - sleistner.vscode-fileutils
 - splintah.theme-one-spacegrey
