@@ -12,4 +12,4 @@
   homebrew_cask:
     name: "{{ cask_apps }}"
     state: present
-    allow_external_apps: True
+    accept_external_apps: True

@@ -24,14 +24,13 @@
 
     - name: install tools
       pacman:
-        name: "{{ item }}"
+        name:
+          - p7zip
+          - unrar
+          - tar
+          - rsync
+          - conky
         update_cache: yes
-      with_items:
-        - p7zip
-        - unrar
-        - tar
-        - rsync
-        - conky
       become: yes
       become_method: sudo
 
@@ -59,23 +58,21 @@
 
     - name: install tools
       apt:
-        name: "{{ item }}"
+        name:
+          - curl
+          - rsync
         state: latest
         update_cache: yes
-      with_items:
-        - curl
-        - rsync
       become: yes
       become_method: sudo
 
     - name: install gnome tools
       apt:
-        name: "{{ item }}"
+        name:
+          - gnome-tweak-tool
+          - breeze-cursor-theme
         state: latest
         update_cache: yes
-      with_items:
-        - gnome-tweak-tool
-        - breeze-cursor-theme
 
     - name: copy login wallpaper
       copy:
