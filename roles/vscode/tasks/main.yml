@@ -19,13 +19,16 @@
       with_items:
         - keybindings.json
 
-    - name: Setup Templates
+    - name: setup Settings
       template:
-        src: "{{ item }}.j2"
-        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/{{ item }}"
-      with_items:
-        - settings.json
-        - projects.json
+        src: "settings.json.j2"
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json"
+
+    - name: setup Projects
+      template:
+        src: "projects.json.j2"
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/projects.json"
+      tags: vscode-projects
 
   when: ansible_os_family == 'Darwin'
 
@@ -49,13 +52,16 @@
         path: "{{ ansible_env.HOME }}/.config/Code/User"
         state: directory
 
-    - name: setup Templates
+    - name: setup Settings
       template:
-        src: "{{ item }}.j2"
-        dest: "{{ ansible_env.HOME }}/.config/Code/User/{{ item }}"
-      with_items:
-        - settings.json
-        - projects.json
+        src: "settings.json.j2"
+        dest: "{{ ansible_env.HOME }}/.config/Code/User/settings.json"
+
+    - name: setup Projects
+      template:
+        src: "projects.json.j2"
+        dest: "{{ ansible_env.HOME }}/.config/Code/User/projects.json"
+      tags: vscode-projects
 
   when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'
 
