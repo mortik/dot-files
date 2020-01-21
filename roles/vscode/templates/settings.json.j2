@@ -14,14 +14,8 @@
     "editor.renderIndentGuides": true,
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [{
-        "language": "javascript",
-        "autoFix": true
-    }, {
-        "language": "vue",
-        "autoFix": true
-    }],
+    "eslint.validate": ["javascript", "vue", "typescript"],
+    "circleci.apiKey": "{{ vscode_circleci_api_key }}"
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.exclude": {
@@ -30,8 +24,8 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "build/**": true,
-        ".tmp/**": true,
+        "build/**/*": true,
+        ".tmp/**/*": true,
         "**/coverage/**": true,
         "**/.eslintcache": true
     },
@@ -41,12 +35,10 @@
         "{{ ansible_env.HOME }}/dev",
         "{{ ansible_env.HOME }}/work",
     ],
-    "projectManager.treeview.visible": false,
     "workbench.iconTheme": "material-icon-theme",
     "[apiblueprint]": {
         "files.trimTrailingWhitespace": false
     },
-    "docker.showExplorer": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
     "[markdown]": {
@@ -64,7 +56,26 @@
     "material-icon-theme.showUpdateMessage": false,
     "go.inferGopath": true,
     "gitlens.keymap": "alternate",
-    "gitlens.historyExplorer.enabled": false,
-    "workbench.statusBar.feedback.visible": false,
-    "circleci.apiKey": "{{ vscode_circleci_api_key }}"
+    "git.autofetch": true,
+    "gitlens.views.fileHistory.enabled": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "material-icon-theme.folders.theme": "classic",
+    "files.associations": {
+        "*.jb": "ruby",
+        "*.inky": "erb"
+    },
+    "ruby.format": "rubocop",
+    "[ruby]": {
+        "editor.defaultFormatter": "rebornix.ruby",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "vetur.validation.script": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never"
 }
+
