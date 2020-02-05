@@ -1,0 +1,24 @@
+---
+  - block:
+
+      - name: install kubernetes-cli
+        homebrew:
+          name: kubernetes-cli
+          state: latest
+
+      - name: install rancher-cli
+        homebrew:
+          name: rancher-cli
+          state: latest
+
+      - name: install kubernetes-helm
+        homebrew:
+          name: kubernetes-helm
+          state: latest
+
+      - name: install kubectx
+        homebrew:
+          name: kubectx
+          state: latest
+
+    when: ansible_os_family == 'Darwin'

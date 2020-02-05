@@ -45,3 +45,5 @@
     - { role: wallpaper, tags: wallpaper }
     - { role: hostname, tags: hostname }
     - { role: forego, tags: forego }
+    - { role: kubernetes, tags: kubernetes }
+    - { role: thrift, tags: thrift }
