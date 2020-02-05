@@ -1,7 +1,13 @@
 {
+    "gitlens.remotes": [
+        {
+            "domain": "gitlab.sumcumo.net",
+            "type": "GitLab"
+        }
+    ],
     "workbench.colorCustomizations": {
-        "statusBar.background" : "#303030",
-        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.background": "#303030",
+        "statusBar.noFolderBackground": "#222225",
         "statusBar.debuggingBackground": "#511f1f",
         "editor.selectionBackground": "#0F5897"
     },
@@ -14,8 +20,12 @@
     "editor.renderIndentGuides": true,
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
-    "eslint.validate": ["javascript", "vue", "typescript"],
-    "circleci.apiKey": "{{ vscode_circleci_api_key }}"
+    "eslint.validate": [
+        "javascript",
+        "vue",
+        "typescript"
+    ],
+    "circleci.apiKey": "c0714d7e9c55dfe2030c5755eff5a8064864f7ad",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.exclude": {
@@ -64,18 +74,41 @@
         "*.jb": "ruby",
         "*.inky": "erb"
     },
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 5000,
     "ruby.format": "rubocop",
-    "[ruby]": {
-        "editor.defaultFormatter": "rebornix.ruby",
-        "editor.formatOnSave": true
-    },
+    "ruby.rubocop.onSave": true,
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "vetur.validation.script": false,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+    "[js]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
     },
+    "[vue]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true,
+            "source.fixAll.stylelint": true
+        },
+    },
+    "[css]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        },
+    },
+    "[scss]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        },
+    },
+    "[sass]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        },
+    },
+    "vetur.validation.script": false,
     "javascript.updateImportsOnFileMove.enabled": "never"
 }
+
 

@@ -30,7 +30,6 @@ shopt -s globstar
 
 # Modify PATH
 export PATH=$PATH:$HOME/Applications/bin
-export PATH=./node_modules/.bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=$PATH:/usr/local/go/bin
 export PATH=./bin:$PATH
