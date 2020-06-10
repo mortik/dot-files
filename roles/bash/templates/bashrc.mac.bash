@@ -33,6 +33,7 @@ export PATH=$PATH:$HOME/Applications/bin
 export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=$PATH:/usr/local/go/bin
 export PATH=./bin:$PATH
+export PATH=./node_modules/.bin:$PATH
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 

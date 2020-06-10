@@ -74,38 +74,18 @@
         "*.jb": "ruby",
         "*.inky": "erb"
     },
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveTimeout": 5000,
     "ruby.format": "rubocop",
     "ruby.rubocop.onSave": true,
+    "[ruby]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveTimeout": 5000,
+    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "[js]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        },
-    },
-    "[vue]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true,
-            "source.fixAll.stylelint": true
-        },
-    },
-    "[css]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
-        },
-    },
-    "[scss]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
-        },
-    },
-    "[sass]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
-        },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
     },
     "vetur.validation.script": false,
     "javascript.updateImportsOnFileMove.enabled": "never"
