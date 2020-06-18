@@ -27,9 +27,9 @@
   mt = mergetool
   undo-commit = reset --soft HEAD^
   unchanged = update-index --assume-unchanged
-[branch "master"]
+[branch "main"]
   remote = origin
-  merge = refs/heads/master
+  merge = refs/heads/main
 [branch "develop"]
   remote = origin
   merge = refs/heads/develop
