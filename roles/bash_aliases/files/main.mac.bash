@@ -13,6 +13,10 @@ alias remove-all-gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 # middleman
 alias start-mm='bundle exec middleman server --port $PORT'
 
+# git
+alias git-cleanup-branches="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
+alias git-cleanup-branches-force="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -D"
+
 # docker
 alias docker-kill-all='docker kill $(docker ps -q)'
 alias docker-clean-c='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
@@ -78,9 +82,6 @@ function cl () {
       cd "$*" && ls -la
    fi
 }
-
-alias gt='gittower .'
-alias git-remove-untracked='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 
 alias l='ls -lah'
 
