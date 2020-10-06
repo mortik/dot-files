@@ -29,6 +29,10 @@ brew_apps:
   - awscli
   - bash-completion
   - hub
+  - kubectx
+  - helm
+  - kubernetes-cli
+  - rancher-cli
 brew_start_services: False
 cask_apps:
   - dash

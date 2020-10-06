@@ -68,3 +68,6 @@
 - name: install extensions
   command: "code --install-extension {{ item }}"
   with_items: "{{ vscode_extensions }}"
+  tags:
+    - vscode-extensions
+    - vscode
