@@ -4,6 +4,15 @@
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"
     state: directory
+  when: shell == 'bash'
+  tags: shell
+
+- name: make sure zshrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.zshrc.d"
+    state: directory
+  when: shell == 'zsh'
+  tags: shell
 
 - block:
 
@@ -16,6 +25,15 @@
       copy:
         src: rbenv.mac.bash
         dest: "{{ ansible_env.HOME }}/.bashrc.d/rbenv.bash"
+      when: shell == 'bash'
+      tags: shell
+
+    - name: setup bash config
+      copy:
+        src: rbenv.mac.zsh
+        dest: "{{ ansible_env.HOME }}/.zshrc.d/rbenv.zsh"
+      when: shell == 'zsh'
+      tags: shell
 
   when: ansible_os_family == 'Darwin'
 

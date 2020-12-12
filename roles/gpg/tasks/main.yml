@@ -37,8 +37,26 @@
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"
     state: directory
+  when: shell == 'bash'
+  tags: shell
+
+- name: make sure zshrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.zshrc.d"
+    state: directory
+  when: shell == 'zsh'
+  tags: shell
 
 - name: setup gnupg bash
   copy:
     src: gnupg.bash
     dest: "{{ ansible_env.HOME }}/.bashrc.d/gnupg.bash"
+  when: shell == 'bash'
+  tags: shell
+
+- name: setup gnupg zsh
+  copy:
+    src: gnupg.zsh
+    dest: "{{ ansible_env.HOME }}/.zshrc.d/gnupg.zsh"
+  when: shell == 'zsh'
+  tags: shell

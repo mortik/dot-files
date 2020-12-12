@@ -47,8 +47,26 @@
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"
     state: directory
+  when: shell == 'bash'
+  tags: shell
+
+- name: make sure zshrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.zshrc.d"
+    state: directory
+  when: shell == 'zsh'
+  tags: shell
 
 - name: setup bash config
   copy:
     src: "neovim.bash"
     dest: "{{ ansible_env.HOME }}/.bashrc.d/neovim.bash"
+  when: shell == 'bash'
+  tags: shell
+
+- name: setup zsh config
+  copy:
+    src: "neovim.zsh"
+    dest: "{{ ansible_env.HOME }}/.zshrc.d/neovim.zsh"
+  when: shell == 'zsh'
+  tags: shell

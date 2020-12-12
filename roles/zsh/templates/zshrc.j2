@@ -1,0 +1,53 @@
+cdpath=({{ zsh_cdpath }})
+
+# Modify PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/Applications/bin
+export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
+export PATH=$PATH:/usr/local/go/bin
+export PATH=./bin:$PATH
+export PATH=./node_modules/.bin:$PATH
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="mortik"
+
+plugins=(
+  git
+  bundler
+  rails
+  vscode
+  dotenv
+  osx
+  rake
+  rbenv
+  ruby
+)
+
+source $ZSH/oh-my-zsh.sh
+
+export LANG=en_US.UTF-8
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='{{ editor }}'
+fi
+
+export HISTCONTROL=ignoredups:ignorespace   # leading space hides commands from history
+export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+ssh-add -A 2> /dev/null
+
+# VM Setup
+export VM_PATH=$HOME/Documents/Virtual-Machines.localized
+
+for config in $HOME/.zshrc.d/*.zsh ; do
+  [ -e "$config" ] && source $config
+done

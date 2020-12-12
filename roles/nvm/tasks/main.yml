@@ -3,6 +3,15 @@
   file:
     path: "{{ ansible_env.HOME }}/.bashrc.d"
     state: directory
+  when: shell == 'bash'
+  tags: shell
+
+- name: make sure zshrc.d folder is present
+  file:
+    path: "{{ ansible_env.HOME }}/.zshrc.d"
+    state: directory
+  when: shell == 'zsh'
+  tags: shell
 
 - block:
 
@@ -15,6 +24,15 @@
       copy:
         src: nvm.mac.bash
         dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
+      when: shell == 'bash'
+      tags: shell
+
+    - name: setup zsh configs
+      copy:
+        src: nvm.mac.zsh
+        dest: "{{ ansible_env.HOME }}/.zshrc.d/nvm.zsh"
+      when: shell == 'zsh'
+      tags: shell
 
   when: ansible_os_family == 'Darwin'
 

@@ -17,11 +17,29 @@
       file:
         path: "{{ ansible_env.HOME }}/.bashrc.d"
         state: directory
+      when: shell == 'bash'
+      tags: shell
+
+    - name: make sure zshrc.d folder is present
+      file:
+        path: "{{ ansible_env.HOME }}/.zshrc.d"
+        state: directory
+      when: shell == 'zsh'
+      tags: shell
 
     - name: setup bash config
       copy:
         src: "hh.bash"
         dest: "{{ ansible_env.HOME }}/.bashrc.d/hh.bash"
+      when: shell == 'bash'
+      tags: shell
+
+    - name: setup zsh config
+      copy:
+        src: "hh.zsh"
+        dest: "{{ ansible_env.HOME }}/.zshrc.d/hh.zsh"
+      when: shell == 'zsh'
+      tags: shell
 
   become: yes
   become_method: sudo

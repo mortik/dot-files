@@ -11,8 +11,9 @@
     - { role: cask, tags: cask, when: "ansible_os_family == 'Darwin'" }
     #- { role: mas, tags: mas, when: "ansible_os_family == 'Darwin'" }
     - { role: git-radar, tags: git-radar }
-    - { role: bash, tags: bash }
-    - { role: bash_aliases, tags: bash-aliases }
+    - { role: zsh, tags: shell, when: "shell == 'zsh'" }
+    - { role: bash, tags: shell, when: "shell == 'bash'" }
+    - { role: bash_aliases, tags: shell, when: "shell == 'bash'" }
     - { role: gpg, tags: gpg }
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }

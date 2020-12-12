@@ -1,0 +1,55 @@
+---
+- name: create zshrc.d folder
+  file:
+    path: "{{ ansible_env.HOME }}/.zshrc.d"
+    state: directory
+
+- block:
+    - name: install zsh
+      homebrew:
+        name: zsh
+        state: latest
+
+    - name: Check if .oh-my-zsh exists
+      stat:
+        path: ~/.oh-my-zsh
+      register: stat_oh_my_zsh_result
+
+    - name: Cloning  oh-my-zsh
+      git:
+        repo=https://github.com/robbyrussell/oh-my-zsh
+        dest=~/.oh-my-zsh
+      when: not stat_oh_my_zsh_result.stat.exists
+
+    - name: Add path to /etc/shells
+      blockinfile:
+        path: /etc/shells
+        block: |
+          /usr/local/bin/zsh
+        marker: "# {mark} ANSIBLE MANAGED BLOCK"
+      become: yes
+      become_method: sudo
+
+    - name: setup zshrc
+      template:
+        src: "zshrc.j2"
+        dest: "{{ ansible_env.HOME }}/.zshrc"
+
+    - name: set shell for user
+      command: chsh -s /usr/local/bin/zsh
+
+  when: ansible_os_family == 'Darwin'
+
+- name: copy theme
+  copy:
+    src: "theme.zsh-theme"
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/themes/mortik.zsh-theme"
+
+- name: copy zshrc.d files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.zshrc.d/{{ item }}"
+  with_items:
+    - ansible.zsh
+    - android.zsh
+    - alias.zsh
