@@ -15,7 +15,6 @@ function current_ruby() {
 		echo "$version"
 }
 
-# separator dashes size
 function dashes {
 	local PYTHON_ENV="$VIRTUAL_ENV"
 	[[ -z "$PYTHON_ENV" ]] && PYTHON_ENV="$CONDA_DEFAULT_ENV"
@@ -27,10 +26,26 @@ function dashes {
 	fi
 }
 
+function timestamp {
+	echo "%{$fg[cyan]%}%D{%H:%M:%S}%{$reset_color%} "
+}
+
+function current_user () {
+	echo "%{$fg[magenta]%}%n%{$reset_color%} "
+}
+
+function current_machine {
+	echo "at %{$fg[red]%}%m%{$reset_color%} "
+}
+
+function prompt_symbol {
+	echo "%(?,$fg[magenta]%(!.#.❯)%{$reset_color%},%{$fg[red]%}%(!.#.❯))"
+}
+
 # primary prompt
 PS1='$FG[237]${(l.$(dashes)..-.)}%{$reset_color%}
-%{$fg[cyan]%}%D{%H:%M:%S}%{$reset_color%} %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[red]%}%m%{$reset_color%} %~%{$fg[cyan]%}$(current_ruby)%{$reset_color%}$(git-radar --zsh)$(hg_prompt_info)
-%(?,$fg[magenta]%(!.#.❯)%{$reset_color%},%{$fg[red]%}%(!.#.❯)) '
+$(timestamp)$(current_user)$(current_machine)%~%{$fg[cyan]%}$(current_ruby)%{$reset_color%}$(git-radar --zsh)$(hg_prompt_info)
+$(prompt_symbol) '
 PS2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
