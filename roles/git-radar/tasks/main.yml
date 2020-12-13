@@ -16,10 +16,28 @@
       file:
         path: "{{ ansible_env.HOME }}/.bashrc.d"
         state: directory
+      when: shell == 'bash'
+      tags: shell
+
+    - name: make sure zshrc.d folder is present
+      file:
+        path: "{{ ansible_env.HOME }}/.zshrc.d"
+        state: directory
+      when: shell == 'zsh'
+      tags: shell
 
     - name: setup for bash
       copy:
         src: git-radar.bash
         dest: "{{ ansible_env.HOME }}/.bashrc.d/git-radar.bash"
+      when: shell == 'bash'
+      tags: shell
+
+    - name: setup for zsh
+      copy:
+        src: git-radar.zsh
+        dest: "{{ ansible_env.HOME }}/.zshrc.d/git-radar.zsh"
+      when: shell == 'zsh'
+      tags: shell
 
   when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'
