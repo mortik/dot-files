@@ -70,6 +70,14 @@ function decrypt () {
   fi
 }
 
+function kube-shell () {
+  if [ -z "$1" ]; then
+    echo "Specify a pod name'"
+  else
+    kubectl exec --stdin --tty $1 -- /bin/bash
+  fi
+}
+
 # tar
 alias packgz='tar zcvf'
 alias unpackgz='tar zxvf'

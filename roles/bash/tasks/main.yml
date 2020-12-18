@@ -82,4 +82,3 @@
   with_items:
     - ansible.bash
     - prompt.bash
-    - travis.bash

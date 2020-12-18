@@ -10,16 +10,10 @@
         name: zsh
         state: latest
 
-    - name: Check if .oh-my-zsh exists
-      stat:
-        path: ~/.oh-my-zsh
-      register: stat_oh_my_zsh_result
-
-    - name: Cloning  oh-my-zsh
-      git:
-        repo=https://github.com/robbyrussell/oh-my-zsh
-        dest=~/.oh-my-zsh
-      when: not stat_oh_my_zsh_result.stat.exists
+    - name: install zplug
+      homebrew:
+        name: zplug
+        state: latest
 
     - name: Add path to /etc/shells
       blockinfile:
@@ -35,15 +29,15 @@
         src: "zshrc.j2"
         dest: "{{ ansible_env.HOME }}/.zshrc"
 
+    - name: setup p10k.zsh
+      copy:
+        src: "p10k.zsh"
+        dest: "{{ ansible_env.HOME }}/.p10k.zsh"
+
     - name: set shell for user
       command: chsh -s /usr/local/bin/zsh
 
   when: ansible_os_family == 'Darwin'
-
-- name: copy theme
-  copy:
-    src: "theme.zsh-theme"
-    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/themes/mortik.zsh-theme"
 
 - name: copy zshrc.d files
   copy:

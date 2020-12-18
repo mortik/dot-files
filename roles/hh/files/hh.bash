@@ -1,6 +1,13 @@
 #!/bin/bash
 
-export HH_CONFIG=hicolor
+# append to the history file, don't overwrite it
+shopt -s histappend
 
-# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
+# add this configuration to ~/.bashrc
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+
+export HH_CONFIG=hicolor         # get more colors
+
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
