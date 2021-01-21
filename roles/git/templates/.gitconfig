@@ -73,3 +73,5 @@
   insteadOf = git@github.com:
 [url "https://"]
   insteadOf = git://
+[init]
+	defaultBranch = main
