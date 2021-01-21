@@ -20,7 +20,6 @@ vscode_extensions:
 - HookyQR.beautify
 - IcePanel.icepanel
 - jvandyke.vscode-circleci
-- mauve.terraform
 - misogi.ruby-rubocop
 - mjmcloug.vscode-elixir
 - mohsen1.prettify-json
