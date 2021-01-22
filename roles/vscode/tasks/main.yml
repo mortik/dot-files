@@ -1,11 +1,12 @@
 ---
 - block:
 
-    # - name: install visual-studio-code
-    #   homebrew_cask:
-    #     name: visual-studio-code
-    #     state: latest
-    #     accept_external_apps: True
+    - name: install visual-studio-code
+      homebrew_cask:
+        name: visual-studio-code
+        state: latest
+        accept_external_apps: True
+      tags: vscode
 
     - name: Setup Dir
       file:
