@@ -8,9 +8,11 @@ github_user: ""
 github_token: ""
 ssh_key_name: ""
 ssh_key_pass: ""
+bash_cdpath: ".:$HOME:$HOME/dev:$HOME/dev/work"
+zsh_cdpath: ". $HOME $HOME/dev $HOME/work"
+shell: zsh
 gpg_default_key_id: ""
 editor: "code"
-shell: zsh
 mas_apps:
   - { id: 497799835, name: "Xcode" }
   - { id: 409203825, name: "Numbers" }
