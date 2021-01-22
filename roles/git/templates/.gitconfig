@@ -1,6 +1,7 @@
 [user]
   name = {{ git_user_name }}
   email = {{ git_user_email }}
+  signingkey = {{ gpg_default_key_id }}
 [color]
   ui = auto
 [alias]
@@ -23,7 +24,7 @@
   brv = branch -av
   l = log --abbrev-commit --date=relative --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
   lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  standup-me = log --since '2 days ago' --author m.klitzke@gmail.com
+  standup-me = log --since '2 days ago' --author {{ git_user_email }}
   mt = mergetool
   undo-commit = reset --soft HEAD^
   unchanged = update-index --assume-unchanged
