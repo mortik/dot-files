@@ -15,21 +15,25 @@
 
 - block:
 
+    - name: download install.sh
+      get_url:
+        url: "https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh"
+        dest: /tmp/nvm-install.sh
+        mode: 0755
+
     - name: install nvm
-      homebrew:
-        name: nvm
-        state: latest
+      command: /tmp/nvm-install.sh
 
     - name: setup bash configs
       copy:
-        src: nvm.mac.bash
+        src: nvm.bash
         dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
       when: shell == 'bash'
       tags: shell
 
     - name: setup zsh configs
       copy:
-        src: nvm.mac.zsh
+        src: nvm.zsh
         dest: "{{ ansible_env.HOME }}/.zshrc.d/nvm.zsh"
       when: shell == 'zsh'
       tags: shell
@@ -55,6 +59,6 @@
 
 - name: setup bash configs
   copy:
-    src: nvm.linux.bash
+    src: nvm.bash
     dest: "{{ ansible_env.HOME }}/.bashrc.d/nvm.bash"
   when: ansible_os_family == 'Archlinux' or ansible_distribution == 'Ubuntu'

@@ -16,9 +16,9 @@
 
 - unarchive:
     src: https://releases.hashicorp.com/terraform/0.11.5/terraform_0.11.5_linux_amd64.zip
-    dest: /usr/local/bin/
+    dest: "{{ homebrew_bin_path }}/"
     remote_src: True
-    creates: /usr/local/bin/terraform
+    creates: "{{ homebrew_bin_path }}/terraform"
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu'

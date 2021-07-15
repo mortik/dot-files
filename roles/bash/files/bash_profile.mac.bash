@@ -4,7 +4,7 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+export PATH={{ homebrew_bin_path }}:/usr/bin:/bin:$PATH
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
 # shellcheck source=/dev/null

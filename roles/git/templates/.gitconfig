@@ -69,7 +69,7 @@
 [commit]
   gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = {{ homebrew_bin_path }}/gpg
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://"]

@@ -5,7 +5,7 @@ fi
 cdpath=({{ zsh_cdpath }})
 
 # Modify PATH
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/bin:$HOME/bin:{{ homebrew_bin_path }}:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/Applications/bin
 export PATH=/usr/local/share/npm/bin:$PATH # Add NPM binaries
 export PATH=$PATH:/usr/local/go/bin
