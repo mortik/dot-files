@@ -8,6 +8,9 @@ xcode-select --install
 
 # brew
 echo "Setup Brew..."
+
+export PATH="/opt/homebrew/bin:$PATH"
+
 which -s brew
 if [[ $? != 0 ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
