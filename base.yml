@@ -17,7 +17,7 @@
     - { role: gpg, tags: gpg }
     - { role: rc-files, tags: rc-files }
     - { role: vscode, tags: vscode }
-    - { role: neovim, tags: neovim }
+    # - { role: neovim, tags: neovim }
     - { role: tmux, tags: tmux }
     - { role: tig, tags: tig }
     - { role: hh, tags: hh }
@@ -28,21 +28,22 @@
     - { role: zoom, tags: zoom }
     - { role: skype, tags: skype }
     - { role: spotify, tags: spotify }
-    - { role: vlc, tags: vlc }
-    - { role: rbenv, tags: rbenv }
-    - { role: nvm, tags: nvm }
+    # - { role: vlc, tags: vlc }
+    - { role: asdf, tags: asdf }
+    # - { role: rbenv, tags: rbenv }
+    # - { role: nvm, tags: nvm }
     - { role: yarn, tags: yarn }
-    - { role: go, tags: go }
-    - { role: elixir, tags: elixir }
+    # - { role: go, tags: go }
+    # - { role: elixir, tags: elixir }
     - { role: nginx, tags: nginx }
     - { role: postgres, tags: postgres }
     - { role: redis, tags: redis }
-    - { role: wkhtmltopdf, tags: wkhtmltopdf }
+    # - { role: wkhtmltopdf, tags: wkhtmltopdf }
     - { role: terraform, tags: terraform }
     - { role: docker, tags: docker }
     - { role: shellcheck, tags: shellcheck }
     - { role: youtube-dl, tags: youtube-dl }
-    - { role: vhosts, tags: vhosts }
+    # - { role: vhosts, tags: vhosts }
     - { role: wallpaper, tags: wallpaper }
     - { role: hostname, tags: hostname }
     - { role: forego, tags: forego }

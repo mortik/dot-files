@@ -19,7 +19,7 @@
       blockinfile:
         path: /etc/shells
         block: |
-          "{{ homebrew_bin_path }}/zsh"
+          {{ homebrew_path }}/bin/zsh
         marker: "# {mark} ANSIBLE MANAGED BLOCK"
       become: yes
       become_method: sudo
