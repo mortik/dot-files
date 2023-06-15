@@ -7,9 +7,9 @@
 
 - unarchive:
     src: https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-darwin-amd64.zip
-    dest: "{{ homebrew_bin_path }}/"
+    dest: "{{ homebrew_path }}/bin/"
     remote_src: True
-    creates: "{{ homebrew_bin_path }}/forego"
+    creates: "{{ homebrew_path }}/bin/forego"
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Ubuntu' or ansible_os_family == 'Archlinux'

@@ -10,7 +10,7 @@ ssh_key_name: ""
 ssh_key_pass: ""
 bash_cdpath: ".:$HOME:$HOME/dev:$HOME/dev/work"
 zsh_cdpath: ". $HOME $HOME/dev $HOME/work"
-homebrew_bin_path: /usr/local/bin
+homebrew_path: /opt/homebrew
 shell: zsh
 gpg_default_key_id: ""
 editor: "code"

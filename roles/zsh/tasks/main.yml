@@ -35,7 +35,7 @@
         dest: "{{ ansible_env.HOME }}/.p10k.zsh"
 
     - name: set shell for user
-      command: "chsh -s {{ homebrew_bin_path }}/zsh"
+      command: "chsh -s {{ homebrew_path }}/bin/zsh"
 
   when: ansible_os_family == 'Darwin'
 

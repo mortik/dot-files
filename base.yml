@@ -35,7 +35,7 @@
     - { role: yarn, tags: yarn }
     # - { role: go, tags: go }
     # - { role: elixir, tags: elixir }
-    - { role: nginx, tags: nginx }
+    # - { role: nginx, tags: nginx }
     - { role: postgres, tags: postgres }
     - { role: redis, tags: redis }
     # - { role: wkhtmltopdf, tags: wkhtmltopdf }

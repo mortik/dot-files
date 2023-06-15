@@ -5,6 +5,12 @@
     state: latest
   when: ansible_os_family == 'Darwin'
 
+- name: install pinentry
+  homebrew:
+    name: pinentry-mac
+    state: latest
+  when: ansible_os_family == 'Darwin'
+
 - name: install gnupg
   pacman:
     name: gnupg
@@ -32,6 +38,11 @@
   template:
     src: gpg.conf.j2
     dest: "{{ ansible_env.HOME }}/.gnupg/gpg.conf"
+
+- name: setup gpg agent conf
+  copy:
+    src: gpg-agent.conf
+    dest: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
 
 - name: make sure bashrc.d folder is present
   file:

@@ -15,7 +15,7 @@
       blockinfile:
         path: /etc/shells
         block: |
-          {{ homebrew_bin_path }}/bash
+          {{ homebrew_path }}/bin/bash
         marker: "# {mark} ANSIBLE MANAGED BLOCK"
       become: yes
       become_method: sudo
@@ -36,12 +36,12 @@
         dest: "{{ ansible_env.HOME }}/.bashrc.d/bash_completion.bash"
 
     - name: add brew bash to shells
-      command: "echo {{ homebrew_bin_path }}/bash >> /etc/shells"
+      command: "echo {{ homebrew_path }}/bin/bash >> /etc/shells"
       become: yes
       become_method: sudo
 
     - name: set shell for user
-      command: "chsh -s {{ homebrew_bin_path }}/bash"
+      command: "chsh -s {{ homebrew_path }}/bin/bash"
 
   when: ansible_os_family == 'Darwin'
 
